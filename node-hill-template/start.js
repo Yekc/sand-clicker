@@ -1,13 +1,13 @@
 const nh = require('node-hill')
 
 nh.startServer({
-    hostKey: "", // Your host key here (can be found under the settings of the set.)
+    hostKey: "Atr18XTrnSFXnh22p5LpTZe2M8JFqmhdT3UpHW0L1ofPONyMgPfA1xdCabxQDyUS", // Your host key here (can be found under the settings of the set.)
 
-    gameId: 478, // Your game id here
+    gameId: 9, // Your game id here
 
-    port: 42480, // Your port id here (default is 42480)
+    port: 42481, // Your port id here (default is 42480)
 
-    local: true, // Whether or not your server is local
+    local: false, // Whether or not your server is local
 
     mapDirectory: './maps/', // The path to your maps folder.
 
