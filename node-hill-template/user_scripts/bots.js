@@ -20,6 +20,6 @@ setInterval(() => {
 
     nearPlayers = Game.players.filter(player => Game.pointDistance3D(npc_shop.position, player.position) < 10)
     nearPlayers.forEach(player => {
-        player.topPrint(`Press \\c7F\\c0 to interact with ${npc.display.name}`, 1)
+        player.topPrint(`Press \\c7F\\c0 to open the Shop`, 1)
     })
 }, 250)
