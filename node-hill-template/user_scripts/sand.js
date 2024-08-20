@@ -13,24 +13,30 @@ setInterval(() => {
 
         if (player.interact == 0) player.open = 0 //Close UI if player walks away
 
-        player.keypress((key) => {
-            switch (key) {
-                case "f":
-                    if (player.open == 0) {
-                        player.open = player.interact //player.interact: Make sure player is close enough
-                        player.setSpeed(0)
-                    } else {
-                        player.open = 0
-                        player.setSpeed(4)
-                    }
-                    break;
-            }
-        })
-
         switch (player.open) {
             case 1:
                 player.topPrint(`Press \\c7F\\c0 to close the Shop`)
                 break;
         }
     })
-}, 250)
+}, 100)
+
+Game.players.forEach((player) => {
+    player.on("Loaded", () => {
+        player.keypress((key) => {
+            switch (key) {
+                case "f":
+                    if (player.open == 0) {
+                        player.message(0)
+                        player.open = player.interact //player.interact: Make sure player is close enough
+                        player.setSpeed(0)
+                    } else {
+                        player.message(1)
+                        player.open = 0
+                        player.setSpeed(4)
+                    }
+                    break;
+            }
+        })
+    })
+})
