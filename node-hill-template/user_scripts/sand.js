@@ -8,7 +8,7 @@ click_brick.clicked((player, secure) => {
 
 setInterval(() => {
     Game.players.forEach((player) => {
-        player.topPrint(`\\c7Sand: ${player.data.sand}        \\c5Sand per click: ${player.data.spc}        \\c7Sand per second: ${player.data.sps}`)
+        player.topPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c5Sand per click: ${player.data.spc}  \\c2|  \\c7Sand per second: ${player.data.sps}`)
         player.setScore(player.data.sand)
     })
 }, 100)
