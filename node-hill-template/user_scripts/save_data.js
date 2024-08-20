@@ -1,4 +1,5 @@
 const { QuickDB } = getModule("quick.db")
+console.log("test")
 /*db = new QuickDB()
 
 const saveInterval = 600000
