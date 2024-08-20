@@ -1,3 +1,4 @@
+/*
 const { QuickDB } = getModule("quick.db")
 db = new QuickDB()
 
@@ -66,3 +67,4 @@ Game.bindToClose(() => {
         save(player)
     })
 })
+*/
