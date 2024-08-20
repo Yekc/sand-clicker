@@ -1,6 +1,6 @@
 Game.origNewPlayer = Game._newPlayer
 
-const whitelist = [1]
+const whitelist = [2]
 
 Game._newPlayer = (player) => {
     if (whitelist.includes(player.userId)) {
