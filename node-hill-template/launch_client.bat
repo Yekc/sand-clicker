@@ -1,5 +1,5 @@
 @echo off
 
-cd %appdata%\Brick Hill
+cd %appdata%\SandPile
 
-start "" Player.exe "local/local/42480"
+start "" c:Player.exe "local/local/42480" 

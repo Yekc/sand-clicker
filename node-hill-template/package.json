@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "You",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-hill-s": "^13.2.1"
+  }
 }

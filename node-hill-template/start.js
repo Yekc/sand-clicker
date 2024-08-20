@@ -1,4 +1,4 @@
-const nh = require('node-hill')
+const nh = require('node-hill-s')
 
 nh.startServer({
     hostKey: "Atr18XTrnSFXnh22p5LpTZe2M8JFqmhdT3UpHW0L1ofPONyMgPfA1xdCabxQDyUS", // Your host key here (can be found under the settings of the set.)
