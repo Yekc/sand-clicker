@@ -11,13 +11,17 @@ setInterval(() => {
         player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c7Sand per second: ${player.data.sps}`)
         player.setScore(player.data.sand)
 
+        if (player.interact == 0) player.open = 0 //Close UI if player walks away
+
         player.keypress((key) => {
             switch (key) {
                 case "f":
                     if (player.open == 0) {
                         player.open = player.interact //player.interact: Make sure player is close enough
+                        player.setSpeed(0)
                     } else {
                         player.open = 0
+                        player.setSpeed(4)
                     }
                     break;
             }
