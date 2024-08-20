@@ -17,7 +17,7 @@ nh.startServer({
 
     // Add npm / built-in node.js modules here
     modules: [
-        //"fs",
+        "fs",
         "quick.db"
     ]
 })

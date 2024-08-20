@@ -9,6 +9,8 @@
   "author": "You",
   "license": "ISC",
   "dependencies": {
-    "node-hill-s": "^13.2.1"
+    "fs": "^0.0.1-security",
+    "node-hill-s": "^13.2.1",
+    "quick.db": "^9.1.7"
   }
 }
