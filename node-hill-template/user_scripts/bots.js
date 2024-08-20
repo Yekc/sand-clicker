@@ -10,7 +10,7 @@ npc_shop.setOutfit(npc_shop_outfit)
 
 Game.newBot(npc_shop)
 
-npc_shop.position = Game.bricks.filter(brick => brick.name === "npc_shop")[0]
+npc_shop.position = player.bricks.filter(brick => brick.name === "npc_shop")[0]
 
 let nearPlayers
 setInterval(() => {
