@@ -18,8 +18,10 @@ setInterval(() => {
     let player = npc_shop.findClosestPlayer(20)
     if (player) npc_shop.lookAtPlayer(player)
 
+    Game.players.forEach(player => player.interact = 0)
     nearPlayers = Game.players.filter(player => Game.pointDistance3D(npc_shop.position, player.position) < 10)
     nearPlayers.forEach(player => {
         player.topPrint(`Press \\c7F\\c0 to open the Shop`, 1)
+        player.interact = 1
     })
 }, 100)

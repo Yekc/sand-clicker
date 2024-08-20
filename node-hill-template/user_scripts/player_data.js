@@ -4,11 +4,7 @@ const saveInterval = 600000
 
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
-/*
-baseStats = {
-    sand: 0
-}
-*/
+player.interact = 0
 
 const currentTemplateVersion = 2
 template = {
