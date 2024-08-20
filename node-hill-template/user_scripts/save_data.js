@@ -62,6 +62,9 @@ load = async function(player) {
                 f(player)
                 console.log(`Updated user data for ${player.username} (${player.userId}) from ${pv} to ${currentTemplateVersion}!`)
             }
+        } else {
+            player.data = template
+            console.log(`Created user data for ${player.username} (${player.userId})!`)
         }
     } catch (error) {
         console.error(error)
