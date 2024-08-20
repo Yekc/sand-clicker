@@ -17,7 +17,7 @@ nh.startServer({
 
     // Add npm / built-in node.js modules here
     modules: [
-        //"discord.js"
+        "quick.db"
     ]
 })
 
