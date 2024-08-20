@@ -14,15 +14,19 @@ setInterval(() => {
         player.keypress((key) => {
             switch (key) {
                 case "f":
-                    switch (player.interact) {
-                        default:
-                            break;
-                        case 1:
-                            console.log("shop")
-                            break;
+                    if (player.open == 0) {
+                        player.open = player.interact //player.interact: Make sure player is close enough
+                    } else {
+                        player.open = 0
                     }
                     break;
             }
         })
+
+        switch (player.open) {
+            case 1:
+                player.topPrint(`Press \\c7F\\c0 to close the Shop`)
+                break;
+        }
     })
 }, 100)
