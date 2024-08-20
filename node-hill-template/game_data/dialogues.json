@@ -1,0 +1,14 @@
+[
+    {
+        "id": "shop",
+        "type": "shop",
+        "items": [
+            {
+                "item": "+1 Sand per click",
+                "req": 0,
+                "base_price": 50,
+                "price_mult": 1.25
+            }
+        ]
+    }
+]

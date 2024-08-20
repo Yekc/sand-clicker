@@ -1,0 +1,24 @@
+[
+    {
+        "id": "shop",
+        "bodyColors": {
+            "head": "#ccc000",
+            "torso": "#eb1010",
+            "leftArm": "#ccc000",
+            "rightArm": "#ccc000",
+            "leftLeg": "#6b501f",
+            "rightLeg": "#6b501f"
+        },
+        "clothing": {
+            "tshirt": 0,
+            "shirt": 0,
+            "pants": 0
+        },
+        "items": {
+            "face": 0,
+            "hat1": 0,
+            "hat2": 0,
+            "hat3": 0
+        }
+    }
+]

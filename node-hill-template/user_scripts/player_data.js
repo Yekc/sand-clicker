@@ -6,12 +6,13 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 2
+const currentTemplateVersion = 3
 template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
 
     sand: 0,
+    total_sand: 0,
 
     spc: 1, //Sand per second
     sps: 0, //Sand per click
@@ -19,8 +20,8 @@ template = {
 
 //Update save data to new format
 const updates = {
-    from1: function(player) {
-
+    from2: function(player) {
+        player.data.total_sand = 0
     }
 }
 
@@ -58,8 +59,8 @@ load = async function(player) {
 Game.on("playerJoin", (player) => {
     player.on("Loaded", async () => {
         //Create variables
-        player.interact = 0
-        player.open = 0
+        player.interact = false
+        player.dialogue = ""
 
         //Join messages and first time joining
         if (player.data.firstJoin) {

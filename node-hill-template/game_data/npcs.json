@@ -1,0 +1,11 @@
+[
+    {
+        "id": "shop",
+        "dialogue": "shop",
+        "display": {
+            "name": "Shopkeeper",
+            "outfit": "shop",
+            "scale": 1.0
+        }
+    }
+]
