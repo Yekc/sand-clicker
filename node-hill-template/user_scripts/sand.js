@@ -10,19 +10,19 @@ setInterval(() => {
     Game.players.forEach((player) => {
         player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c7Sand per second: ${player.data.sps}`)
         player.setScore(player.data.sand)
-    })
 
-    player.keypress((key) => {
-        switch (key) {
-            case "f":
-                switch (player.interact) {
-                    default:
-                        break;
-                    case 1:
-                        console.log("shop")
-                        break;
-                }
-                break;
-        }
+        player.keypress((key) => {
+            switch (key) {
+                case "f":
+                    switch (player.interact) {
+                        default:
+                            break;
+                        case 1:
+                            console.log("shop")
+                            break;
+                    }
+                    break;
+            }
+        })
     })
 }, 100)
