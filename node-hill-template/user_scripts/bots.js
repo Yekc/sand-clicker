@@ -44,10 +44,14 @@ setInterval(() => {
         if (player.interact == 0) player.open = 0
 
         //Display UI
+        let draw = ""
         switch (player.open) {
             case 1:
                 player.topPrint(`Press \\c7F\\c0 to close the Shop`)
 
+                draw += "\\c1|\\c2===\\c1| \\c5Shop \\c1|\\c2====================\\c1|#"
+                draw += "\\c1Press the number next to the shop item to purchase it##"
+                draw += `\\c0[\\c71\\c0]   +1 Sand per click   \\c7Price: ${0}`
                 break;
         }
     })
