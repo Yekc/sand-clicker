@@ -4,16 +4,21 @@ const saveInterval = 600000
 
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
+/*
 baseStats = {
     sand: 0
 }
+*/
 
-const currentTemplateVersion = 1
+const currentTemplateVersion = 2
 template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
 
-    sand: 0
+    sand: 0,
+
+    spc: 1,
+    sps: 0
 }
 
 const updates = {
@@ -31,7 +36,7 @@ save = async function(player) {
 }
 
 load = async function(player) {
-    player.sand = baseStats.sand
+    //player.sand = baseStats.sand
 
     /*
     if (await db.has(player.userId.toString())) {
@@ -73,6 +78,21 @@ load = async function(player) {
     
     player.emit("Loaded")
 }
+
+Game.on("playerJoin", (player) => {
+    player.on("Loaded", async () => {
+        console.log(`DEBUG >>> Player ${player.username} (${player.userId}) loaded!`)
+
+        if (player.data.firstJoin) {
+            player.message("\\c5Welcome new player!")
+            player.message("\\c5Click the \\c8yellow brick \\c5 to begin earning sand.")
+
+            player.data.firstJoin = false
+        } else {
+            player.message("\\c5Welcome back!")
+        }
+    })
+})
 
 Game.on("initialSpawn", (player) => {
     load(player)
