@@ -21,17 +21,17 @@ setInterval(() => {
     })
 }, 100)
 
-Game.players.forEach((player) => {
+Game.on("playerJoin", (player) => {
     player.on("Loaded", () => {
-        player.keypress((key) => {
+        player.keypress(async(key) => {
             switch (key) {
                 case "f":
                     if (player.open == 0) {
-                        player.message(0)
+                        player.message("test1")
                         player.open = player.interact //player.interact: Make sure player is close enough
                         player.setSpeed(0)
                     } else {
-                        player.message(1)
+                        player.message("test2")
                         player.open = 0
                         player.setSpeed(4)
                     }
