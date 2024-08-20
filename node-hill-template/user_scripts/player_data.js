@@ -4,8 +4,6 @@ const saveInterval = 600000
 
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
-player.interact = 0
-
 const currentTemplateVersion = 2
 template = {
     firstJoin: true,
@@ -80,6 +78,8 @@ load = async function(player) {
 
 Game.on("playerJoin", (player) => {
     player.on("Loaded", async () => {
+        player.interact = 0
+
         console.log(`Player ${player.username} (${player.userId}) loaded!`)
 
         if (player.data.firstJoin) {
