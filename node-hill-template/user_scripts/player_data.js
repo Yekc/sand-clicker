@@ -22,7 +22,10 @@ template = {
 }
 
 const updates = {
-    from0: function(player) {}
+    from1: function(player) {
+        player.data.spc = 1
+        player.data.sps = 0
+    }
 }
 
 save = async function(player) {
