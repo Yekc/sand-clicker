@@ -66,7 +66,7 @@ load = async function(player) {
 
             if (player.data.saveDataVersion < currentTemplateVersion) {
                 let pv = player.data.saveDataVersion
-                let f = updates["from" + String(currentTemplateVersion)]
+                let f = updates["from" + String(currentTemplateVersion - 1)]
                 f(player)
                 console.log(`Updated user data for ${player.username} (${player.userId}) from ${pv} to ${currentTemplateVersion}!`)
             }
@@ -84,7 +84,7 @@ load = async function(player) {
 
 Game.on("playerJoin", (player) => {
     player.on("Loaded", async () => {
-        console.log(`DEBUG >>> Player ${player.username} (${player.userId}) loaded!`)
+        console.log(`Player ${player.username} (${player.userId}) loaded!`)
 
         if (player.data.firstJoin) {
             player.message("\\c5Welcome new player!")
