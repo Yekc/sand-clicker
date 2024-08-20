@@ -6,6 +6,6 @@ Game._newPlayer = (player) => {
     if (whitelist.includes(player.userId)) {
         Game.origNewPlayer(player)
     } else {
-        player.kick("this game is whitelisted... for now")
+        player.kick("You are not on the whitelist!")
     }
 }
