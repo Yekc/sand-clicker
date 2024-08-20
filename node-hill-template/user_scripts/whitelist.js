@@ -1,7 +1,11 @@
-Game.authHandler = async(player) => {
-    if (player.username !== "Yek") {
-        console.log(player.username)
-        return player.kick("this game is whitelisted for now")
+Game.origNewPlayer = Game._newPlayer
+
+const whitelist = [1]
+
+Game._newPlayer = (player) => {
+    if (whitelist.includes(player.userId)) {
+        Game.origNewPlayer(player)
+    } else {
+        player.kick("this game is whitelisted... for now")
     }
-    return true
 }
