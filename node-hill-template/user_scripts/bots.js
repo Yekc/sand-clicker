@@ -22,4 +22,4 @@ setInterval(() => {
     nearPlayers.forEach(player => {
         player.topPrint(`Press \\c7F\\c0 to open the Shop`, 1)
     })
-}, 250)
+}, 100)
