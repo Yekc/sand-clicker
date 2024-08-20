@@ -1,8 +1,7 @@
 const { QuickDB } = getModule("quick.db")
-console.log("test")
-/*db = new QuickDB()
+db = new QuickDB()
 
-const saveInterval = 600000
+/*const saveInterval = 600000
 
 baseStats = {
     sand: 0
