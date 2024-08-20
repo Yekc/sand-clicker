@@ -1,5 +1,5 @@
 const { QuickDB } = getModule("quick.db")
-db = new QuickDB()
+/*db = new QuickDB()
 
 const saveInterval = 600000
 
@@ -66,3 +66,4 @@ Game.bindToClose(() => {
         save(player)
     })
 })
+*/
