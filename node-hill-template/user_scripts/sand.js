@@ -1,12 +1,10 @@
 //Yellow brick clicking
 const click_brick = world.bricks.find(brick => brick.name === "click")
-click_brick.clicked((player, secure) => {
+click_brick.clicked(debouncePlayer((player, secure) => {
     if (!secure) return //Make sure player is close enough
-    debounce(() => {
-        player.centerPrint(`\\c8+${player.data.spc}`)
-        player.data.sand += player.data.spc
-    }, player.data.click_cooldown)
-})
+    player.centerPrint(`\\c8+${player.data.spc}`)
+    player.data.sand += player.data.spc
+}, player.data.click_cooldown))
 
 //Sand per second interval
 setInterval(() => {
