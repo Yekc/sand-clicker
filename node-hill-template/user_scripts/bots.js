@@ -29,7 +29,7 @@ purchaseItem = function(player, i) {
             getSand(player, -price)
             item_functions[item.action](player) //Run the action caused by the purchase
             player.data.items[item.action]++ //Increase the amount of times the player has purchased this
-            player.message(`\\c5You bought \\c0${item.item} \\c5for \\c7${item.price} sand\\c5!`)
+            player.message(`\\c5You bought \\c0${item.item} \\c5for \\c8${getPrice(player, item)} sand\\c5!`)
         } else {
             player.message("\\c6You can not afford this!")
         }
