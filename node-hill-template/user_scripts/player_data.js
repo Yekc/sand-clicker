@@ -6,7 +6,7 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 3
+const currentTemplateVersion = 4
 template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
@@ -16,13 +16,19 @@ template = {
 
     spc: 1, //Sand per second
     sps: 0, //Sand per click
+
+    items: {
+        increase_spc: 0
+    }
 }
 
 //Update save data to new format
 const updates = {
-    from2: function(player) {
-        player.data.total_sand = 0
-        saveDataVersion = 3
+    from3: function(player) {
+        player.data.items: {
+            increase_spc: 0
+        }
+        saveDataVersion = 4
     }
 }
 

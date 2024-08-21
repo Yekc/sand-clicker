@@ -7,13 +7,15 @@
                 "item": "+1 Sand per click",
                 "req": 0,
                 "base_price": 50,
-                "price_mult": 1.25
+                "price_mult": 1.25,
+                "action": "increase_spc"
             },
             {
                 "item": "Test item",
                 "req": 100,
                 "base_price": 100,
-                "price_mult": 1.0
+                "price_mult": 1.0,
+                "action": ""
             }
         ]
     }

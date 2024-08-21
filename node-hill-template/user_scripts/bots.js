@@ -131,9 +131,15 @@ Game.on("playerJoin", (player) => {
                 case "1":
                     if (player.interact) {
                         let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
-                        let npc = getNpc(character.id)
-
+                        let item = getDialogue(getNpc(character.id).dialogue).items[0]
                         console.log(getDialogue(npc.dialogue).items[0])
+                        let price = item.base_price * 1/*(0 * item.price_mult)*/
+
+                        if (player.data.sand >= price) {
+                            getSand(player, -price)
+                            item_functions[item.action](player) //Run the action caused by the purchase
+                            player.data.items[item.action]++ //Increase the amount of times the player has purchased this
+                        }
                     }
                     break;
                 case 2:
