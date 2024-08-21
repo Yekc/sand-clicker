@@ -54,6 +54,7 @@ npcs.forEach(npc => {
         let nearPlayers
         setInterval(() => {
             //Look for close players
+            console.log("looking for near players")
             nearPlayers = Game.players.filter(player => Game.pointDistance3D(character.position, player.position) < interact_distance)
             nearPlayers.forEach(player => {
                 if (player.open == 0) player.topPrint(`Press \\c7F\\c0 to interact with ${npc.display.name}`)
@@ -105,10 +106,10 @@ Game.on("playerJoin", (player) => {
                 case "f":
                     if (!player.interact) {
                         let npc = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
-                        console.log(npc)
                         if (npc) {
+                            console.log("found")
                             player.interact = true
-                            player.dialogue = npc.dialogue
+                            player.dialogue = npcs.find(x => x.id == npc.id)[0].dialogue
                             player.setSpeed(0)
                         }
                     } else {
