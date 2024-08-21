@@ -169,8 +169,11 @@ Game.on("playerJoin", (player) => {
                 //Number selection
                 case "1":
                     if (character && player.interact) {
+                        console.log("yea")
                         player.dialogue = getNpc(character.id).dialogue
+                        console.log("yup")
                         if (player.dialogue.type === "shop") purchaseItem(player, 1)
+                        console.log("yoohoo")
                     }
                     break;
                 case "2":
