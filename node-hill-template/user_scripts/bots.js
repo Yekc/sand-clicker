@@ -14,7 +14,7 @@ getDialogue = function(id) {
     return dialogues.find(dialogue => dialogue.id == id)
 }
 
-let npcBricks = [...npcBricks, ...Game.world.bricks.filter(brick => brick.name.startsWith("npc_"))]
+let npcBricks = [...Game.world.bricks.filter(brick => brick.name.startsWith("npc_"))]
 
 getOutfit = function(id) {
     current = outfits.find(o => o.id == id)
