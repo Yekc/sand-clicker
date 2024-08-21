@@ -16,7 +16,7 @@ const item_functions = {
 }
 
 getPrice = function(player, item) {
-    return item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult))
+    return Math.round(item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult)))
 }
 
 purchaseItem = function(player, i) {
