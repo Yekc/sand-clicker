@@ -132,7 +132,6 @@ Game.on("playerJoin", (player) => {
                     if (player.interact) {
                         let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
                         let item = getDialogue(getNpc(character.id).dialogue).items[0]
-                        console.log(getDialogue(npc.dialogue).items[0])
                         let price = item.base_price * 1/*(0 * item.price_mult)*/
 
                         if (player.data.sand >= price) {
