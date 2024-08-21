@@ -37,8 +37,6 @@ getOutfit = function(id) {
         .hat3(current.items.hat3)
 }
 
-/*
-
 npcs.forEach(npc => {
     npcBricks.filter(brick => brick.name === "npc_" + npc.id).forEach(brick => {
         //Create NPC
@@ -67,6 +65,8 @@ npcs.forEach(npc => {
     })
 })
 
+/*
+
 //NPC interaction
 let nearPlayers
 setInterval(() => {
@@ -88,7 +88,7 @@ setInterval(() => {
                     draw += "\\c1|\\c2===\\c1| \\c5Shop \\c1|\\c2====================\\c1|"
                     draw += "#\\c1Press the number next to the shop item to purchase it#"
                     dialogue.items.forEach(item => {
-                        draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*//*}` //look at how tempalte updates are done
+                        draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)}` //look at how tempalte updates are done
                     })
 
                     player.centerPrint(draw)
@@ -122,3 +122,5 @@ Game.on("playerJoin", (player) => {
         })
     })
 })
+
+*/
