@@ -14,27 +14,6 @@ getDialogue = function(id) {
     return dialogues.find(dialogue => dialogue.id == id)
 }
 
-/*
-//Create NPCs
-const npc_shop = new Bot("Shopkeeper")
-
-//Create NPC outfits
-const npc_shop_outfit = new Outfit()
-    .body("#ccc000")
-    .torso("#eb1010")
-    .rightLeg("#6b501f")
-    .leftLeg("#6b501f")
-
-//Set NPC outfits
-npc_shop.setOutfit(npc_shop_outfit)
-
-//Spawn NPCs
-Game.newBot(npc_shop)
-
-//Set NPC positions
-npc_shop.position = Game.world.bricks.filter(brick => brick.name === "npc_shop")[0].center
-*/
-
 npcBricks = [...npcBricks, ...Game.world.bricks.filter(brick => brick.name.startsWith("npc_"))]
 
 getOutfit = function(id) {
@@ -57,6 +36,8 @@ getOutfit = function(id) {
         .hat2(current.items.hat2)
         .hat3(current.items.hat3)
 }
+
+/*
 
 npcs.forEach(npc => {
     npcBricks.filter(brick => brick.name === "npc_" + npc.id).forEach(brick => {
@@ -96,21 +77,6 @@ setInterval(() => {
         player.setScore(player.data.sand)
 
         //Display UI
-        /*
-        let draw = ""
-        switch (player.open) {
-            case 1:
-                player.topPrint(`Press \\c7F\\c0 to close the Shop`)
-
-                draw += "\\c1|\\c2===\\c1| \\c5Shop \\c1|\\c2====================\\c1|"
-                draw += "#\\c1Press the number next to the shop item to purchase it#"
-                draw += `#\\c1[\\c71\\c1]   \\c0+1 Sand per click   \\c8Price: ${0}`
-
-                player.centerPrint(draw)
-                break;
-        }
-        */
-        //Display UI
         if (player.dialogue !== "") {
             let draw = ""
             let dialogue = getDialogue(player.dialogue)
@@ -122,7 +88,7 @@ setInterval(() => {
                     draw += "\\c1|\\c2===\\c1| \\c5Shop \\c1|\\c2====================\\c1|"
                     draw += "#\\c1Press the number next to the shop item to purchase it#"
                     dialogue.items.forEach(item => {
-                        draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}`
+                        draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*//*}` //look at how tempalte updates are done
                     })
 
                     player.centerPrint(draw)
