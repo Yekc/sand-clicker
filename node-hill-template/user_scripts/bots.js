@@ -77,6 +77,7 @@ setInterval(() => {
         //Display UI
         if (player.dialogue !== "") {
             let draw = ""
+            console.log(player.dialogue)
             let dialogue = getDialogue(player.dialogue)
 
             switch (dialogue.type) {
