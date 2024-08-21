@@ -128,7 +128,7 @@ Game.on("playerJoin", (player) => {
                     break;
                 
                 //Number selection
-                case 1:
+                case "1":
                     if (player.interact) {
                         let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
                         let npc = getNpc(character.id)

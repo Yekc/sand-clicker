@@ -22,6 +22,7 @@ template = {
 const updates = {
     from2: function(player) {
         player.data.total_sand = 0
+        saveDataVersion = 3
     }
 }
 
