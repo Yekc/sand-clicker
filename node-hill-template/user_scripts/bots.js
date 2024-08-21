@@ -89,6 +89,7 @@ setInterval(() => {
                     dialogue.items.forEach(item => {
                         draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}` //look at how tempalte updates are done
                     })
+                    draw += "#test1#test2#test3#test4#test5#test6#test7#test8#test9#test0#.#.#.#.#.#.#.#.#.#.#.#.#."
 
                     player.centerPrint(draw)
                     break;
