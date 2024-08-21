@@ -97,7 +97,7 @@ setInterval(() => {
                     draw += "#\\c1Press the number next to the shop item to purchase it#"
                     let key = 1
                     dialogue.items.forEach(item => {
-                        if (item.req <= player.data.total_sand) {
+                        if (item.req == 0 || item.req <= player.data.total_sand) {
                             draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}` //look at how tempalte updates are done
                             key++
                         }
