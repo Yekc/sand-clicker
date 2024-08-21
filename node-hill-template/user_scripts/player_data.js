@@ -25,7 +25,7 @@ template = {
 //Update save data to new format
 const updates = {
     from3: function(player) {
-        player.data.items: {
+        player.data.items = {
             increase_spc: 0
         }
         saveDataVersion = 4
