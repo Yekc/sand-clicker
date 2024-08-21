@@ -77,7 +77,6 @@ setInterval(() => {
         //Display UI
         if (player.dialogue !== "") {
             let draw = ""
-            console.log(player.dialogue)
             let dialogue = getDialogue(player.dialogue)
 
             switch (dialogue.type) {
@@ -106,6 +105,7 @@ Game.on("playerJoin", (player) => {
                 case "f":
                     if (!player.interact) {
                         let npc = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
+                        console.log(npc)
                         if (npc) {
                             player.interact = true
                             player.dialogue = npc.dialogue
