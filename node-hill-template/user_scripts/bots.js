@@ -2,13 +2,30 @@ let npcs = require("../game_data/npcs.json")
 let outfits = require("../game_data/outfits.json")
 let dialogues = require("../game_data/dialogues.json")
 
+//List of physical NPC bodies
 let characters = []
 
+//How close can you interact with NPCs
 const interact_distance = 10
 
+//Functions executed when purchasing something
 const item_functions = {
     increase_spc: function(player) {
         player.data.spc++
+    }
+}
+
+purchaseItem = function(player, i) {
+    if (player.interact) {
+        let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
+        let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
+        let price = item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult))
+
+        if (player.data.sand >= price) {
+            getSand(player, -price)
+            item_functions[item.action](player) //Run the action caused by the purchase
+            player.data.items[item.action]++ //Increase the amount of times the player has purchased this
+        }
     }
 }
 
@@ -98,7 +115,7 @@ setInterval(() => {
                     let key = 1
                     dialogue.items.forEach(item => {
                         if (item.req == 0 || item.req <= player.data.total_sand) {
-                            draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}` //look at how tempalte updates are done
+                            draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult))}` //look at how tempalte updates are done
                             key++
                         }
                     })
@@ -135,33 +152,31 @@ Game.on("playerJoin", (player) => {
                 
                 //Number selection
                 case "1":
-                    if (player.interact) {
-                        let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
-                        let item = getDialogue(getNpc(character.id).dialogue).items[0]
-                        let price = item.base_price * 1/*(0 * item.price_mult)*/
-
-                        if (player.data.sand >= price) {
-                            getSand(player, -price)
-                            item_functions[item.action](player) //Run the action caused by the purchase
-                            player.data.items[item.action]++ //Increase the amount of times the player has purchased this
-                        }
-                    }
+                    purchaseItem(player, 1)
                     break;
-                case 2:
+                case "2":
+                    purchaseItem(player, 2)
                     break;
-                case 3:
+                case "3":
+                    purchaseItem(player, 3)
                     break;
-                case 4:
+                case "4":
+                    purchaseItem(player, 4)
                     break;
-                case 5:
+                case "5":
+                    purchaseItem(player, 5)
                     break;
-                case 6:
+                case "6":
+                    purchaseItem(player, 6)
                     break;
-                case 7:
+                case "7":
+                    purchaseItem(player, 7)
                     break;
-                case 8:
+                case "8":
+                    purchaseItem(player, 8)
                     break;
-                case 9:
+                case "9":
+                    purchaseItem(player, 9)
                     break;
             }
         })
