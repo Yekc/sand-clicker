@@ -6,6 +6,12 @@ let characters = []
 
 const interact_distance = 10
 
+const item_functions = {
+    increase_spc: function(player) {
+        player.data.spc++
+    }
+}
+
 getNpc = function(id) {
     return npcs.find(npc => npc.id == id)
 }
