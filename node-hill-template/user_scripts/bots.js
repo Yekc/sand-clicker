@@ -25,13 +25,19 @@ purchaseItem = function(player, i) {
         let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
         let price = getPrice(player, item)
 
-        if (player.data.sand >= price) {
-            getSand(player, -price)
-            player.message(`\\c5You bought \\c0${item.item} \\c5for \\c8${getPrice(player, item)} sand\\c5!`)
-            item_functions[item.action](player) //Run the action caused by the purchase
-            player.data.items[item.action]++ //Increase the amount of times the player has purchased this
+        if (item.req > 0 && item.req > player.data.total_sand) {
+            if (player.data.items[item.action] >= item.stock) {
+                player.message("\\c6You can not buy more of this!")
+            } else if (player.data.sand >= price) {
+                player.message("\\c6You can not afford this!")
+            } else {
+                getSand(player, -price)
+                player.message(`\\c5You bought \\c0${item.item} \\c5for \\c8${getPrice(player, item)} sand\\c5!`)
+                item_functions[item.action](player) //Run the action caused by the purchase
+                player.data.items[item.action]++ //Increase the amount of times the player has purchased this
+            }
         } else {
-            player.message("\\c6You can not afford this!")
+            player.message("\\c6You can not buy this yet!")
         }
     }
 }
@@ -124,6 +130,8 @@ setInterval(() => {
                         if (item.req == 0 || item.req <= player.data.total_sand) {
                             draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
                             key++
+                        } else {
+                            draw += `#\\c1[\\c7${key}\\c1]   \\c1?????????   \\c8Price: \\c1?????????`
                         }
                     })
 
@@ -159,31 +167,32 @@ Game.on("playerJoin", (player) => {
                 
                 //Number selection
                 case "1":
-                    purchaseItem(player, 1)
+                    player.dialogue = getNpc(character.id).dialogue
+                    if (player.dialogue.type === "shop") purchaseItem(player, 1)
                     break;
                 case "2":
-                    purchaseItem(player, 2)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 2)
                     break;
                 case "3":
-                    purchaseItem(player, 3)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 3)
                     break;
                 case "4":
-                    purchaseItem(player, 4)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 4)
                     break;
                 case "5":
-                    purchaseItem(player, 5)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 5)
                     break;
                 case "6":
-                    purchaseItem(player, 6)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 6)
                     break;
                 case "7":
-                    purchaseItem(player, 7)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 7)
                     break;
                 case "8":
-                    purchaseItem(player, 8)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 8)
                     break;
                 case "9":
-                    purchaseItem(player, 9)
+                    if (player.dialogue.type === "shop") purchaseItem(player, 9)
                     break;
             }
         })

@@ -6,6 +6,7 @@
             {
                 "item": "+1 Sand per click",
                 "req": 0,
+                "stock": 20,
                 "base_price": 50,
                 "price_mult": 1.25,
                 "action": "increase_spc"
