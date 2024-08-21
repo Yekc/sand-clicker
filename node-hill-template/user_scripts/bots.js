@@ -26,7 +26,7 @@ purchaseItem = function(player, i) {
         let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
         let price = getPrice(player, item)
 
-        if (item.req > 0 && item.req > player.data.total_sand) {
+        if (item.req > player.data.total_sand) {
             if (player.data.items[item.action] >= item.stock) {
                 player.message("\\c6You can not buy more of this!")
             } else if (player.data.sand >= price) {
@@ -130,10 +130,10 @@ setInterval(() => {
                     dialogue.items.forEach(item => {
                         if (item.req == 0 || item.req <= player.data.total_sand) {
                             draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
-                            key++
                         } else {
                             draw += `#\\c1[\\c7${key}\\c1]   \\c1?????????   \\c8Price: \\c1?????????`
                         }
+                        key++
                     })
 
                     player.centerPrint(draw)
