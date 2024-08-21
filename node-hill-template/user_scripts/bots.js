@@ -53,8 +53,11 @@ npcs.forEach(npc => {
 
         let nearPlayers
         setInterval(() => {
+            //Look at closest player
+            let player = character.findClosestPlayer(20)
+            if (player) character.lookAtPlayer(player)
+
             //Look for close players
-            console.log("looking for near players")
             nearPlayers = Game.players.filter(player => Game.pointDistance3D(character.position, player.position) < interact_distance)
             nearPlayers.forEach(player => {
                 if (!player.interact) player.topPrint(`Press \\c7F\\c0 to interact with ${npc.display.name}`)
@@ -87,9 +90,9 @@ setInterval(() => {
                     draw += "\\c1|\\c2===\\c1| \\c5Shop \\c1|\\c2====================\\c1|"
                     draw += "#\\c1Press the number next to the shop item to purchase it#"
                     dialogue.items.forEach(item => {
-                        draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}` //look at how tempalte updates are done
+                        if (item.req <= player.data.total_sand)
+                            draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}` //look at how tempalte updates are done
                     })
-                    draw += "#test1#test2#test3#test4#test5#test6#test7#test8#test9#test0#.#.#.#.#.#.#.#.#.#.#.#.#."
 
                     player.centerPrint(draw)
                     break;
