@@ -109,7 +109,8 @@ Game.on("playerJoin", (player) => {
                         if (npc) {
                             console.log("found")
                             player.interact = true
-                            player.dialogue = npcs.find(x => x.id == npc.id)[0].dialogue
+                            console.log(npcs.find(x => x.id == npc.id))
+                            player.dialogue = npcs.find(x => x.id == npc.id).dialogue
                             player.setSpeed(0)
                         }
                     } else {
