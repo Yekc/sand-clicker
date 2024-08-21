@@ -12,6 +12,7 @@ const interact_distance = 10
 const item_functions = {
     increase_spc: function(player) {
         player.data.spc++
+        player.message("\\c5Your \\c7sand per click \\c5was increased by 1!")
     }
 }
 

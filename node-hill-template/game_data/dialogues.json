@@ -10,6 +10,22 @@
                 "base_price": 50,
                 "price_mult": 1.25,
                 "action": "increase_spc"
+            },
+            {
+                "item": "crazy hamburgeor",
+                "req": 250,
+                "stock": 2,
+                "base_price": 1,
+                "price_mult": 2,
+                "action": "increase_spc"
+            },
+            {
+                "item": "the hamobrger expends",
+                "req": 2000,
+                "stock": 1,
+                "base_price": 1000,
+                "price_mult": 1,
+                "action": "increase_spc"
             }
         ]
     }
