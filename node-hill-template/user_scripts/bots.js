@@ -89,9 +89,12 @@ setInterval(() => {
 
                     draw += "\\c1|\\c2===\\c1| \\c5Shop \\c1|\\c2====================\\c1|"
                     draw += "#\\c1Press the number next to the shop item to purchase it#"
+                    let key = 1
                     dialogue.items.forEach(item => {
-                        if (item.req <= player.data.total_sand)
-                            draw += `#\\c1[\\c71\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}` //look at how tempalte updates are done
+                        if (item.req <= player.data.total_sand) {
+                            draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * 1/*(0 * item.price_mult)*/}` //look at how tempalte updates are done
+                            key++
+                        }
                     })
 
                     player.centerPrint(draw)
@@ -109,10 +112,10 @@ Game.on("playerJoin", (player) => {
                 //Interact with UI
                 case "f":
                     if (!player.interact) {
-                        let npc = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
-                        if (npc) {
+                        let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
+                        if (character) {
                             player.interact = true
-                            player.dialogue = npcs.find(x => x.id == npc.id).dialogue
+                            player.dialogue = getNpc(character.id).dialogue
                             player.setSpeed(0)
                         }
                     } else {
@@ -122,6 +125,32 @@ Game.on("playerJoin", (player) => {
                         player.centerPrint("")
                         player.setSpeed(4)
                     }
+                    break;
+                
+                //Number selection
+                case 1:
+                    if (player.interact) {
+                        let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
+                        let npc = getNpc(character.id)
+
+                        console.log(getDialogue(npc.dialogue).items[0])
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
                     break;
             }
         })
