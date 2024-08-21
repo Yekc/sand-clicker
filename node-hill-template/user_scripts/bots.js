@@ -15,11 +15,15 @@ const item_functions = {
     }
 }
 
+getPrice = function(player, item) {
+    return item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult))
+}
+
 purchaseItem = function(player, i) {
     if (player.interact) {
         let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
         let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
-        let price = item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult))
+        let price = getPrice(player, item)
 
         if (player.data.sand >= price) {
             getSand(player, -price)
@@ -115,7 +119,7 @@ setInterval(() => {
                     let key = 1
                     dialogue.items.forEach(item => {
                         if (item.req == 0 || item.req <= player.data.total_sand) {
-                            draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult))}` //look at how tempalte updates are done
+                            draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
                             key++
                         }
                     })
