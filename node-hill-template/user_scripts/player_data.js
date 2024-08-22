@@ -39,8 +39,10 @@ const updates = {
 
 updateSps = function(player) {
     player.data.sps = 0
-    if (player.data.items.tiny_tim_buy > 0) player.data.sps += player.data.items.tiny_tim + 1
-    if (player.data.items.mr_crabs_buy > 0) player.data.sps += (player.data.items.mr_crabs + 1) * 5
+    console.log("PLAYER_DATA")
+    console.log(player.data.items)
+    if (player.data.items.tiny_tim_buy > 0) player.data.sps += 1 + player.data.items.tiny_tim
+    if (player.data.items.mr_crabs_buy > 0) player.data.sps += 5 + (player.data.items.mr_crabs * 2)
 }
 
 save = async function(player) {

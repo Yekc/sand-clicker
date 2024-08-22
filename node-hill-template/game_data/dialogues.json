@@ -27,7 +27,7 @@
                 "req": 5000,
                 "item_req": "",
                 "stock": 1,
-                "base_price": 5000,
+                "base_price": 2500,
                 "price_mult": 1,
                 "action": "mr_crabs_buy"
             }
@@ -54,7 +54,7 @@
                 "item_req": "mr_crabs_buy",
                 "item_req_fancy": "Mr. Crabs",
                 "stock": 20,
-                "base_price": 2500,
+                "base_price": 1000,
                 "price_mult": 1.25,
                 "action": "mr_crabs"
             }
