@@ -10,7 +10,7 @@
     },
     {
         "id": "office",
-        "dialogue": "shop",
+        "dialogue": "office",
         "display": {
             "name": "Manager",
             "outfit": "office",

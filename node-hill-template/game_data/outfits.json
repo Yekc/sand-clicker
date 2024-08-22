@@ -25,9 +25,9 @@
         "id": "office",
         "bodyColors": {
             "head": "#ccc000",
-            "torso": "#46536b",
-            "leftArm": "#46536b",
-            "rightArm": "#46536b",
+            "torso": "#ffffff",
+            "leftArm": "#ccc000",
+            "rightArm": "#ccc000",
             "leftLeg": "#272f3d",
             "rightLeg": "#272f3d"
         },
