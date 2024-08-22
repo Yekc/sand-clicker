@@ -36,7 +36,7 @@ const item_functions = {
     },
     tims_father: function(player) {
         updateSps(player)
-        player.message("\\c0Tim's Father \\c5has been promoted! \\c9+2 sand per second")
+        player.message("\\c0Tim's Father \\c5has been promoted! \\c9+5 sand per second")
     },
     sand_eater_buy: function(player) {
         updateSps(player)
@@ -44,7 +44,7 @@ const item_functions = {
     },
     sand_eater: function(player) {
         updateSps(player)
-        player.message("\\c0Sand Eater \\c5has been promoted! \\c9+2 sand per second")
+        player.message("\\c0Sand Eater \\c5has been promoted! \\c9+10 sand per second")
     }
 }
 

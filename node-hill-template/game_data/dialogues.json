@@ -42,7 +42,7 @@
             },
             {
                 "item": "Hire Sand Eater (20/s)",
-                "req": 30000,
+                "req": 50000,
                 "item_req": "",
                 "stock": 1,
                 "base_price": 10000,
@@ -88,7 +88,7 @@
             },
             {
                 "item": "Upgrade Sand Eater (+10/s)",
-                "req": 30000,
+                "req": 50000,
                 "item_req": "sand_eater_buy",
                 "item_req_fancy": "Sand Eater",
                 "stock": 50,
