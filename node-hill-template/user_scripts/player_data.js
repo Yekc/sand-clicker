@@ -37,7 +37,7 @@ const updates = {
         player.data.items.sand_eater_buy = 0
         player.data.items.tims_father = 0
         player.data.items.sand_eater = 0
-        saveDataVersion = 6
+        player.data.saveDataVersion = 6
     }
 }
 
