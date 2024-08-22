@@ -7,7 +7,7 @@ if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
 const currentTemplateVersion = 1
-template = {
+const template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
 
