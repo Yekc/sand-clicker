@@ -149,7 +149,7 @@ setInterval(() => {
                                 draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
                             }
                         } else {
-                            draw += `#\\c1[\\c7${key}\\c1]   \\c6Unlock at ${player.data.total_sand} total sand   \\c8Price: ????`
+                            draw += `#\\c1[\\c7${key}\\c1]   \\c6Not unlocked! (${player.data.total_sand}/${item.req} total sand)   \\c8Price: ????`
                         }
                         key++
                     })
