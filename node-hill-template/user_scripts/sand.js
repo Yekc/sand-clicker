@@ -92,6 +92,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 //Sand per second
 setInterval(() => {
     Game.players.forEach((player) => {
+        updateSps(player)
         getSand(player, player.data.sps)
     })
 }, 1000)

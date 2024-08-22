@@ -15,39 +15,30 @@ const item_functions = {
         player.message("\\c5Your \\c7sand per click \\c5was increased by 1!")
     },
     tiny_tim_buy: function(player) {
-        updateSps(player)
         player.message("\\c5Upgrade \\c0Tiny Tim \\c5at the office building!")
     },
     tiny_tim: function(player) {
-        updateSps(player)
         player.message("\\c0Tiny Tim \\c5has been promoted! \\c9+1 sand per second")
     },
     mr_crabs_buy: function(player) {
-        updateSps(player)
         player.message("\\c5Upgrade \\c0Mr. Crabs \\c5at the office building!")
     },
     mr_crabs: function(player) {
-        updateSps(player)
         player.message("\\c0Mr. Crabs \\c5has been promoted! \\c9+2 sand per second")
     },
     tims_father_buy: function(player) {
-        updateSps(player)
         player.message("\\c5Upgrade \\c0Tim's Father \\c5at the office building!")
     },
     tims_father: function(player) {
-        updateSps(player)
         player.message("\\c0Tim's Father \\c5has been promoted! \\c9+5 sand per second")
     },
     sand_eater_buy: function(player) {
-        updateSps(player)
         player.message("\\c5Upgrade \\c0Sand Eater \\c5at the office building!")
     },
     sand_eater: function(player) {
-        updateSps(player)
         player.message("\\c0Sand Eater \\c5has been promoted! \\c9+10 sand per second")
     },
     manager: function(player) {
-        updateSps(player)
         player.message(`\\c5Your manager has been promoted! \\c9x${1 + (Math.round(0.1 * player.data.items.manager * 10) / 10)} sand per second`)
     }
 }
