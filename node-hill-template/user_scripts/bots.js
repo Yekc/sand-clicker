@@ -155,6 +155,12 @@ setInterval(() => {
         }
         player.setScore(player.data.total_sand)
 
+        //Office tip
+        if (!player.data.office_tip && player.data.items.tiny_tim_buy > 0 && !player.interact) {
+            player.centerPrint("\\c5Remember to upgrade your workers at the office building! (To increase their efficiency)", 5)
+            player.data.office_tip = true
+        }
+
         //Display UI
         if (player.dialogue !== "") {
             let draw = ""
