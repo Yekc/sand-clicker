@@ -57,7 +57,7 @@ randomBrick = function(s) {
         brick.clicked(debouncePlayer((player, secure) => {
             if (!secure || !is_random) return //Make sure player is close enough and that random brick should exist
             random_health--
-            player.message(`\\c7${random_health}/10`)
+            player.centerPrint(`\\c7${random_health}/10`)
             if (random_health == 0) {
                 giveRandom(player, false)
                 brick.setVisibility(0)
