@@ -7,5 +7,14 @@
             "outfit": "shop",
             "scale": 1.0
         }
+    },
+    {
+        "id": "office",
+        "dialogue": "shop",
+        "display": {
+            "name": "Manager",
+            "outfit": "office",
+            "scale": 1.0
+        }
     }
 ]

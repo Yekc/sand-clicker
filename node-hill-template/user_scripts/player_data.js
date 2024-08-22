@@ -62,11 +62,6 @@ load = async function(player) {
                 f(player)
                 console.log(`Updated user data for ${player.username} (${player.userId}) from ${pv} to ${currentTemplateVersion}!`)
             }
-
-            //Hide not unlocked parts of the map
-            if (player.data.total_sand < 500) player.bricks.forEach(brick => {
-                if (brick.name == "office") brick.setVisibility(0)
-            })
         } else { //Player has no save data
             player.data = template
             console.log(`Created user data for ${player.username} (${player.userId})!`)

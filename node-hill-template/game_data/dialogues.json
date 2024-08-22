@@ -28,5 +28,27 @@
                 "action": "mr_crabs_buy"
             }
         ]
+    },
+    {
+        "id": "office",
+        "type": "shop",
+        "items": [
+            {
+                "item": "Upgrade Tiny Tim (+1/s)",
+                "req": 500,
+                "stock": 20,
+                "base_price": 250,
+                "price_mult": 1.25,
+                "action": "tiny_tim"
+            },
+            {
+                "item": "Upgrade Mr. Crabs (+2/s)",
+                "req": 5000,
+                "stock": 20,
+                "base_price": 2500,
+                "price_mult": 1.25,
+                "action": "mr_crabs"
+            }
+        ]
     }
 ]

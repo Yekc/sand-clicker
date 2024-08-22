@@ -18,9 +18,17 @@ const item_functions = {
         updateSps(player)
         player.message("\\c5Upgrade \\c0Tiny Tim \\c5at the office building!")
     },
+    tiny_tim: function(player) {
+        updateSps(player)
+        player.message("\\c0Tiny Tim \\c5has been promoted! \\c9+1 sand per second")
+    },
     mr_crabs_buy: function(player) {
         updateSps(player)
         player.message("\\c5Upgrade \\c0Mr. Crabs \\c5at the office building!")
+    },
+    mr_crabs: function(player) {
+        updateSps(player)
+        player.message("\\c0Mr. Crabs \\c5has been promoted! \\c9+2 sand per second")
     }
 }
 
@@ -126,7 +134,7 @@ setInterval(() => {
     //NPC UI
     Game.players.forEach((player) => {
         //Info and score
-        player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c7Sand per second: ${player.data.sps}`)
+        player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps}`)
         player.setScore(player.data.total_sand)
 
         //Display UI
