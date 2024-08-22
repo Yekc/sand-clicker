@@ -178,7 +178,7 @@ Game.on("playerJoin", (player) => {
                 case "1":
                     if (character && player.interact) {
                         player.dialogue = getNpc(character.id).dialogue
-                        console.log(player.dialogue.type)
+                        console.log(player.dialogue)
                         if (player.dialogue.type === "shop") purchaseItem(player, 1)
                     }
                     break;
