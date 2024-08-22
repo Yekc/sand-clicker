@@ -29,34 +29,26 @@ getPrice = function(player, item) {
 }
 
 purchaseItem = function(player, i) {
-    console.log("function runs")
     if (player.interact) {
-        console.log("player.interact == true")
         let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
         let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
         let price = getPrice(player, item)
 
-        console.log("variables set")
-
         if (item.req <= player.data.total_sand) {
-            console.log("req complete")
             if (player.data.items[item.action] >= item.stock) {
                 player.message("\\c6You can not buy more of this!")
             } else if (player.data.sand < price) {
                 player.message("\\c6You can not afford this!")
             } else {
-                console.log("buying")
                 getSand(player, -price)
                 player.message(`\\c5You bought \\c0${item.item} \\c5for \\c8${getPrice(player, item)} sand\\c5!`)
                 item_functions[item.action](player) //Run the action caused by the purchase
                 player.data.items[item.action]++ //Increase the amount of times the player has purchased this
-                console.log("bought")
             }
         } else {
             player.message("\\c6You can not buy this yet!")
         }
     }
-    console.log("end check")
 }
 
 let npcBricks = [...Game.world.bricks.filter(brick => brick.name.startsWith("npc_"))]
@@ -177,57 +169,47 @@ Game.on("playerJoin", (player) => {
                 //Number selection
                 case "1":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        console.log(player.dialogue)
-                        if (player.dialogue.type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
                     }
                     break;
                 case "2":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 2)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 2)
                     }
                     break;
                 case "3":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 3)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 3)
                     }
                     break;
                 case "4":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 4)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 4)
                     }
                     break;
                 case "5":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 5)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 5)
                     }
                     break;
                 case "6":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 6)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 6)
                     }
                     break;
                 case "7":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 7)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 7)
                     }
                     break;
                 case "8":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 8)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 8)
                     }
                     break;
                 case "9":
                     if (character && player.interact) {
-                        player.dialogue = getNpc(character.id).dialogue
-                        if (player.dialogue.type === "shop") purchaseItem(player, 9)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 9)
                     }
                     break;
             }
