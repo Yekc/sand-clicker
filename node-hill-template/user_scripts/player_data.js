@@ -6,7 +6,7 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 6
+const currentTemplateVersion = 7
 template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
@@ -26,18 +26,17 @@ template = {
         tims_father_buy: 0,
         tims_father: 0,
         sand_eater_buy: 0,
-        sand_eater: 0
+        sand_eater: 0,
+        manager: 0
     }
 }
 
 //Update save data to new format
 const updates = {
-    from5: function(player) {
-        player.data.items.tims_father_buy = 0
-        player.data.items.sand_eater_buy = 0
-        player.data.items.tims_father = 0
-        player.data.items.sand_eater = 0
-        player.data.saveDataVersion = 6
+    from6: function(player) {
+        player.data.items.manager = 0
+
+        player.data.saveDataVersion = 7
     }
 }
 
