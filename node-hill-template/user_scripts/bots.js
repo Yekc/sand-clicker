@@ -237,7 +237,7 @@ Game.on("playerJoin", (player) => {
                 
                 //Pet inventory scrolling
                 case "z":
-                    if (player.pet_inv && player.pet_inv_page > 0) player.pet_inv_page--
+                    if (player.pet_inv && player.pet_inv_page > 1) player.pet_inv_page--
                     break;
                 case "x":
                     if (player.pet_inv && player.pet_inv_page < global.max_pet_inv_page) player.pet_inv_page++
