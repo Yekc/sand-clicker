@@ -29,6 +29,22 @@ const item_functions = {
     mr_crabs: function(player) {
         updateSps(player)
         player.message("\\c0Mr. Crabs \\c5has been promoted! \\c9+2 sand per second")
+    },
+    tims_father_buy: function(player) {
+        updateSps(player)
+        player.message("\\c5Upgrade \\c0Tim's Father \\c5at the office building!")
+    },
+    tims_father: function(player) {
+        updateSps(player)
+        player.message("\\c0Tim's Father \\c5has been promoted! \\c9+2 sand per second")
+    },
+    sand_eater_buy: function(player) {
+        updateSps(player)
+        player.message("\\c5Upgrade \\c0Sand Eater \\c5at the office building!")
+    },
+    sand_eater: function(player) {
+        updateSps(player)
+        player.message("\\c0Sand Eater \\c5has been promoted! \\c9+2 sand per second")
     }
 }
 
