@@ -19,7 +19,7 @@ Game.on("playerJoin", (player) => {
 
                 player.topPrint("Press \\c7E \\c0to close your pet inventory")
 
-                draw += "\\c1|\\c2===\\c1| \\c9Pet Inventory \\c1|\\c2====================\\c1|"
+                //draw += "\\c1|\\c2===\\c1| \\c9Pet Inventory \\c1|\\c2====================\\c1|"
                 draw += "#\\c1Press the number next to the pet to equip/dequip it"
                 draw += "#\\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages"
                 draw += "#\\c1Press \\c7I \\c1to view info about a pet#"
