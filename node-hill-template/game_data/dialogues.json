@@ -54,8 +54,8 @@
                 "req": 75000,
                 "item_req": "",
                 "stock": 20,
-                "base_price": 10000,
-                "price_mult": 1.2,
+                "base_price": 1000,
+                "price_mult": 1.1,
                 "action": "manager"
             }
         ]
