@@ -45,6 +45,8 @@ updateSps = function(player) {
     player.data.sps = 0
     if (player.data.items.tiny_tim_buy > 0) player.data.sps += 1 + player.data.items.tiny_tim
     if (player.data.items.mr_crabs_buy > 0) player.data.sps += 5 + (player.data.items.mr_crabs * 2)
+    if (player.data.items.tims_father_buy > 0) player.data.sps += 10 + (player.data.items.mr_crabs * 5)
+    if (player.data.items.sand_eater_buy > 0) player.data.sps += 20 + (player.data.items.mr_crabs * 10)
 }
 
 save = async function(player) {
