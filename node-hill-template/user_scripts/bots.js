@@ -11,34 +11,43 @@ const interact_distance = 10
 //Functions executed when purchasing something
 const item_functions = {
     increase_spc: function(player) {
-        player.data.spc++
+        updateSpc()
         player.message("\\c5Your \\c7sand per click \\c5was increased by 1!")
     },
     tiny_tim_buy: function(player) {
+        updateSps()
         player.message("\\c5Upgrade \\c0Tiny Tim \\c5at the office building!")
     },
     tiny_tim: function(player) {
+        updateSps()
         player.message("\\c0Tiny Tim \\c5has been promoted! \\c9+1 sand per second")
     },
     mr_crabs_buy: function(player) {
+        updateSps()
         player.message("\\c5Upgrade \\c0Mr. Crabs \\c5at the office building!")
     },
     mr_crabs: function(player) {
+        updateSps()
         player.message("\\c0Mr. Crabs \\c5has been promoted! \\c9+2 sand per second")
     },
     tims_father_buy: function(player) {
+        updateSps()
         player.message("\\c5Upgrade \\c0Tim's Father \\c5at the office building!")
     },
     tims_father: function(player) {
+        updateSps()
         player.message("\\c0Tim's Father \\c5has been promoted! \\c9+5 sand per second")
     },
     sand_eater_buy: function(player) {
+        updateSps()
         player.message("\\c5Upgrade \\c0Sand Eater \\c5at the office building!")
     },
     sand_eater: function(player) {
+        updateSps()
         player.message("\\c0Sand Eater \\c5has been promoted! \\c9+10 sand per second")
     },
     manager: function(player) {
+        updateSps()
         player.message(`\\c5Your manager has been promoted! \\c9x${1 + Math.round((0.05 * player.data.items.manager) * 100) / 100} sand per second`)
     }
 }
@@ -194,7 +203,7 @@ Game.on("playerJoin", (player) => {
         player.keypress(async(key) => {
             let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
             switch (key) {
-                //Interact with UI
+                //Open NPC menu
                 case "f":
                     if (!player.interact) {
                         if (character) {
@@ -208,6 +217,21 @@ Game.on("playerJoin", (player) => {
                         player.topPrint("")
                         player.centerPrint("")
                         player.setSpeed(4)
+                    }
+                    break;
+                
+                //Open pet inventory
+                case "e":
+                    if (!player.interact) {
+                        if (!player.pet_inv) {
+                            player.pet_inv = true
+                            player.setSpeed(0)
+                        } else {
+                            player.pet_inv = false
+                            player.topPrint("")
+                            player.centerPrint("")
+                            player.setSpeed(4)
+                        }
                     }
                     break;
                 

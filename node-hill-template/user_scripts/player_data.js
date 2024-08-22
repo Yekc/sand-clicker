@@ -30,12 +30,30 @@ const template = {
         sand_eater_buy: 0,
         sand_eater: 0,
         manager: 0
+    },
+
+    pet_equipped: false,
+    pet_active: "",
+    pets: {
+        scallop: 0
     }
 }
 
 //Update save data to new format
 const updates = {
     from0: function(player) {}
+}
+
+updateSpc = function(player) {
+    player.data.spc = 1
+
+    player.data.spc += player.data.items.increase_spc
+
+    if (player.data.pet_equipped) {
+        let pet = getPet(player.data.pet_active)
+        if (pet.perks.spc != 0) player.data.spc += pet.perks.spc
+        if (pet.perks.spc_mult != 0) player.data.spc *= pet.perks.spc_mult
+    }
 }
 
 updateSps = function(player) {
@@ -47,6 +65,12 @@ updateSps = function(player) {
     if (player.data.items.sand_eater_buy > 0) player.data.sps += 20 + (player.data.items.sand_eater * 10)
     
     if (player.data.items.manager > 0) player.data.sps = Math.round(player.data.sps * (1 + (0.05 * player.data.items.manager)))
+    
+    if (player.data.pet_equipped) {
+        let pet = getPet(player.data.pet_active)
+        if (pet.perks.sps != 0) player.data.sps += pet.perks.sps
+        if (pet.perks.sps_mult != 0) player.data.sps *= pet.perks.sps_mult
+    }
 }
 
 save = async function(player) {
@@ -85,6 +109,8 @@ Game.on("playerJoin", (player) => {
         //Create variables
         player.interact = false
         player.dialogue = ""
+        player.pet_inv = false
+        player.pet_inv_page = 1
 
         //Join messages and first time joining
         if (player.data.firstJoin) {
