@@ -6,12 +6,12 @@ getSand = function(player, amount) {
 giveRandom = function(player, s) {
     if (s) {
         Game.messageAll(`${player.name} \\c5has looted the \\c7SUPER \\c4RANDOM BRICK!!!`)
-        player.message(`\\c5You earned \\c8${10000 + player.data.sps * 300} sand\\c5!`)
-        getSand(player, 10000 + player.data.sps * 300)
+        player.message(`\\c5You earned \\c8${10000 + player.data.sps * 900} sand\\c5!`)
+        getSand(player, 10000 + player.data.sps * 900)
     } else {
         Game.messageAll(`${player.name} \\c5has looted the \\c4RANDOM BRICK!`)
-        player.message(`\\c5You earned \\c8${1000 + player.data.sps * 60} sand\\c5!`)
-        getSand(player, 1000 + player.data.sps * 60)
+        player.message(`\\c5You earned \\c8${1000 + player.data.sps * 300} sand\\c5!`)
+        getSand(player, 1000 + player.data.sps * 300)
     }
 }
 
@@ -35,7 +35,7 @@ randomBrick = function(s) {
         brick.clicked(debouncePlayer((player, secure) => {
             if (!secure || !is_random) return //Make sure player is close enough and that random brick should exist
             random_health--
-            player.message(`\\c4${random_health}/10`)
+            player.centerPrint(`\\c4${random_health}/10`, 3)
             if (random_health == 0) {
                 giveRandom(player, true)
                 brick.setVisibility(0)
