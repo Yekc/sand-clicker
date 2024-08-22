@@ -50,7 +50,7 @@
                 "action": "sand_eater_buy"
             },
             {
-                "item": "Upgrade Manager (x1.1/s)",
+                "item": "Upgrade Manager (+0.1%/s)",
                 "req": 75000,
                 "item_req": "",
                 "stock": 20,
