@@ -1,21 +1,22 @@
 const nh = require('node-hill-s')
 
 nh.startServer({
-    hostKey: "Atr18XTrnSFXnh22p5LpTZe2M8JFqmhdT3UpHW0L1ofPONyMgPfA1xdCabxQDyUS", // Your host key here (can be found under the settings of the set.)
+    hostKey: "ZbqFHImC73riat2FphDPwKp0CwJlbyepiQoKY8G3S64fSiZT6idG5S6TTyQTDJJC", //MAIN
+    //hostKey: "Whuapq6U2i6YwIiNk5UEUlLdkozWgZAkSiSQUUuvbrZVZH4w34QI3PWlhhMUHQtE", //TESTING
 
-    gameId: 9, // Your game id here
+    gameId: 9, //MAIN
+    //gameId: 10, //TESTING
 
-    port: 42481, // Your port id here (default is 42480)
+    port: 42481,
 
-    local: false, // Whether or not your server is local
+    local: false,
 
-    mapDirectory: './maps/', // The path to your maps folder.
+    mapDirectory: './maps/',
 
-    map: 'sand.brk', // The file name of your .brk
+    map: 'sand.brk',
 
-    scripts: './user_scripts', // Your .js files path
+    scripts: './user_scripts',
 
-    // Add npm / built-in node.js modules here
     modules: [
         "fs"
     ]
