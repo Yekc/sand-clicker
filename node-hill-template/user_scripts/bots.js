@@ -39,7 +39,7 @@ const item_functions = {
         player.message("\\c0Sand Eater \\c5has been promoted! \\c9+10 sand per second")
     },
     manager: function(player) {
-        player.message(`\\c5Your manager has been promoted! \\c9x${1 + (Math.round(0.1 * player.data.items.manager * 10) / 10)} sand per second`)
+        player.message(`\\c5Your manager has been promoted! \\c9x${1 + Math.round((0.05 * player.data.items.manager) * 10) / 10} sand per second`)
     }
 }
 
