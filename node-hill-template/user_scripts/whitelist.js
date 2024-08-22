@@ -1,7 +1,6 @@
-/*
 Game.origNewPlayer = Game._newPlayer
 
-const whitelist = [2]
+const whitelist = [1, 2, 9]
 
 Game._newPlayer = (player) => {
     if (whitelist.includes(player.userId)) {
@@ -10,4 +9,3 @@ Game._newPlayer = (player) => {
         player.kick("You are not on the whitelist!")
     }
 }
-*/
