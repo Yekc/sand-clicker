@@ -83,7 +83,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         let random = Math.round(Math.random() * 3000)
         if (random < 10) {
             is_random = true
-            is_super = random < 1
+            is_super = random < 2
             randomBrick(is_super)
         }
     }
