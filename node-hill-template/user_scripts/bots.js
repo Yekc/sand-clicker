@@ -142,7 +142,11 @@ setInterval(() => {
                     let key = 1
                     dialogue.items.forEach(item => {
                         if (item.req == 0 || item.req <= player.data.total_sand) {
-                            draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
+                            if (player.data.items[item.action] >= item.stock) {
+                                draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c6Out of stock!`
+                            } else {
+                                draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
+                            }
                         } else {
                             draw += `#\\c1[\\c7${key}\\c1]   \\c1?????????   \\c8Price: \\c1?????????`
                         }
