@@ -140,7 +140,7 @@ setInterval(() => {
     Game.players.forEach((player) => {
         //Info and score
         if (player.data.items.manager > 0) {
-            player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps} (x${1 + (Math.round(0.1 * player.data.items.manager * 10) / 10)} mult.)`)
+            player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps} (x${1 + Math.round((0.05 * player.data.items.manager) * 10) / 10} mult.)`)
         } else {
             player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps}`)
         }
