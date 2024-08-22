@@ -8,7 +8,7 @@
                 "item": "+1 Sand per click",
                 "req": 0,
                 "item_req": "",
-                "stock": 20,
+                "stock": 19,
                 "base_price": 50,
                 "price_mult": 1.25,
                 "action": "increase_spc"
@@ -43,7 +43,7 @@
                 "req": 500,
                 "item_req": "tiny_tim_buy",
                 "item_req_fancy": "Tiny Tim",
-                "stock": 20,
+                "stock": 50,
                 "base_price": 250,
                 "price_mult": 1.15,
                 "action": "tiny_tim"
@@ -53,7 +53,7 @@
                 "req": 5000,
                 "item_req": "mr_crabs_buy",
                 "item_req_fancy": "Mr. Crabs",
-                "stock": 20,
+                "stock": 50,
                 "base_price": 1000,
                 "price_mult": 1.15,
                 "action": "mr_crabs"
