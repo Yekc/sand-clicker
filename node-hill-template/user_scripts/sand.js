@@ -5,11 +5,11 @@ getSand = function(player, amount) {
 
 giveRandom = function(player, s) {
     if (s) {
-        Game.messageAll(`${player.name} \\c5has looted the \\c7SUPER \\c4RANDOM BRICK!!!`)
+        Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c4RANDOM BRICK!!!`)
         player.message(`\\c5You earned \\c8${10000 + player.data.sps * 900} sand\\c5!`)
         getSand(player, 10000 + player.data.sps * 900)
     } else {
-        Game.messageAll(`${player.name} \\c5has looted the \\c4RANDOM BRICK!`)
+        Game.messageAll(`${player.username} \\c5has looted the \\c4RANDOM BRICK!`)
         player.message(`\\c5You earned \\c8${1000 + player.data.sps * 300} sand\\c5!`)
         getSand(player, 1000 + player.data.sps * 300)
     }
@@ -81,9 +81,9 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     //Chance for random and super random brick
     if (!(is_random || is_super)) {
         let random = Math.round(Math.random() * 3000)
-        if (random < 10) {
+        if (random < 100) {
             is_random = true
-            is_super = random < 1
+            is_super = random < 100
             randomBrick(is_super)
         }
     }
