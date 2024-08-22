@@ -3,6 +3,8 @@ let outfits = require("../game_data/outfits.json")
 
 const pet_functions = {}
 
+const max_pet_inv_page = 5
+
 getPet = function(id) {
     return pets.find(pet => pet.id == id)
 }
@@ -19,7 +21,7 @@ Game.on("playerJoin", (player) => {
 
                 draw += "\\c1|\\c2===\\c1| \\c9Pet Inventory \\c1|\\c2====================\\c1|"
                 draw += "#\\c1Press the number next to the pet to equip/dequip it"
-                draw += "#\\c1Use your arrow keys to scroll through the pages"
+                draw += "#\\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages"
                 draw += "#\\c1Press \\c7I \\c1to view info about a pet#"
 
                 for (i = 0; i < 9; i++) {
@@ -31,7 +33,7 @@ Game.on("playerJoin", (player) => {
                     }
                 }
 
-                draw += `##Page ${player.pet_inv_page == 0 ? "\\c1" : ""}< \\c0${player.pet_inv_page}/? ${player.pet_inv_page == 999 ? "\\c1" : ""}>`
+                draw += `##Page ${player.pet_inv_page == 0 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${max_pet_inv_page} ${player.pet_inv_page == max_pet_inv_page ? "\\c2" : ""}>`
 
                 player.centerPrint(draw)
             }

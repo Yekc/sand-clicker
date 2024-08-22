@@ -235,6 +235,14 @@ Game.on("playerJoin", (player) => {
                     }
                     break;
                 
+                //Pet inventory scrolling
+                case "z":
+                    if (player.pet_inv && player.pet_inv_page > 0) player.pet_inv_page--
+                    break;
+                case "x":
+                    if (player.pet_inv && player.pet_inv_page < max_pet_inv_page) player.pet_inv_page++
+                    break;
+                
                 //Number selection
                 case "1":
                     if (character && player.interact) {
