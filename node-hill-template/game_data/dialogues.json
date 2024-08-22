@@ -30,6 +30,24 @@
                 "base_price": 2000,
                 "price_mult": 1,
                 "action": "mr_crabs_buy"
+            },
+            {
+                "item": "Hire Tim's Father (10/s)",
+                "req": 15000,
+                "item_req": "",
+                "stock": 1,
+                "base_price": 3500,
+                "price_mult": 1,
+                "action": "tims_father_buy"
+            },
+            {
+                "item": "Hire Sand Eater (20/s)",
+                "req": 30000,
+                "item_req": "",
+                "stock": 1,
+                "base_price": 10000,
+                "price_mult": 1,
+                "action": "sand_eater_buy"
             }
         ]
     },
@@ -45,7 +63,7 @@
                 "item_req_fancy": "Tiny Tim",
                 "stock": 50,
                 "base_price": 250,
-                "price_mult": 1.15,
+                "price_mult": 1.1,
                 "action": "tiny_tim"
             },
             {
@@ -54,9 +72,29 @@
                 "item_req": "mr_crabs_buy",
                 "item_req_fancy": "Mr. Crabs",
                 "stock": 50,
-                "base_price": 1000,
+                "base_price": 750,
                 "price_mult": 1.15,
                 "action": "mr_crabs"
+            },
+            {
+                "item": "Upgrade Tim's Father (+5/s)",
+                "req": 15000,
+                "item_req": "tims_father_buy",
+                "item_req_fancy": "Tim's Father",
+                "stock": 50,
+                "base_price": 1500,
+                "price_mult": 1.2,
+                "action": "tims_father"
+            },
+            {
+                "item": "Upgrade Sand Eater (+10/s)",
+                "req": 30000,
+                "item_req": "sand_eater_buy",
+                "item_req_fancy": "Sand Eater",
+                "stock": 50,
+                "base_price": 2000,
+                "price_mult": 1.2,
+                "action": "sand_eater"
             }
         ]
     }
