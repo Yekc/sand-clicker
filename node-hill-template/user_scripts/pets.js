@@ -3,7 +3,7 @@ let outfits = require("../game_data/outfits.json")
 
 const pet_functions = {}
 
-const max_pet_inv_page = 5
+global.max_pet_inv_page = 5
 
 getPet = function(id) {
     return pets.find(pet => pet.id == id)
@@ -33,7 +33,7 @@ Game.on("playerJoin", (player) => {
                     }
                 }
 
-                draw += `##Page ${player.pet_inv_page == 0 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${max_pet_inv_page} ${player.pet_inv_page == max_pet_inv_page ? "\\c2" : ""}>`
+                draw += `##Page ${player.pet_inv_page == 0 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c2" : ""}>`
 
                 player.centerPrint(draw)
             }
