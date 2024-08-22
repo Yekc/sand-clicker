@@ -24,6 +24,11 @@ const item_functions = {
     }
 }
 
+updateSps = function(player) {
+    if (player.data.items.tiny_tim_buy > 0) player.data.sps += player.data.items.tiny_tim + 1
+    if (player.data.items.mr_crabs_buy > 0) player.data.sps += (player.data.items.mr_crabs + 1) * 5
+}
+
 getNpc = function(id) {
     return npcs.find(npc => npc.id == id)
 }
