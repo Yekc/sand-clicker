@@ -48,6 +48,15 @@
                 "base_price": 10000,
                 "price_mult": 1,
                 "action": "sand_eater_buy"
+            },
+            {
+                "item": "Upgrade Manager (x1.1/s)",
+                "req": 75000,
+                "item_req": "",
+                "stock": 20,
+                "base_price": 10000,
+                "price_mult": 1.2,
+                "action": "manager"
             }
         ]
     },

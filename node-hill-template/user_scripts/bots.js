@@ -45,6 +45,10 @@ const item_functions = {
     sand_eater: function(player) {
         updateSps(player)
         player.message("\\c0Sand Eater \\c5has been promoted! \\c9+10 sand per second")
+    },
+    manager: function(player) {
+        updateSps(player)
+        player.message("\\c5Your manager has been promoted! \\c9x1.1 sand per second")
     }
 }
 
@@ -144,7 +148,11 @@ setInterval(() => {
     //NPC UI
     Game.players.forEach((player) => {
         //Info and score
-        player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps}`)
+        if (player.data.items.manager > 0) {
+            player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps} (x${player.data.items.manager * 1.1} mult.)`)
+        } else {
+            player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps}`)
+        }
         player.setScore(player.data.total_sand)
 
         //Display UI
