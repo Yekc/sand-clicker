@@ -16,39 +16,47 @@ const item_functions = {
     }
 }
 
-getPrice = function(player, item) {
-    return Math.round(item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult)))
-}
-
-purchaseItem = function(player, i) {
-    if (player.interact) {
-        let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
-        let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
-        let price = getPrice(player, item)
-
-        if (item.req == 0 || item.req <= player.data.total_sand) {
-            if (player.data.items[item.action] >= item.stock) {
-                player.message("\\c6You can not buy more of this!")
-            } else if (player.data.sand < price) {
-                player.message("\\c6You can not afford this!")
-            } else {
-                getSand(player, -price)
-                player.message(`\\c5You bought \\c0${item.item} \\c5for \\c8${getPrice(player, item)} sand\\c5!`)
-                item_functions[item.action](player) //Run the action caused by the purchase
-                player.data.items[item.action]++ //Increase the amount of times the player has purchased this
-            }
-        } else {
-            player.message("\\c6You can not buy this yet!")
-        }
-    }
-}
-
 getNpc = function(id) {
     return npcs.find(npc => npc.id == id)
 }
 
 getDialogue = function(id) {
     return dialogues.find(dialogue => dialogue.id == id)
+}
+
+getPrice = function(player, item) {
+    return Math.round(item.base_price * Math.max(1, (player.data.items[item.action] * item.price_mult)))
+}
+
+purchaseItem = function(player, i) {
+    console.log("function runs")
+    if (player.interact) {
+        console.log("player.interact == true")
+        let character = characters.find(npc => Game.pointDistance3D(npc.position, player.position) < interact_distance)
+        let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
+        let price = getPrice(player, item)
+
+        console.log("variables set")
+
+        if (item.req <= player.data.total_sand) {
+            console.log("req complete")
+            if (player.data.items[item.action] >= item.stock) {
+                player.message("\\c6You can not buy more of this!")
+            } else if (player.data.sand < price) {
+                player.message("\\c6You can not afford this!")
+            } else {
+                console.log("buying")
+                getSand(player, -price)
+                player.message(`\\c5You bought \\c0${item.item} \\c5for \\c8${getPrice(player, item)} sand\\c5!`)
+                item_functions[item.action](player) //Run the action caused by the purchase
+                player.data.items[item.action]++ //Increase the amount of times the player has purchased this
+                console.log("bought")
+            }
+        } else {
+            player.message("\\c6You can not buy this yet!")
+        }
+    }
+    console.log("end check")
 }
 
 let npcBricks = [...Game.world.bricks.filter(brick => brick.name.startsWith("npc_"))]
