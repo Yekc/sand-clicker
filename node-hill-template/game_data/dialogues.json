@@ -1,6 +1,7 @@
 [
     {
         "id": "shop",
+        "name": "\\c5Shop",
         "type": "shop",
         "items": [
             {
@@ -31,6 +32,7 @@
     },
     {
         "id": "office",
+        "name": "\\c7Workers",
         "type": "shop",
         "items": [
             {

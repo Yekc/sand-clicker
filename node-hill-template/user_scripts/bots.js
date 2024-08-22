@@ -146,8 +146,8 @@ setInterval(() => {
                 case "shop":
                     player.topPrint(`Press \\c7F\\c0 to close the Shop`)
 
-                    draw += "\\c1|\\c2===\\c1| \\c5Shop \\c1|\\c2====================\\c1|"
-                    draw += "#\\c1Press the number next to the shop item to purchase it#"
+                    draw += `\\c1|\\c2===\\c1| ${dialogue.name} \\c1|\\c2====================\\c1|`
+                    draw += "#\\c1Press the number next to the item to purchase it#"
                     let key = 1
                     dialogue.items.forEach(item => {
                         if (item.req == 0 || item.req <= player.data.total_sand) {
