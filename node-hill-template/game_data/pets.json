@@ -1,0 +1,18 @@
+[
+    {
+        "id": "scallop",
+        "rarity": 0,
+        "perks": {
+            "spc": 5,
+            "spc_mult": 1.25,
+            "sps": 5,
+            "sps_mult": 1.25,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "outfit": "scallop",
+            "scale": 0.4
+        }
+    }
+]
