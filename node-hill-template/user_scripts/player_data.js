@@ -50,7 +50,7 @@ updateSps = function(player) {
     if (player.data.items.tims_father_buy > 0) player.data.sps += 10 + (player.data.items.tims_father * 5)
     if (player.data.items.sand_eater_buy > 0) player.data.sps += 20 + (player.data.items.sand_eater * 10)
     
-    if (player.data.items.manager > 0) player.data.sps = Math.round(player.data.sps + 1 + (0.1 * player.data.items.manager))
+    if (player.data.items.manager > 0) player.data.sps = Math.round(player.data.sps * (1 + (0.1 * player.data.items.manager)))
 }
 
 save = async function(player) {
