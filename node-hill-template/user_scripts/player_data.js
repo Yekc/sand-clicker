@@ -38,6 +38,7 @@ const updates = {
 }
 
 updateSps = function(player) {
+    player.data.sps = 0
     if (player.data.items.tiny_tim_buy > 0) player.data.sps += player.data.items.tiny_tim + 1
     if (player.data.items.mr_crabs_buy > 0) player.data.sps += (player.data.items.mr_crabs + 1) * 5
 }
