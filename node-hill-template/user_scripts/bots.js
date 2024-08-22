@@ -16,11 +16,11 @@ const item_functions = {
     },
     tiny_tim_buy: function(player) {
         updateSps(player)
-        player.message("\\c5Upgrade \\c0Tiny Tim \\c5at the work stall!")
+        player.message("\\c5Upgrade \\c0Tiny Tim \\c5at the office building!")
     },
     mr_crabs_buy: function(player) {
         updateSps(player)
-        player.message("\\c5Upgrade \\c0Mr. Crabs \\c5at the work stall!")
+        player.message("\\c5Upgrade \\c0Mr. Crabs \\c5at the office building!")
     }
 }
 
