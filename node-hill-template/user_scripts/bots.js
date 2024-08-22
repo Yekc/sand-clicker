@@ -13,6 +13,14 @@ const item_functions = {
     increase_spc: function(player) {
         player.data.spc++
         player.message("\\c5Your \\c7sand per click \\c5was increased by 1!")
+    },
+    tiny_tim_buy: function(player) {
+        updateSps(player)
+        player.message("\\c5Upgrade \\c0Tiny Tim \\c5at the work stall!")
+    },
+    mr_crabs_buy: function(player) {
+        updateSps(player)
+        player.message("\\c5Upgrade \\c0Mr. Crabs \\c5at the work stall!")
     }
 }
 
@@ -40,7 +48,7 @@ purchaseItem = function(player, i) {
             } else if (player.data.sand < price) {
                 player.message("\\c6You can not afford this!")
             } else {
-                getSand(player, -price)
+                player.data.sand -= price
                 player.message(`\\c5You bought \\c0${item.item} \\c5for \\c8${getPrice(player, item)} sand\\c5!`)
                 item_functions[item.action](player) //Run the action caused by the purchase
                 player.data.items[item.action]++ //Increase the amount of times the player has purchased this

@@ -9,7 +9,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     if (!secure) return //Make sure player is close enough
     player.centerPrint(`\\c8+${player.data.spc}`)
     getSand(player, player.data.spc)
-}, 100))
+}, 250))
 
 //Sand per second interval
 setInterval(() => {

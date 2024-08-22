@@ -6,7 +6,7 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 4
+const currentTemplateVersion = 5
 template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
@@ -18,18 +18,26 @@ template = {
     sps: 0, //Sand per click
 
     items: {
-        increase_spc: 0
+        increase_spc: 0,
+        tiny_tim_buy: 0,
+        tiny_tim: 0,
+        mr_crabs_buy: 0,
+        mr_crabs: 0
     }
 }
 
 //Update save data to new format
 const updates = {
-    from3: function(player) {
-        player.data.items = {
-            increase_spc: 0
-        }
-        saveDataVersion = 4
+    from4: function(player) {
+        player.data.items.tiny_tim_buy = 0
+        player.data.items.mr_crabs_buy = 0
+        saveDataVersion = 5
     }
+}
+
+updateSps = function(player) {
+    if (player.data.items.tiny_tim_buy > 0) player.data.sps += player.data.items.tiny_tim + 1
+    if (player.data.items.mr_crabs_buy > 0) player.data.sps += (player.data.items.mr_crabs + 1) * 5
 }
 
 save = async function(player) {
@@ -76,6 +84,9 @@ Game.on("playerJoin", (player) => {
             player.data.firstJoin = false
         } else {
             player.message("\\c5Welcome back!")
+
+            //Update sand per second
+            updateSps(player)
         }
 
         console.log(`Player ${player.username} (${player.userId}) loaded!`)
