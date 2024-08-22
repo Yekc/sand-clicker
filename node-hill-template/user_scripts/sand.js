@@ -11,9 +11,14 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     getSand(player, player.data.spc)
 }, 175))
 
-//Sand per second interval
+//Sand per second and random brick interval
+let is_random = false
+let is_super = false
 setInterval(() => {
     Game.players.forEach((player) => {
         getSand(player, player.data.sps)
     })
+
+    let random = Math.random() * 1000
+    console.log(random)
 }, 1000)
