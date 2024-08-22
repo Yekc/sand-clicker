@@ -7,7 +7,7 @@ if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
 const currentTemplateVersion = 1
-export const template = {
+const template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
 
@@ -69,7 +69,7 @@ load = async function(player) {
                 console.log(`Updated user data for ${player.username} (${player.userId}) from ${pv} to ${currentTemplateVersion}!`)
             }
         } else { //Player has no save data
-            player.data = deepcopy(template)
+            player.data = JSON.parse(JSON.stringify(template)) //Need to reparse like that to deep copy player data
             console.log(`Created user data for ${player.username} (${player.userId})!`)
         }
     } catch (error) {
