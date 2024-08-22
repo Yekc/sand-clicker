@@ -29,11 +29,11 @@ Game.on("playerJoin", (player) => {
                     if (current > 0) {
                         draw += `#\\c1[\\c7${i + 1}\\c1] \\c0` + Object.keys(player.data.pets[i])[0]
                     } else {
-                        draw += `#\\c1[${i + 1}] ????`
+                        draw += `#\\c1[${i + 1}] \\c6Not unlocked!`
                     }
                 }
 
-                draw += `##Page ${player.pet_inv_page == 0 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c2" : ""}>`
+                draw += `##\\c0Page ${player.pet_inv_page == 0 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c2" : ""}>`
 
                 player.centerPrint(draw)
             }
