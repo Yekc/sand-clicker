@@ -31,6 +31,8 @@ const updates = {
     from4: function(player) {
         player.data.items.tiny_tim_buy = 0
         player.data.items.mr_crabs_buy = 0
+        player.data.items.tiny_tim = 0
+        player.data.items.mr_crabs = 0
         saveDataVersion = 5
     }
 }
