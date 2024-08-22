@@ -26,7 +26,7 @@ purchaseItem = function(player, i) {
         let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
         let price = getPrice(player, item)
 
-        if (item.req > player.data.total_sand) {
+        if (item.req <= player.data.total_sand) {
             if (player.data.items[item.action] >= item.stock) {
                 player.message("\\c6You can not buy more of this!")
             } else if (player.data.sand >= price) {
@@ -169,11 +169,8 @@ Game.on("playerJoin", (player) => {
                 //Number selection
                 case "1":
                     if (character && player.interact) {
-                        console.log("yea")
                         player.dialogue = getNpc(character.id).dialogue
-                        console.log("yup")
                         if (player.dialogue.type === "shop") purchaseItem(player, 1)
-                        console.log("yoohoo")
                     }
                     break;
                 case "2":
