@@ -150,14 +150,18 @@ setInterval(() => {
                     draw += "#\\c1Press the number next to the item to purchase it#"
                     let key = 1
                     dialogue.items.forEach(item => {
-                        if (item.req == 0 || item.req <= player.data.total_sand) {
-                            if (player.data.items[item.action] >= item.stock) {
-                                draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c6Out of stock!`
+                        if (item.item_req === "" || player.data.items[item.item_req] > 0) {
+                            if (item.req == 0 || item.req <= player.data.total_sand) {
+                                if (player.data.items[item.action] >= item.stock) {
+                                    draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c6Out of stock!`
+                                } else {
+                                    draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
+                                }
                             } else {
-                                draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
+                                draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(${player.data.total_sand}/${item.req} total sand)`
                             }
                         } else {
-                            draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(${player.data.total_sand}/${item.req} total sand)`
+                            draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(0/1} ${item.item_req})`
                         }
                         key++
                     })

@@ -7,6 +7,7 @@
             {
                 "item": "+1 Sand per click",
                 "req": 0,
+                "item_req": "",
                 "stock": 20,
                 "base_price": 50,
                 "price_mult": 1.25,
@@ -15,6 +16,7 @@
             {
                 "item": "Hire Tiny Tim (1/s)",
                 "req": 500,
+                "item_req": "",
                 "stock": 1,
                 "base_price": 500,
                 "price_mult": 1,
@@ -23,6 +25,7 @@
             {
                 "item": "Hire Mr. Crabs (5/s)",
                 "req": 5000,
+                "item_req": "",
                 "stock": 1,
                 "base_price": 5000,
                 "price_mult": 1,
@@ -38,6 +41,7 @@
             {
                 "item": "Upgrade Tiny Tim (+1/s)",
                 "req": 500,
+                "item_req": "tiny_tim_buy",
                 "stock": 20,
                 "base_price": 250,
                 "price_mult": 1.25,
@@ -46,6 +50,7 @@
             {
                 "item": "Upgrade Mr. Crabs (+2/s)",
                 "req": 5000,
+                "item_req": "mr_crabs_buy",
                 "stock": 20,
                 "base_price": 2500,
                 "price_mult": 1.25,
