@@ -26,10 +26,10 @@ purchaseItem = function(player, i) {
         let item = getDialogue(getNpc(character.id).dialogue).items[i - 1]
         let price = getPrice(player, item)
 
-        if (item.req <= player.data.total_sand) {
+        if (item.req == 0 || item.req <= player.data.total_sand) {
             if (player.data.items[item.action] >= item.stock) {
                 player.message("\\c6You can not buy more of this!")
-            } else if (player.data.sand >= price) {
+            } else if (player.data.sand < price) {
                 player.message("\\c6You can not afford this!")
             } else {
                 getSand(player, -price)
