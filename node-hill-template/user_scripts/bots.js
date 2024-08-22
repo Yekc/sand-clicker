@@ -161,7 +161,7 @@ setInterval(() => {
                                 draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(${player.data.total_sand}/${item.req} total sand)`
                             }
                         } else {
-                            draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(0/1} ${item.item_req})`
+                            draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(0/1 ${item.item_req_fancy})`
                         }
                         key++
                     })
