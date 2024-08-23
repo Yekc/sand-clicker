@@ -134,8 +134,8 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         if (choose.length > 0) {
             let n = Math.floor(Math.random() * choose.length)
             if (getPet(choose[n].id).req <= player.data.total_sand) {
-                earnPet(player, choose[n].id)
                 player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`)
+                earnPet(player, choose[n].id)
                 player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`, 5)
                 player.should_say = false
             }
