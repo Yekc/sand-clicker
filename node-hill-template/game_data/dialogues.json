@@ -57,6 +57,15 @@
                 "base_price": 1000,
                 "price_mult": 1.1,
                 "action": "manager"
+            },
+            {
+                "item": "Buy \\c6Mythic Mr. Rich \\c0Pet",
+                "req": 1000000,
+                "item_req": "",
+                "stock": 1,
+                "base_price": 2500000,
+                "price_mult": 1,
+                "action": "mr_rich_buy"
             }
         ]
     },

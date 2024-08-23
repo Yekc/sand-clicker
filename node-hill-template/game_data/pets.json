@@ -171,7 +171,7 @@
     },
     {
         "id": "flamingo",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 0,
             "spc_mult": 2,
@@ -188,7 +188,7 @@
     },
     {
         "id": "iguana",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 100,
             "spc_mult": 0,
@@ -205,7 +205,7 @@
     },
     {
         "id": "penguin",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 500,
             "spc_mult": 0,
@@ -222,7 +222,7 @@
     },
     {
         "id": "seal",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 750,
             "spc_mult": 0,
@@ -239,7 +239,7 @@
     },
     {
         "id": "turtle",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 200,
             "spc_mult": 2,
@@ -256,7 +256,7 @@
     },
     {
         "id": "walrus",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -273,7 +273,7 @@
     },
     {
         "id": "family_dog",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -290,7 +290,7 @@
     },
     {
         "id": "fred",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 20,
             "spc_mult": 25,
@@ -307,7 +307,7 @@
     },
     {
         "id": "squid",
-        "in_the_sand": false,
+        "in_the_sand": true,
         "perks": {
             "spc": 0,
             "spc_mult": 0,

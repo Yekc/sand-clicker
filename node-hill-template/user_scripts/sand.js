@@ -15,6 +15,13 @@ giveRandom = function(player, s) {
         player.message(`\\c5You earned \\c8${1000 + player.data.sps * 300} sand\\c5!`)
         getSand(player, 1000 + player.data.sps * 300)
     }
+
+    //Chance to get the cookie monster
+    let pet_roll = Math.round(Math.random() * (s ? 10 : 100)) //1/10 if super, 1/100 if not super
+    if (pet_roll < 2) {
+        earnPet(player, "cookie_monster")
+        player.message(`\\c5You found a \\c6Mythic Cookie Monster\\c5!`)
+    }
 }
 
 randomBrick = function(s) {
