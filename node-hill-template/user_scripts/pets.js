@@ -82,7 +82,9 @@ Game.on("playerJoin", (player) => {
 
                     draw += `##\\c0Page ${player.pet_inv_page == 1 ? "\\c1" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c1" : ""}>    \\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages`
                 } else {
+                    console.log((player.pet_inv_view - 1) + (9 * (player.pet_inv_page - 1)))
                     let current_pet = getPet(Object.keys(player.data.pets)[(player.pet_inv_view - 1) + (9 * (player.pet_inv_page - 1))])
+                    console.log(current_pet)
 
                     if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
 
@@ -102,8 +104,6 @@ Game.on("playerJoin", (player) => {
             }
 
             if (player.data.pet_equipped) {
-                let pet = getPet(player.data.pet_active)
-
                 //Player has not recieved perks from equipping the pet yet
                 if (!gave_perks) {
                     updateSpc(player)
