@@ -4,6 +4,7 @@ Game.MOTD = ""
 
 //Restart after 2 hours
 setTimeout(() => {
+    console.log("test1")
     Game.messageAll.message("\\c6!!! Server restarting in 1 minute !!!")
 
     Game.players.forEach(player => {
