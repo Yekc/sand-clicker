@@ -92,9 +92,9 @@ Game.on("playerJoin", (player) => {
 
                     draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}#`
                     draw += "#\\c0Stats:"
-                    if (current_pet.perks.spc != 0) draw += `#    \\c8${current_pet.perks.spc > 0 ? "+" : "-"}${current_pet.perks.spc} sand per click`
-                    if (current_pet.perks.sps != 0) draw += `#    \\c7${current_pet.perks.sps > 0 ? "+" : "-"}${current_pet.perks.sps} sand per second`
-                    if (current_pet.perks.spc_mult != 0) draw += `#    \\c9x${current_pet.perks.spc_mult} sand per click`
+                    if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${current_pet.perks.spc} sand per click`
+                    if (current_pet.perks.sps != 0) draw += `#    \\c9${current_pet.perks.sps > 0 ? "+" : "-"}${current_pet.perks.sps} sand per second`
+                    if (current_pet.perks.spc_mult != 0) draw += `#    \\c7x${current_pet.perks.spc_mult} sand per click`
                     if (current_pet.perks.sps_mult != 0) draw += `#    \\c9x${current_pet.perks.sps_mult} sand per second`
                     if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS! \\c0${current_pet.perks.bonus_fancy}`
 
