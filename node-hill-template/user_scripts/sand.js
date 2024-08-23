@@ -132,9 +132,9 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 
         //Give the pet to the player
         if (choose.length > 0) {
-            console.log(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`)
-            player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`)
+            console.log(`${pet.display.name}`)
             earnPet(player, choose[Math.floor(Math.random() * choose.length)].id)
+            player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`)
             player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`, 5)
             player.should_say = false
         }
