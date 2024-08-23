@@ -12,7 +12,8 @@ setTimeout(() => {
     })
 
     setTimeout(() => {Game.shutdown()}, 60000)
-}, 7200000)
+//}, 7200000)
+}, 3600000) //1 hour temp
 
 //Random bricks
 Game.world.bricks.forEach(brick => {
