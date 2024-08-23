@@ -132,10 +132,11 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 
         //Give the pet to the player
         if (choose.length > 0) {
-            if (getPet(choose[Math.floor(Math.random() * choose.length)].id).req <= player.data.total_sand) {
-                earnPet(player, choose[Math.floor(Math.random() * choose.length)].id)
-                player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[Math.floor(Math.random() * choose.length)].id).display.name}\\c5!`)
-                player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[Math.floor(Math.random() * choose.length)].id).display.name}\\c5!`, 5)
+            let n = Math.floor(Math.random() * choose.length)
+            if (getPet(choose[n].id).req <= player.data.total_sand) {
+                earnPet(player, choose[n].id)
+                player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`)
+                player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`, 5)
                 player.should_say = false
             }
         }
