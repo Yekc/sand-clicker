@@ -341,6 +341,7 @@ Game.on("playerJoin", (player) => {
                     if (character && player.interact) {
                         if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 9)
                     } else {
+                        console.log(8 + (9 * (player.pet_inv_page - 1)))
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[8 + (9 * (player.pet_inv_page - 1))]] > 0) player.pet_inv_view = 9
                     }
                     break;
