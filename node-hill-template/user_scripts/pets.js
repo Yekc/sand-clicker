@@ -72,7 +72,7 @@ Game.on("playerJoin", (player) => {
 
                 for (i = 0; i < 9; i++) {
                     let current = player.data.pets[i * player.pet_inv_page]
-                    console.log(player.data.pets[i * player.pet_inv_page])
+                    console.log(i * player.pet_inv_page)
                     if (current > 0) {
                         draw += `#\\c1[\\c7${i + 1}\\c1] \\c0` + Object.keys(player.data.pets[i])[0]
                     } else {
