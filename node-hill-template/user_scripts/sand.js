@@ -106,7 +106,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     }
 
     //Chance to earn a pet
-    let pet_roll = Math.round(Math.random() * 40000)
+    let pet_roll = Math.round(Math.random() * 50) //40000
     let rarity = 0
     if (pet_roll < 2) {
         rarity = 6
