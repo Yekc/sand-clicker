@@ -72,14 +72,9 @@ Game.on("playerJoin", (player) => {
 
                 for (i = 0; i < 9; i++) {
                     let current = player.data.pets[Object.keys(player.data.pets)[i * player.pet_inv_page]]
-                    console.log(Object.keys(player.data.pets)[i * player.pet_inv_page])
-                    console.log(current)
-                    if (current) {
-                        if (current > 0) {
-                            draw += `#\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current.display.rarity)}${getRarityName(current.display.rarity)} ${current.display.name}`
-                        } else {
-                            draw += `#\\c1[${i + 1}] \\c6Not unlocked!`
-                        }
+                    let current_pet = getPet(Object.keys(player.data.pets)[i * player.pet_inv_page])
+                    if (current > 0) {
+                        draw += `#\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
                     } else {
                         draw += `#\\c1[${i + 1}] \\c6Not unlocked!`
                     }
