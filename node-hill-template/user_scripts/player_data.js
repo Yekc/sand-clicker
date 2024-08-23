@@ -64,7 +64,35 @@ const template = {
 //Update save data to new format
 const updates = {
     from1: function(player) {
+        player.data.items.mr_rich_buy = 0
+        player.data.pet_equipped = false
+        player.data.pet_active = ""
+        player.data.pets = {
+            mole_crab: 0,
+            roly_poly: 0,
+            scallop: 0,
+            starfish: 0,
+            rat: 0,
+            seagull: 0,
+            sand_dollar: 0,
+            hermit_crab: 0,
+            jellyfish: 0,
+            pelican: 0,
+            flamingo: 0,
+            iguana: 0,
+            penguin: 0,
+            seal: 0,
+            turtle: 0,
+            walrus: 0,
+            family_dog: 0,
+            fred: 0,
+            squid: 0,
+            mr_rich: 0,
+            sandworm: 0,
+            cookie_monster: 0
+        }
 
+        player.data.saveDataVersion = 2
     }
 }
 
