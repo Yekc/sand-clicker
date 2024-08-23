@@ -113,10 +113,10 @@ updateSpc = function(player) {
 updateSps = function(player) {
     player.data.sps = 0
 
-    if (player.data.items.tiny_tim_buy > 0) player.data.sps += 1 + (player.data.items.tiny_tim * (getPet(player.data.pet_active).perks.bonus === "fred_bonus" ? 10 : 1))
-    if (player.data.items.mr_crabs_buy > 0) player.data.sps += 5 + ((player.data.items.mr_crabs * 2) * (getPet(player.data.pet_active).perks.bonus === "squid_bonus" ? 5 : 1))
+    if (player.data.items.tiny_tim_buy > 0) player.data.sps += 1 + (player.data.items.tiny_tim * (player.data.pet_equipped ? (getPet(player.data.pet_active).perks.bonus === "fred_bonus" ? 10 : 1) : 1))
+    if (player.data.items.mr_crabs_buy > 0) player.data.sps += 5 + ((player.data.items.mr_crabs * 2) * (player.data.pet_equipped ? (getPet(player.data.pet_active).perks.bonus === "squid_bonus" ? 5 : 1) : 1))
     if (player.data.items.tims_father_buy > 0) player.data.sps += 10 + (player.data.items.tims_father * 5)
-    if (player.data.items.sand_eater_buy > 0) player.data.sps += 20 + ((player.data.items.sand_eater * 10) * (getPet(player.data.pet_active).perks.bonus === "sandworm_bonus" ? 2 : 1))
+    if (player.data.items.sand_eater_buy > 0) player.data.sps += 20 + ((player.data.items.sand_eater * 10) * (player.data.pet_equipped ? (getPet(player.data.pet_active).perks.bonus === "sandworm_bonus" ? 2 : 1) : 1))
     
     if (player.data.items.manager > 0) player.data.sps = Math.round(player.data.sps * (1 + (0.05 * player.data.items.manager)))
     
