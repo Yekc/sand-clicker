@@ -52,7 +52,7 @@ const item_functions = {
     },
     mr_rich_buy: function(player) {
         earnPet(player, "mr_rich")
-        player.message("\\c5You bought a \\c6Mythic Mr. Rich \\c0pet!")
+        player.message("\\c5You bought a \\c2Mythic Mr. Rich \\c0pet!")
     }
 }
 
