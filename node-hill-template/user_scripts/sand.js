@@ -118,7 +118,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         rarity = 3
     } else if (pet_roll < 26) {
         rarity = 2
-    } else if (pet_roll < 48) {
+    } else if (pet_roll < 56) {
         rarity = 1
     }
     if (rarity > 0) {
