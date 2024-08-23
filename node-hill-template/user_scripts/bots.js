@@ -252,8 +252,8 @@ Game.on("playerJoin", (player) => {
                 //Equip pet
                 case "q":
                     if (player.pet_inv && player.pet_inv_view != 0) {
-                        if (player.pet_active !== Object.keys(player.data.pets)[player.pet_inv_view - 1]) {
-                            player.data.pet_active = Object.keys(player.data.pets)[player.pet_inv_view - 1]
+                        if (player.pet_active !== Object.keys(player.data.pets)[(player.pet_inv_view - 1) * player.pet_inv_page]) {
+                            player.data.pet_active = Object.keys(player.data.pets)[(player.pet_inv_view - 1) * player.pet_inv_page]
                             player.data.pet_equipped = true
                             player.message("\\c5You equipped a pet!")
                         } else {
