@@ -205,32 +205,38 @@ Game.on("playerJoin", (player) => {
             switch (key) {
                 //Open NPC menu
                 case "f":
-                    if (!player.interact) {
-                        if (character) {
-                            player.interact = true
-                            player.dialogue = getNpc(character.id).dialogue
-                            player.setSpeed(0)
+                    if (!player.pet_inv) {
+                        if (!player.interact) {
+                            if (character) {
+                                player.interact = true
+                                player.dialogue = getNpc(character.id).dialogue
+                                player.setSpeed(0)
+                            }
+                        } else {
+                            player.interact = false
+                            player.dialogue = ""
+                            player.topPrint("")
+                            player.centerPrint("")
+                            player.setSpeed(4)
                         }
-                    } else {
-                        player.interact = false
-                        player.dialogue = ""
-                        player.topPrint("")
-                        player.centerPrint("")
-                        player.setSpeed(4)
                     }
                     break;
                 
                 //Open pet inventory
                 case "e":
                     if (!player.interact) {
-                        if (!player.pet_inv) {
-                            player.pet_inv = true
-                            player.setSpeed(0)
+                        if (player.pet_inv_view == 0) {
+                            if (!player.pet_inv) {
+                                player.pet_inv = true
+                                player.setSpeed(0)
+                            } else {
+                                player.pet_inv = false
+                                player.topPrint("")
+                                player.centerPrint("")
+                                player.setSpeed(4)
+                            }
                         } else {
-                            player.pet_inv = false
-                            player.topPrint("")
-                            player.centerPrint("")
-                            player.setSpeed(4)
+                            player.pet_inv_view = 0
                         }
                     }
                     break;
@@ -243,50 +249,83 @@ Game.on("playerJoin", (player) => {
                     if (player.pet_inv && player.pet_inv_page < global.max_pet_inv_page) player.pet_inv_page++
                     break;
                 
+                //Equip pet
+                case "q":
+                    if (player.pet_inv && player.pet_inv_view != 0) {
+                        if (player.pet_active !== Object.keys(player.data.pets)[player.pet_inv_view - 1]) {
+                            player.data.pet_active = Object.keys(player.data.pets)[player.pet_inv_view - 1]
+                            player.data.pet_equipped = true
+                            player.message("\\c5You equipped a pet!")
+                        } else {
+                            player.data.pet_active = ""
+                            player.data.pet_equipped = false
+                            player.message("\\c5You unequipped a pet!")
+                        }
+                    }
+                    break;
+                
                 //Number selection
                 case "1":
                     if (character && player.interact) {
                         if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[0]] > 0) player.pet_inv_view = 1
                     }
                     break;
                 case "2":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 2)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[player.pet_inv_page]] > 0) player.pet_inv_view = 2
                     }
                     break;
                 case "3":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 3)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[2 * player.pet_inv_page]] > 0) player.pet_inv_view = 3
                     }
                     break;
                 case "4":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 4)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[3 * player.pet_inv_page]] > 0) player.pet_inv_view = 4
                     }
                     break;
                 case "5":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 5)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[4 * player.pet_inv_page]] > 0) player.pet_inv_view = 5
                     }
                     break;
                 case "6":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 6)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[5 * player.pet_inv_page]] > 0) player.pet_inv_view = 6
                     }
                     break;
                 case "7":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 7)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[6 * player.pet_inv_page]] > 0) player.pet_inv_view = 7
                     }
                     break;
                 case "8":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 8)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[7 * player.pet_inv_page]] > 0) player.pet_inv_view = 8
                     }
                     break;
                 case "9":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 9)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                    } else {
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[8 * player.pet_inv_page]] > 0) player.pet_inv_view = 9
                     }
                     break;
             }

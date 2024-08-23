@@ -360,12 +360,12 @@
         "id": "cookie_monster",
         "in_the_sand": false,
         "perks": {
-            "spc": 0,
+            "spc": -500,
             "spc_mult": 0,
-            "sps": 0,
-            "sps_mult": 1.25,
+            "sps": -500,
+            "sps_mult": 0,
             "bonus": "cookie_monster_bonus",
-            "bonus_fancy": "\\c93x \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks"
+            "bonus_fancy": "\\c910x \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks, and spawn 2x more of them"
         },
         "display": {
             "name": "Cookie Monster",

@@ -68,23 +68,39 @@ Game.on("playerJoin", (player) => {
 
                 let draw = ""
                 draw += "\\c1|\\c2===\\c1| \\c9Pet Inventory \\c1|\\c2====================\\c1|"
-                draw += "#\\c1Press the number next to the pet to equip/dequip it"
-                draw += "#\\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages"
-                draw += "#\\c1Press \\c7I \\c1to view info about a pet#"
+                if (player.pet_inv_view == 0) {
+                    draw += "#\\c1Press the number next to a pet to view more information about it#"
+                    if (player.data.pet_active !== "") draw += `\\c5Currently equipped: ${getRarityColor(getPet(player.data.pet_active).display.rarity)}${getRarityName(getPet(player.data.pet_active).display.rarity)} ${getPet(player.data.pet_active).display.name}#`
 
-                for (i = 0; i < 9; i++) {
-                    if (i * player.pet_inv_page < 22) {
-                        let current = player.data.pets[Object.keys(player.data.pets)[i * player.pet_inv_page]]
-                        let current_pet = getPet(Object.keys(player.data.pets)[i * player.pet_inv_page])
-                        if (current > 0) {
-                            draw += `#\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
-                        } else {
-                            draw += `#\\c1[${i + 1}] \\c6Not unlocked!`
+                    for (i = 0; i < 9; i++) {
+                        if (i * player.pet_inv_page < 22) {
+                            let current = player.data.pets[Object.keys(player.data.pets)[i * player.pet_inv_page]]
+                            let current_pet = getPet(Object.keys(player.data.pets)[i * player.pet_inv_page])
+                            if (current > 0) {
+                                draw += `#\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
+                            } else {
+                                draw += `#\\c1[${i + 1}] \\c6Not unlocked!`
+                            }
                         }
                     }
-                }
 
-                draw += `##\\c0Page ${player.pet_inv_page == 1 ? "\\c1" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c1" : ""}>`
+                    draw += `##\\c0Page ${player.pet_inv_page == 1 ? "\\c1" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c1" : ""}>    \\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages`
+                } else {
+                    let current_pet = getPet(Object.keys(player.data.pets)[player.pet_inv_view * player.pet_inv_page])
+
+                    if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
+
+                    draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}#`
+                    draw += "#\\c0Stats:"
+                    if (current_pet.perks.spc != 0) draw += `#    \\c8${current_pet.perks.spc > 0 ? "+" : "-"}${current_pet.perks.spc} sand per click`
+                    if (current_pet.perks.sps != 0) draw += `#    \\c7${current_pet.perks.sps > 0 ? "+" : "-"}${current_pet.perks.sps} sand per second`
+                    if (current_pet.perks.spc_mult != 0) draw += `#    \\c9x${current_pet.perks.spc_mult} sand per click`
+                    if (current_pet.perks.sps_mult != 0) draw += `#    \\c9x${current_pet.perks.sps_mult} sand per second`
+                    if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS! \\c0${current_pet.perks.bonus_fancy}`
+
+                    draw += `##\\c1[\\c7Q\\c1] ${player.data.pet_active === current_pet.id ? "\\c6Unequip" : "\\c0Eqip"}`
+                    draw += `#\\c1[\\c7E\\c1] \\c0Go back to pet inventory`
+                }
 
                 player.centerPrint(draw)
             }

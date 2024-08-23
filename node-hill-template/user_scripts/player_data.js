@@ -41,6 +41,8 @@ updateSpc = function(player) {
         if (pet.perks.spc != 0) player.data.spc += pet.perks.spc
         if (pet.perks.spc_mult != 0) player.data.spc *= pet.perks.spc_mult
     }
+
+    if (player.data.spc < 0) player.data.spc = 0
 }
 
 updateSps = function(player) {
@@ -58,6 +60,8 @@ updateSps = function(player) {
         if (pet.perks.sps != 0) player.data.sps += pet.perks.sps
         if (pet.perks.sps_mult != 0) player.data.sps *= pet.perks.sps_mult
     }
+
+    if (player.data.sps < 0) player.data.sps = 0
 }
 
 save = async function(player) {
@@ -98,6 +102,7 @@ Game.on("playerJoin", (player) => {
         player.dialogue = ""
         player.pet_inv = false
         player.pet_inv_page = 1
+        player.pet_inv_view = 0
 
         //Join messages and first time joining
         if (player.data.firstJoin) {
