@@ -98,6 +98,7 @@ load = async function(player) {
 Game.on("playerJoin", (player) => {
     player.on("Loaded", async () => {
         //Create variables
+        player.should_say = true
         player.interact = false
         player.dialogue = ""
         player.pet_inv = false
