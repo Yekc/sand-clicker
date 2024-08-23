@@ -19,24 +19,11 @@ const template = {
 
     office_tip: false,
 
-    items: {
-        increase_spc: 0,
-        tiny_tim_buy: 0,
-        tiny_tim: 0,
-        mr_crabs_buy: 0,
-        mr_crabs: 0,
-        tims_father_buy: 0,
-        tims_father: 0,
-        sand_eater_buy: 0,
-        sand_eater: 0,
-        manager: 0
-    },
+    items: {},
 
     pet_equipped: false,
     pet_active: "",
-    pets: {
-        scallop: 0
-    }
+    pets: {}
 }
 
 //Update save data to new format
