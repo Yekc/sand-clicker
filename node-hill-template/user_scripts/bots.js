@@ -253,12 +253,24 @@ Game.on("playerJoin", (player) => {
                 case "q":
                     if (player.pet_inv && player.pet_inv_view != 0) {
                         if (player.data.pet_active !== Object.keys(player.data.pets)[(player.pet_inv_view - 1) * player.pet_inv_page]) {
+                            //Equip pet
                             player.data.pet_active = Object.keys(player.data.pets)[(player.pet_inv_view - 1) * player.pet_inv_page]
                             player.data.pet_equipped = true
+                            
+                            //Update stats
+                            updateSpc(player)
+                            updateSps(player)
+                            
                             player.message("\\c5You equipped a pet!")
                         } else {
+                            //Unequip pet
                             player.data.pet_active = ""
                             player.data.pet_equipped = false
+
+                            //Update stats
+                            updateSpc(player)
+                            updateSps(player)
+
                             player.message("\\c5You unequipped a pet!")
                         }
                     }
