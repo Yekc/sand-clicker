@@ -46,10 +46,10 @@ getRarityName = function(rarity) {
 }
 
 earnPet = function(player, id) {
-    if (player.data.pets[id] > 0) {
+    if (player.data.pets[Object.keys(player.data.pets)[i * player.pet_inv_page]] > 0) {
         player.message("\\c6You already have that pet!")
     } else {
-        player.data.pets[id] = 1
+        player.data.pets[Object.keys(player.data.pets)[i * player.pet_inv_page]] = 1
         player.message("\\c5A pet has been added to your inventory! Press \\c7E \\c5to see it in your pet inventory.")
     }
 }
