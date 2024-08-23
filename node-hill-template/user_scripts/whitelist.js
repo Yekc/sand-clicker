@@ -1,3 +1,4 @@
+/*
 Game.origNewPlayer = Game._newPlayer
 
 const whitelist = [1, 2, 9]
@@ -9,3 +10,4 @@ Game._newPlayer = (player) => {
         player.kick("You are not on the whitelist!")
     }
 }
+*/
