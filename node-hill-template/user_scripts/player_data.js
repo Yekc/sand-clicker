@@ -40,6 +40,7 @@ updateSpc = function(player) {
         let pet = getPet(player.data.pet_active)
         console.log(pet.perks.spc)
         console.log(pet.perks.spc_mult)
+        console.log(player.data.spc)
         if (pet.perks.spc != 0) player.data.spc += pet.perks.spc
         if (pet.perks.spc_mult != 0) player.data.spc = Math.round(player.data.spc * pet.perks.spc_mult)
     }
