@@ -274,56 +274,56 @@ Game.on("playerJoin", (player) => {
                     break;
                 case "2":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 2)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[player.pet_inv_page]] > 0) player.pet_inv_view = 2
                     }
                     break;
                 case "3":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 3)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[2 * player.pet_inv_page]] > 0) player.pet_inv_view = 3
                     }
                     break;
                 case "4":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 4)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[3 * player.pet_inv_page]] > 0) player.pet_inv_view = 4
                     }
                     break;
                 case "5":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 5)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[4 * player.pet_inv_page]] > 0) player.pet_inv_view = 5
                     }
                     break;
                 case "6":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 6)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[5 * player.pet_inv_page]] > 0) player.pet_inv_view = 6
                     }
                     break;
                 case "7":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 7)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[6 * player.pet_inv_page]] > 0) player.pet_inv_view = 7
                     }
                     break;
                 case "8":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 8)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[7 * player.pet_inv_page]] > 0) player.pet_inv_view = 8
                     }
                     break;
                 case "9":
                     if (character && player.interact) {
-                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
+                        if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 9)
                     } else {
                         if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[8 * player.pet_inv_page]] > 0) player.pet_inv_view = 9
                     }
