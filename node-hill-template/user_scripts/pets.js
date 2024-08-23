@@ -32,7 +32,7 @@ Game.on("playerJoin", (player) => {
                     }
                 }
 
-                draw += `##\\c0Page ${player.pet_inv_page == 0 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c2" : ""}>`
+                draw += `##\\c0Page ${player.pet_inv_page == 1 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c2" : ""}>`
 
                 player.centerPrint(draw)
             }
