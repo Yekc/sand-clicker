@@ -2,6 +2,7 @@
     {
         "id": "mole_crab",
         "in_the_sand": true,
+        "req": 0,
         "perks": {
             "spc": 10,
             "spc_mult": 0,
@@ -19,6 +20,7 @@
     {
         "id": "roly_poly",
         "in_the_sand": true,
+        "req": 0,
         "perks": {
             "spc": 1,
             "spc_mult": 0,
@@ -36,6 +38,7 @@
     {
         "id": "scallop",
         "in_the_sand": true,
+        "req": 0,
         "perks": {
             "spc": 5,
             "spc_mult": 1.25,
@@ -53,6 +56,7 @@
     {
         "id": "starfish",
         "in_the_sand": true,
+        "req": 0,
         "perks": {
             "spc": 10,
             "spc_mult": 0,
@@ -70,6 +74,7 @@
     {
         "id": "rat",
         "in_the_sand": true,
+        "req": 500,
         "perks": {
             "spc": 0,
             "spc_mult": 5,
@@ -87,6 +92,7 @@
     {
         "id": "seagull",
         "in_the_sand": true,
+        "req": 500,
         "perks": {
             "spc": 10,
             "spc_mult": 5,
@@ -104,6 +110,7 @@
     {
         "id": "sand_dollar",
         "in_the_sand": true,
+        "req": 500,
         "perks": {
             "spc": 100,
             "spc_mult": 0,
@@ -121,6 +128,7 @@
     {
         "id": "hermit_crab",
         "in_the_sand": true,
+        "req": 5000,
         "perks": {
             "spc": 50,
             "spc_mult": 0,
@@ -138,6 +146,7 @@
     {
         "id": "jellyfish",
         "in_the_sand": true,
+        "req": 5000,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -148,13 +157,14 @@
         },
         "display": {
             "name": "Jellyfish",
-            "description": "Urinating on jellyfish stings does not help its a myth.",
+            "description": "Urinating on jellyfish stings does not help, its a myth.",
             "rarity": 2
         }
     },
     {
         "id": "pelican",
         "in_the_sand": true,
+        "req": 5000,
         "perks": {
             "spc": 200,
             "spc_mult": 0,
@@ -172,6 +182,7 @@
     {
         "id": "flamingo",
         "in_the_sand": true,
+        "req": 50000,
         "perks": {
             "spc": 0,
             "spc_mult": 2,
@@ -189,6 +200,7 @@
     {
         "id": "iguana",
         "in_the_sand": true,
+        "req": 50000,
         "perks": {
             "spc": 100,
             "spc_mult": 0,
@@ -206,6 +218,7 @@
     {
         "id": "penguin",
         "in_the_sand": true,
+        "req": 50000,
         "perks": {
             "spc": 500,
             "spc_mult": 0,
@@ -223,6 +236,7 @@
     {
         "id": "seal",
         "in_the_sand": true,
+        "req": 100000,
         "perks": {
             "spc": 750,
             "spc_mult": 0,
@@ -240,6 +254,7 @@
     {
         "id": "turtle",
         "in_the_sand": true,
+        "req": 100000,
         "perks": {
             "spc": 200,
             "spc_mult": 2,
@@ -257,6 +272,7 @@
     {
         "id": "walrus",
         "in_the_sand": true,
+        "req": 100000,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -274,6 +290,7 @@
     {
         "id": "family_dog",
         "in_the_sand": true,
+        "req": 250000,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -291,6 +308,7 @@
     {
         "id": "fred",
         "in_the_sand": true,
+        "req": 250000,
         "perks": {
             "spc": 20,
             "spc_mult": 25,
@@ -308,6 +326,7 @@
     {
         "id": "squid",
         "in_the_sand": true,
+        "req": 250000,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -325,6 +344,7 @@
     {
         "id": "mr_rich",
         "in_the_sand": false,
+        "req": 0,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -342,6 +362,7 @@
     {
         "id": "sandworm",
         "in_the_sand": true,
+        "req": 750000,
         "perks": {
             "spc": 0,
             "spc_mult": 0,
@@ -359,6 +380,7 @@
     {
         "id": "cookie_monster",
         "in_the_sand": false,
+        "req": 0,
         "perks": {
             "spc": -500,
             "spc_mult": 0,

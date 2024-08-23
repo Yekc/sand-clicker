@@ -1,6 +1,7 @@
 let pets = require("../game_data/pets.json")
 
 getSand = function(player, amount) {
+    if (getPet(player.data.pet_active).perks.bonus === "mr_rich_bonus") amount = Math.round(amount * 1.2)
     player.data.sand += amount
     player.data.total_sand += amount
 }
@@ -8,12 +9,16 @@ getSand = function(player, amount) {
 giveRandom = function(player, s) {
     if (s) {
         Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c4RANDOM BRICK!!!`)
-        player.message(`\\c5You earned \\c8${10000 + player.data.sps * 900} sand\\c5!`)
-        getSand(player, 10000 + player.data.sps * 900)
+        let amount = 10000 + player.data.sps * 900
+        if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") amount *= 10
+        player.message(`\\c5You earned \\c8${amount} sand\\c5!`)
+        getSand(player, amount)
     } else {
         Game.messageAll(`${player.username} \\c5has looted the \\c4RANDOM BRICK!`)
-        player.message(`\\c5You earned \\c8${1000 + player.data.sps * 300} sand\\c5!`)
-        getSand(player, 1000 + player.data.sps * 300)
+        let amount = 1000 + player.data.sps * 300
+        if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") amount *= 10
+        player.message(`\\c5You earned \\c8${amount} sand\\c5!`)
+        getSand(player, amount)
     }
 
     //Chance to get the cookie monster
@@ -90,6 +95,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     //Chance for random and super random brick
     if (!(is_random || is_super)) {
         let random = Math.round(Math.random() * 3000)
+        if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") random = Math.floor(random / 2)
         if (random < 10) {
             is_random = true
             is_super = random < 2

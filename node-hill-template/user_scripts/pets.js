@@ -1,10 +1,6 @@
 let pets = require("../game_data/pets.json")
 let outfits = require("../game_data/outfits.json")
 
-const pet_functions = {
-
-}
-
 global.max_pet_inv_page = 3
 
 getPet = function(id) {
