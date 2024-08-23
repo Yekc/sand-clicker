@@ -285,14 +285,14 @@ Game.on("playerJoin", (player) => {
                     if (character && player.interact) {
                         if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 1)
                     } else {
-                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[0]] > 0) player.pet_inv_view = 1
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[9 * (player.pet_inv_page - 1)]] > 0) player.pet_inv_view = 1
                     }
                     break;
                 case "2":
                     if (character && player.interact) {
                         if (getDialogue(player.dialogue).type === "shop") purchaseItem(player, 2)
                     } else {
-                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[9 * (player.pet_inv_page - 1)]] > 0) player.pet_inv_view = 2
+                        if (player.pet_inv && player.pet_inv_view == 0 && player.data.pets[Object.keys(player.data.pets)[1 + (9 * (player.pet_inv_page - 1))]] > 0) player.pet_inv_view = 2
                     }
                     break;
                 case "3":
