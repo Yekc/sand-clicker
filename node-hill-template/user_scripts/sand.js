@@ -134,7 +134,10 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     }
 
     //Sand per click indicator
-    if (player.should_say) player.centerPrint(`\\c8+${player.data.spc}`)
+    if (player.should_say) {
+        player.centerPrint(`+${player.data.spc}`)
+        setTimeout(() => {player.centerPrint(`\\c8+${player.data.spc}`)}, 100)
+    }
 }, 175))
 
 //Sand per second
