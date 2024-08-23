@@ -131,11 +131,10 @@ click_brick.clicked(debouncePlayer((player, secure) => {
             player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`, 5)
             player.should_say = false
         }
-
-        //Sand per click indicator
-        console.log(player.should_say)
-        if (player.should_say) player.centerPrint(`\\c8+${player.data.spc}`)
     }
+
+    //Sand per click indicator
+    if (player.should_say) player.centerPrint(`\\c8+${player.data.spc}`)
 }, 175))
 
 //Sand per second
