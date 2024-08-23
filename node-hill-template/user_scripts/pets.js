@@ -69,13 +69,13 @@ Game.on("playerJoin", (player) => {
                     if (player.data.pet_active !== "") draw += `\\c5Currently equipped: ${getRarityColor(getPet(player.data.pet_active).display.rarity)}${getRarityName(getPet(player.data.pet_active).display.rarity)} ${getPet(player.data.pet_active).display.name}#`
 
                     for (i = 0; i < 9; i++) {
-                        if (i * player.pet_inv_page < 22) {
+                        if (i + (9 * (player.pet_inv_page - 1)) < 22) {
                             let current = player.data.pets[Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))]]
                             let current_pet = getPet(Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))])
                             if (current > 0) {
-                                draw += `${i + (9 * (player.pet_inv_page - 1))} #\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
+                                draw += `#${i + (9 * (player.pet_inv_page - 1))} \\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
                             } else {
-                                draw += `${i + (9 * (player.pet_inv_page - 1))} #\\c1[${i + 1}] \\c6Not unlocked!`
+                                draw += `#${i + (9 * (player.pet_inv_page - 1))} \\c1[${i + 1}] \\c6Not unlocked!`
                             }
                         }
                     }
