@@ -69,7 +69,7 @@ Game.on("playerJoin", (player) => {
                     if (player.data.pet_active !== "") draw += `\\c5Currently equipped: ${getRarityColor(getPet(player.data.pet_active).display.rarity)}${getRarityName(getPet(player.data.pet_active).display.rarity)} ${getPet(player.data.pet_active).display.name}#`
 
                     for (i = 0; i < 9; i++) {
-                        if (i * player.pet_inv_page < 23) {
+                        if (i * player.pet_inv_page < 29) {
                             let current = player.data.pets[Object.keys(player.data.pets)[i * player.pet_inv_page]]
                             let current_pet = getPet(Object.keys(player.data.pets)[i * player.pet_inv_page])
                             if (current > 0) {
