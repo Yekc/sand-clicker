@@ -1,19 +1,376 @@
 [
     {
+        "id": "mole_crab",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 10,
+            "spc_mult": 0,
+            "sps": 20,
+            "sps_mult": 1.15,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Mole Crab",
+            "description": "Basically a hermit crab but smaller.",
+            "rarity": 0
+        }
+    },
+    {
+        "id": "roly_poly",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 1,
+            "spc_mult": 0,
+            "sps": 1,
+            "sps_mult": 0,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Roly-Poly",
+            "description": "Otherwise known as the Armadillidiidae.",
+            "rarity": 0
+        }
+    },
+    {
         "id": "scallop",
-        "rarity": 0,
+        "in_the_sand": true,
         "perks": {
             "spc": 5,
             "spc_mult": 1.25,
             "sps": 5,
-            "sps_mult": 1.25,
+            "sps_mult": 1.2,
             "bonus": "",
             "bonus_fancy": ""
         },
         "display": {
             "name": "Scallop",
-            "outfit": "scallop",
-            "scale": 0.4
+            "description": "What the scallop-",
+            "rarity": 0
+        }
+    },
+    {
+        "id": "starfish",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 10,
+            "spc_mult": 0,
+            "sps": 10,
+            "sps_mult": 1.15,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Starfish",
+            "description": "Is mayonnaise an instrument?",
+            "rarity": 0
+        }
+    },
+    {
+        "id": "rat",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 5,
+            "sps": 1,
+            "sps_mult": 1.35,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Rat",
+            "description": "Decided to eat sand instead of cheese.",
+            "rarity": 1
+        }
+    },
+    {
+        "id": "seagull",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 10,
+            "spc_mult": 5,
+            "sps": 1,
+            "sps_mult": 0,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Seagull",
+            "description": "SQUAWK! SQUAWK! SQUAWK! SQUAWK!",
+            "rarity": 1
+        }
+    },
+    {
+        "id": "sand_dollar",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 100,
+            "spc_mult": 0,
+            "sps": 0,
+            "sps_mult": 0,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Sand Dollar",
+            "description": "To the moon B)",
+            "rarity": 1
+        }
+    },
+    {
+        "id": "hermit_crab",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 50,
+            "spc_mult": 0,
+            "sps": 100,
+            "sps_mult": 1.75,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Hermit Crab",
+            "description": "Basically a mole crab but bigger.",
+            "rarity": 2
+        }
+    },
+    {
+        "id": "jellyfish",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 0,
+            "sps": 250,
+            "sps_mult": 1.2,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Jellyfish",
+            "description": "Urinating on jellyfish stings does not help its a myth.",
+            "rarity": 2
+        }
+    },
+    {
+        "id": "pelican",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 200,
+            "spc_mult": 0,
+            "sps": 10,
+            "sps_mult": 0,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Pelican",
+            "description": "Uses its big beak to scoop up lots of sand.",
+            "rarity": 2
+        }
+    },
+    {
+        "id": "flamingo",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 2,
+            "sps": 0,
+            "sps_mult": 2,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Flamingo",
+            "description": "Not related to flamenco dancing.",
+            "rarity": 3
+        }
+    },
+    {
+        "id": "iguana",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 100,
+            "spc_mult": 0,
+            "sps": 100,
+            "sps_mult": 1.75,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Iguana",
+            "description": "Turns yellow.",
+            "rarity": 3
+        }
+    },
+    {
+        "id": "penguin",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 500,
+            "spc_mult": 0,
+            "sps": 400,
+            "sps_mult": 0,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Penguin",
+            "description": "No idea how its surviving in such a hot environment.",
+            "rarity": 3
+        }
+    },
+    {
+        "id": "seal",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 750,
+            "spc_mult": 0,
+            "sps": 0,
+            "sps_mult": 0,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Seal",
+            "description": "HONK.",
+            "rarity": 4
+        }
+    },
+    {
+        "id": "turtle",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 200,
+            "spc_mult": 2,
+            "sps": 0,
+            "sps_mult": 2,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Turtle",
+            "description": "Slow and steady wins the race.",
+            "rarity": 4
+        }
+    },
+    {
+        "id": "walrus",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 0,
+            "sps": 2500,
+            "sps_mult": 0,
+            "bonus": "",
+            "bonus_fancy": ""
+        },
+        "display": {
+            "name": "Walrus",
+            "description": "Don't get to close!",
+            "rarity": 4
+        }
+    },
+    {
+        "id": "family_dog",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 0,
+            "sps": 2000,
+            "sps_mult": 0,
+            "bonus": "family_dog_bonus",
+            "bonus_fancy": "\\c9+1% \\c7sand per second \\c0for every pet you own"
+        },
+        "display": {
+            "name": "Family Dog",
+            "description": "You lured this dog away with a bone. You hear the owners searching for it in the distance.",
+            "rarity": 5
+        }
+    },
+    {
+        "id": "fred",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 20,
+            "spc_mult": 25,
+            "sps": 0,
+            "sps_mult": 0,
+            "bonus": "fred_bonus",
+            "bonus_fancy": "Tiny Tim works \\c910x \\c0faster"
+        },
+        "display": {
+            "name": "Fred",
+            "description": "Some child on the beach decided to follow you. His name is Fred.",
+            "rarity": 5
+        }
+    },
+    {
+        "id": "squid",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 0,
+            "sps": 100,
+            "sps_mult": 2,
+            "bonus": "squid_bonus",
+            "bonus_fancy": "Mr. Crabs works \\c95x \\c0faster"
+        },
+        "display": {
+            "name": "Squid",
+            "description": "Plays the clarinet.",
+            "rarity": 5
+        }
+    },
+    {
+        "id": "mr_rich",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 0,
+            "sps": 0,
+            "sps_mult": 0,
+            "bonus": "mr_rich_bonus",
+            "bonus_fancy": "\\c920% \\c0more \\c8sand \\c0from every source"
+        },
+        "display": {
+            "name": "Mr. Rich",
+            "description": "Weird flex but ok.",
+            "rarity": 6
+        }
+    },
+    {
+        "id": "sandworm",
+        "in_the_sand": true,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 0,
+            "sps": 0,
+            "sps_mult": 1.25,
+            "bonus": "sandworm_bonus",
+            "bonus_fancy": "Sand Eater works \\c92x \\c0faster"
+        },
+        "display": {
+            "name": "Sandworm",
+            "description": "Loves eating sand dunes with the sand eater.",
+            "rarity": 6
+        }
+    },
+    {
+        "id": "cookie_monster",
+        "in_the_sand": false,
+        "perks": {
+            "spc": 0,
+            "spc_mult": 0,
+            "sps": 0,
+            "sps_mult": 1.25,
+            "bonus": "cookie_monster_bonus",
+            "bonus_fancy": "\\c93x \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks"
+        },
+        "display": {
+            "name": "Cookie Monster",
+            "description": "He's blue and loves cookies.",
+            "rarity": 6
         }
     }
 ]

@@ -8,12 +8,11 @@ setTimeout(() => {
 
     Game.players.forEach(player => {
         save(player)
+        player.kick("SERVER AUTO-RESTARTING!#Please rejoin the game.")
     })
 
-    setTimeout(() => {Game.messageAll("\\c6!!! Server restarting in 10 seconds !!!")}, 10000)
     setTimeout(() => {Game.shutdown()}, 60000)
-//}, 7200000)
-}, 70000)
+}, 7200000)
 
 //Random bricks
 Game.world.bricks.forEach(brick => {

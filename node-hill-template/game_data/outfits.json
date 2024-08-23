@@ -42,27 +42,5 @@
             "hat2": 0,
             "hat3": 0
         }
-    },
-    {
-        "id": "scallop",
-        "bodyColors": {
-            "head": "#fcf3de",
-            "torso": "#fcf3de",
-            "leftArm": "#fcf3de",
-            "rightArm": "#fcf3de",
-            "leftLeg": "#fcf3de",
-            "rightLeg": "#fcf3de"
-        },
-        "clothing": {
-            "tshirt": 0,
-            "shirt": 0,
-            "pants": 0
-        },
-        "items": {
-            "face": 0,
-            "hat1": 0,
-            "hat2": 0,
-            "hat3": 0
-        }
     }
 ]

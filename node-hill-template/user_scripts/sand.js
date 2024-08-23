@@ -1,3 +1,5 @@
+let pets = require("../game_data/pets.json")
+
 getSand = function(player, amount) {
     player.data.sand += amount
     player.data.total_sand += amount
@@ -85,6 +87,38 @@ click_brick.clicked(debouncePlayer((player, secure) => {
             is_random = true
             is_super = random < 2
             randomBrick(is_super)
+        }
+    }
+
+    //Chance to earn a pet
+    let pet_roll = Math.round(Math.random() * 20000)
+    let rarity = 0
+    if (pet_roll < 2) { //1/20000, 0.005%
+        rarity = 6
+    } else if (pet_roll < 3) { //1/10000, 0.01%
+        rarity = 5
+    } else if (pet_roll < 6) { //1/4000, 0.025%
+        rarity = 4
+    } else if (pet_roll < 16) { //1/1333, 0.075%
+        rarity = 3
+    } else if (pet_roll < 21) { //1/1000, 0.1%
+        rarity = 2
+    } else if (pet_roll < 28) {//1/740, 0.135%
+        rarity = 1
+    }
+    if (rarity > 0) {
+        //Choose a random pet of that rarity
+        let choose = []
+        pets.forEach(pet => {
+            if (pet.display.rarity == rarity && pet.in_the_sand) {
+                choose.push(pet)
+            }
+        })
+
+        //Give the pet to the player
+        if (choose.length > 0) {
+            earnPet(player, choose[Math.floor(Math.random() * choose.length)].id)
+            player.message(`\\c5You found a ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`)
         }
     }
 }, 175))

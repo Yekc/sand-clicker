@@ -9,6 +9,53 @@ getPet = function(id) {
     return pets.find(pet => pet.id == id)
 }
 
+getRarityColor = function(rarity) {
+    switch (rarity) {
+        default:
+            return "\\c0";
+        case 1:
+            return "\\c5";
+        case 2:
+            return "\\c7";
+        case 3:
+            return "\\c4";
+        case 4:
+            return "\\c9";
+        case 5:
+            return "\\c8";
+        case 6:
+            return "\\c6";
+    }
+}
+
+getRarityName = function(rarity) {
+    switch (rarity) {
+        default:
+            return "Common";
+        case 1:
+            return "Uncommon";
+        case 2:
+            return "Rare";
+        case 3:
+            return "Very Rare";
+        case 4:
+            return "Epic";
+        case 5:
+            return "Legendary";
+        case 6:
+            return "Mythic";
+    }
+}
+
+earnPet = function(player, id) {
+    if (player.data.pets[id] > 0) {
+        player.message("\\c6You already have that pet!")
+    } else {
+        player.data.pets[id] = 1
+        player.message("\\c5A pet has been added to your inventory! Press \\c7E \\c5to see it in your pet inventory.")
+    }
+}
+
 Game.on("playerJoin", (player) => {
     player.on("Loaded", () => {
         let gave_perks = false
