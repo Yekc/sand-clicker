@@ -133,7 +133,7 @@ npcs.forEach(npc => {
             //Look for close players
             nearPlayers = Game.players.filter(player => Game.pointDistance3D(character.position, player.position) < interact_distance)
             nearPlayers.forEach(player => {
-                if (!player.interact) player.topPrint(`Press \\c7F\\c0 to interact with ${npc.display.name}`)
+                if (!player.interact && !player.pet_inv) player.topPrint(`Press \\c7F\\c0 to interact with ${npc.display.name}`)
             })
         }, 250)
 
