@@ -46,10 +46,10 @@ getRarityName = function(rarity) {
 }
 
 earnPet = function(player, id) {
-    if (player.data.pets[Object.keys(player.data.pets)[i + (9 * player.pet_inv_page - 1)]] > 0) {
+    if (player.data.pets[Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))]] > 0) {
         player.message("\\c6You already have that pet!")
     } else {
-        player.data.pets[Object.keys(player.data.pets)[i + (9 * player.pet_inv_page - 1)]] = 1
+        player.data.pets[Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))]] = 1
         player.message("\\c5A pet has been added to your inventory! Press \\c7E \\c5to see it in your pet inventory.")
     }
 }
@@ -70,8 +70,8 @@ Game.on("playerJoin", (player) => {
 
                     for (i = 0; i < 9; i++) {
                         if (i * player.pet_inv_page < 22) {
-                            let current = player.data.pets[Object.keys(player.data.pets)[i + (9 * player.pet_inv_page - 1)]]
-                            let current_pet = getPet(Object.keys(player.data.pets)[i + (9 * player.pet_inv_page - 1)])
+                            let current = player.data.pets[Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))]]
+                            let current_pet = getPet(Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))])
                             if (current > 0) {
                                 draw += `#\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
                             } else {
@@ -82,7 +82,7 @@ Game.on("playerJoin", (player) => {
 
                     draw += `##\\c0Page ${player.pet_inv_page == 1 ? "\\c1" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c1" : ""}>    \\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages`
                 } else {
-                    let current_pet = getPet(Object.keys(player.data.pets)[(player.pet_inv_view - 1) + (9 * player.pet_inv_page - 1)])
+                    let current_pet = getPet(Object.keys(player.data.pets)[(player.pet_inv_view - 1) + (9 * (player.pet_inv_page - 1))])
 
                     if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
 
