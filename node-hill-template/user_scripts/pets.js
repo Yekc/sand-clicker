@@ -17,9 +17,7 @@ Game.on("playerJoin", (player) => {
             if (player.pet_inv) {
                 player.topPrint("Press \\c7E \\c0to close your pet inventory")
 
-                let draw
-                draw += "test"
-                /*
+                let draw = ""
                 draw += "\\c1|\\c2===\\c1| \\c9Pet Inventory \\c1|\\c2====================\\c1|"
                 draw += "#\\c1Press the number next to the pet to equip/dequip it"
                 draw += "#\\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages"
@@ -35,7 +33,7 @@ Game.on("playerJoin", (player) => {
                 }
 
                 draw += `##\\c0Page ${player.pet_inv_page == 0 ? "\\c2" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c2" : ""}>`
-                */
+
                 player.centerPrint(draw)
             }
 
