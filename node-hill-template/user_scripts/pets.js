@@ -22,7 +22,7 @@ getRarityColor = function(rarity) {
         case 5:
             return "\\c8";
         case 6:
-            return "\\c6";
+            return "\\c2";
     }
 }
 

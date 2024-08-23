@@ -1,7 +1,7 @@
 let pets = require("../game_data/pets.json")
 
 getSand = function(player, amount) {
-    if (player.data.pet_equipped) if (getPet(player.data.pet_active).perks.bonus === "mr_rich_bonus") amount = Math.round(amount * 1.2)
+    if (player.data.pet_equipped) if (getPet(player.data.pet_active).perks.bonus === "mr_rich_bonus") amount *= 2
     player.data.sand += amount
     player.data.total_sand += amount
 }
