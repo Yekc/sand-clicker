@@ -100,7 +100,8 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     }
 
     //Chance to earn a pet
-    let pet_roll = Math.round(Math.random() * 40000)
+    //let pet_roll = Math.round(Math.random() * 40000)
+    let pet_roll = Math.round(Math.random() * 100)
     let rarity = 0
     if (pet_roll < 2) {
         rarity = 6
@@ -126,8 +127,9 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 
         //Give the pet to the player
         if (choose.length > 0) {
-            earnPet(player, choose[Math.floor(Math.random() * choose.length)].id)
+            console.log(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`)
             player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`)
+            earnPet(player, choose[Math.floor(Math.random() * choose.length)].id)
             player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`, 5)
             player.should_say = false
         }

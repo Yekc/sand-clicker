@@ -49,6 +49,10 @@ const item_functions = {
     manager: function(player) {
         updateSps(player)
         player.message(`\\c5Your manager has been promoted! \\c9x${1 + Math.round((0.05 * player.data.items.manager) * 100) / 100} sand per second`)
+    },
+    mr_rich_buy: function(player) {
+        earnPet(player, "mr_rich")
+        player.message("\\c5You bought a \\c6Mythic Mr. Rich \\c0pet!")
     }
 }
 
@@ -260,7 +264,7 @@ Game.on("playerJoin", (player) => {
                             //Update stats
                             updateSpc(player)
                             updateSps(player)
-                            
+
                             player.message("\\c5You equipped a pet!")
                         } else {
                             //Unequip pet

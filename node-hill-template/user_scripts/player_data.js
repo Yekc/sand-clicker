@@ -6,7 +6,7 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 1
+const currentTemplateVersion = 2
 const template = {
     firstJoin: true,
     saveDataVersion: currentTemplateVersion,
@@ -19,16 +19,53 @@ const template = {
 
     office_tip: false,
 
-    items: {},
+    items: {
+        increase_spc: 0,
+        tiny_tim_buy: 0,
+        tiny_tim: 0,
+        mr_crabs_buy: 0,
+        mr_crabs: 0,
+        tims_father_buy: 0,
+        tims_father: 0,
+        sand_eater_buy: 0,
+        sand_eater: 0,
+        manager: 0,
+        mr_rich_buy: 0
+    },
 
     pet_equipped: false,
     pet_active: "",
-    pets: {}
+    pets: {
+        mole_crab: 0,
+        roly_poly: 0,
+        scallop: 0,
+        starfish: 0,
+        rat: 0,
+        seagull: 0,
+        sand_dollar: 0,
+        hermit_crab: 0,
+        jellyfish: 0,
+        pelican: 0,
+        flamingo: 0,
+        iguana: 0,
+        penguin: 0,
+        seal: 0,
+        turtle: 0,
+        walrus: 0,
+        family_dog: 0,
+        fred: 0,
+        squid: 0,
+        mr_rich: 0,
+        sandworm: 0,
+        cookie_monster: 0
+    }
 }
 
 //Update save data to new format
 const updates = {
-    from0: function(player) {}
+    from1: function(player) {
+
+    }
 }
 
 updateSpc = function(player) {
@@ -38,9 +75,6 @@ updateSpc = function(player) {
 
     if (player.data.pet_equipped) {
         let pet = getPet(player.data.pet_active)
-        console.log(pet.perks.spc)
-        console.log(pet.perks.spc_mult)
-        console.log(player.data.spc)
         if (pet.perks.spc != 0) player.data.spc += pet.perks.spc
         if (pet.perks.spc_mult != 0) player.data.spc = Math.round(player.data.spc * pet.perks.spc_mult)
     }
