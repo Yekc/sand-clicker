@@ -84,7 +84,7 @@ let random_health = 0
 const click_brick = Game.world.bricks.find(brick => brick.name === "click")
 click_brick.clicked(debouncePlayer((player, secure) => {
     if (!secure) return //Make sure player is close enough
-    player.centerPrint(`\\c8+${player.data.spc}`)
+    let should_say = true
     getSand(player, player.data.spc)
 
     //Chance for random and super random brick
@@ -94,6 +94,8 @@ click_brick.clicked(debouncePlayer((player, secure) => {
             is_random = true
             is_super = random < 2
             randomBrick(is_super)
+            player.centerPrint(`\\c5You spawned a ${is_super ? "\\c7SUPER \\c4" : "\\c4"}RANDOM BRICK\\c5! Go get it!`, 2)
+            should_say = false
         }
     }
 
@@ -126,7 +128,12 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         if (choose.length > 0) {
             earnPet(player, choose[Math.floor(Math.random() * choose.length)].id)
             player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`)
+            player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${pet.display.name}\\c5!`, 5)
+            should_say = false
         }
+
+        //Sand per click indicator
+        if (should_say) player.centerPrint(`\\c8+${player.data.spc}`)
     }
 }, 175))
 
