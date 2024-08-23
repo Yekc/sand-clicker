@@ -18,7 +18,7 @@ Game.on("playerJoin", (player) => {
                 player.topPrint("Press \\c7E \\c0to close your pet inventory")
 
                 let draw
-                draw += "test#test"
+                draw += "test"
                 /*
                 draw += "\\c1|\\c2===\\c1| \\c9Pet Inventory \\c1|\\c2====================\\c1|"
                 draw += "#\\c1Press the number next to the pet to equip/dequip it"
