@@ -351,7 +351,7 @@
             "sps": 0,
             "sps_mult": 0,
             "bonus": "mr_rich_bonus",
-            "bonus_fancy": "\\c9100% \\c0more \\c8sand \\c0from every source"
+            "bonus_fancy": "\\c9x2 \\c0more \\c8sand \\c0from every source"
         },
         "display": {
             "name": "Mr. Rich",
@@ -387,7 +387,7 @@
             "sps": -500,
             "sps_mult": 0,
             "bonus": "cookie_monster_bonus",
-            "bonus_fancy": "\\c910x \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks, and spawn 2x more of them"
+            "bonus_fancy": "\\c9x10 \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks, and spawn x2 more of them"
         },
         "display": {
             "name": "Cookie Monster",
