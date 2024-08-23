@@ -133,6 +133,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         }
 
         //Sand per click indicator
+        console.log(player.should_say)
         if (player.should_say) player.centerPrint(`\\c8+${player.data.spc}`)
     }
 }, 175))
