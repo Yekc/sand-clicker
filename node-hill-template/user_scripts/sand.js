@@ -112,9 +112,9 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     let rarity = -1
     if (pet_roll < 2) {
         rarity = 6
-    } else if (pet_roll < 3) {
+    } else if (pet_roll < 4) {
         rarity = 5
-    } else if (pet_roll < 6) {
+    } else if (pet_roll < 8) {
         rarity = 4
     } else if (pet_roll < 16) {
         rarity = 3
@@ -122,10 +122,10 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         rarity = 2
     } else if (pet_roll < 56) {
         rarity = 1
-    } else if (pet_roll < 106) {
+    } else if (pet_roll < 201) {
         rarity = 0
     }
-    if (rarity >= 0) {
+    if (rarity != -1) {
         //Choose a random pet of that rarity
         let choose = []
         pets.forEach(pet => {

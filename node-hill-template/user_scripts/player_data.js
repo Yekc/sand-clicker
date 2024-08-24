@@ -126,7 +126,9 @@ updateSps = function(player) {
         if (pet.perks.sps_mult != 0) player.data.sps = Math.round(player.data.sps * pet.perks.sps_mult)
         if (pet.perks.bonus === "family_dog_bonus") {
             let total_pets = 0
-            player.data.pets.forEach(p => {if (p > 0) total_pets++})
+            for (let i = 0; i < 22; i++) {
+                if (player.data.pets[Object.keys(player.data.pets)[i]] > 0) total_pets++
+            }
             player.data.sps = Math.round(player.data.sps * 1.01 * total_pets)
         }
     }
