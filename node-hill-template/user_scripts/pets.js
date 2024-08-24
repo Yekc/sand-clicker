@@ -46,10 +46,12 @@ getRarityName = function(rarity) {
 
 earnPet = function(player, id) {
     if (player.data.pets[id] > 0) {
-        player.message("\\c6You already have that pet!")
+        //player.message("\\c6You already have that pet!")
+        return false
     } else {
         player.data.pets[id] = 1
         player.message("\\c5A pet has been added to your inventory! Press \\c7E \\c5to see it in your pet inventory.")
+        return true
     }
 }
 
@@ -85,13 +87,14 @@ Game.on("playerJoin", (player) => {
 
                     if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
 
-                    draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}#`
+                    draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
+                    draw += `#\\c1${current_pet.display.description}#`
                     draw += "#\\c0Stats:"
                     if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${current_pet.perks.spc} sand per click`
                     if (current_pet.perks.sps != 0) draw += `#    \\c9${current_pet.perks.sps > 0 ? "+" : "-"}${current_pet.perks.sps} sand per second`
                     if (current_pet.perks.spc_mult != 0) draw += `#    \\c7x${current_pet.perks.spc_mult} sand per click`
                     if (current_pet.perks.sps_mult != 0) draw += `#    \\c9x${current_pet.perks.sps_mult} sand per second`
-                    if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS! \\c0${current_pet.perks.bonus_fancy}`
+                    if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS!\\c0${current_pet.perks.bonus_fancy}`
 
                     draw += `##\\c1[\\c7Q\\c1] ${player.data.pet_active === current_pet.id ? "\\c6Unequip" : "\\c0Equip"}`
                     draw += `#\\c1[\\c7E\\c1] \\c0Go back to pet inventory`

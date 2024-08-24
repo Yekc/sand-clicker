@@ -297,7 +297,7 @@
             "sps": 2000,
             "sps_mult": 0,
             "bonus": "family_dog_bonus",
-            "bonus_fancy": "\\c9+1% \\c7sand per second \\c0for every pet you own"
+            "bonus_fancy": "\\c9 +1% \\c7sand per second \\c0for every pet you own"
         },
         "display": {
             "name": "Family Dog",
@@ -315,7 +315,7 @@
             "sps": 0,
             "sps_mult": 0,
             "bonus": "fred_bonus",
-            "bonus_fancy": "Tiny Tim works \\c910x \\c0faster"
+            "bonus_fancy": " Tiny Tim works \\c910x \\c0faster"
         },
         "display": {
             "name": "Fred",
@@ -333,7 +333,7 @@
             "sps": 100,
             "sps_mult": 2,
             "bonus": "squid_bonus",
-            "bonus_fancy": "Mr. Crabs works \\c95x \\c0faster"
+            "bonus_fancy": " Mr. Crabs works \\c95x \\c0faster"
         },
         "display": {
             "name": "Squid",
@@ -351,7 +351,7 @@
             "sps": 0,
             "sps_mult": 0,
             "bonus": "mr_rich_bonus",
-            "bonus_fancy": "\\c9x2 \\c0more \\c8sand \\c0from every source"
+            "bonus_fancy": "\\c9 x2 \\c0more \\c8sand \\c0from every source"
         },
         "display": {
             "name": "Mr. Rich",
@@ -369,7 +369,7 @@
             "sps": 0,
             "sps_mult": 1.25,
             "bonus": "sandworm_bonus",
-            "bonus_fancy": "Sand Eater works \\c92x \\c0faster"
+            "bonus_fancy": " Sand Eater works \\c92x \\c0faster"
         },
         "display": {
             "name": "Sandworm",
@@ -387,7 +387,7 @@
             "sps": -500,
             "sps_mult": 0,
             "bonus": "cookie_monster_bonus",
-            "bonus_fancy": "\\c9x10 \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks, and spawn x2 more of them"
+            "bonus_fancy": "\\c9 x10 \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks, and spawn x2 more of them"
         },
         "display": {
             "name": "Cookie Monster",

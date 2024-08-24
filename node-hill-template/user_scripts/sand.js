@@ -24,8 +24,10 @@ giveRandom = function(player, s) {
     //Chance to get the cookie monster
     let pet_roll = Math.round(Math.random() * (s ? 10 : 100)) //1/10 if super, 1/100 if not super
     if (pet_roll < 2) {
-        earnPet(player, "cookie_monster")
-        player.message(`\\c5You found a \\c6Mythic Cookie Monster\\c5!`)
+        if (earnPet(player, "cookie_monster")) {
+            player.message(`\\c5You found a \\c6Mythic Cookie Monster\\c5!`)
+            player.centerPrint(`\\c5You found a \\c6Mythic Cookie Monster\\c5!`, 5)
+        }
     }
 }
 
@@ -120,6 +122,8 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         rarity = 2
     } else if (pet_roll < 56) {
         rarity = 1
+    } else if (pet_roll < 86) {
+        rarity = 0
     }
     if (rarity > 0) {
         //Choose a random pet of that rarity
@@ -134,10 +138,11 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         if (choose.length > 0) {
             let n = Math.floor(Math.random() * choose.length)
             if (getPet(choose[n].id).req == 0 || getPet(choose[n].id).req <= player.data.total_sand) {
-                player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`)
-                earnPet(player, choose[n].id)
-                player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`, 5)
-                player.should_say = false
+                if (earnPet(player, choose[n].id)) {
+                    player.message(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`)
+                    player.centerPrint(`\\c5You found a${(rarity == 1 || rarity == 4) ? "n" : ""} ${getRarityColor(rarity)}${getRarityName(rarity)} ${getPet(choose[n].id).display.name}\\c5!`, 5)
+                    player.should_say = false
+                }
             }
         }
     }
