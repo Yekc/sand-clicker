@@ -129,7 +129,7 @@ updateSps = function(player) {
             for (let i = 0; i < 22; i++) {
                 if (player.data.pets[Object.keys(player.data.pets)[i]] > 0) total_pets++
             }
-            player.data.sps = Math.round(player.data.sps * (1 + (0.01 * total_pets)))
+            player.data.sps = Math.round(player.data.sps * (1 + (0.1 * total_pets)))
         }
     }
 
