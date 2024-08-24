@@ -109,7 +109,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 
     //Chance to earn a pet
     let pet_roll = Math.round(Math.random() * 40000)
-    let rarity = 0
+    let rarity = -1
     if (pet_roll < 2) {
         rarity = 6
     } else if (pet_roll < 3) {
@@ -122,10 +122,10 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         rarity = 2
     } else if (pet_roll < 56) {
         rarity = 1
-    } else if (pet_roll < 86) {
+    } else if (pet_roll < 106) {
         rarity = 0
     }
-    if (rarity > 0) {
+    if (rarity >= 0) {
         //Choose a random pet of that rarity
         let choose = []
         pets.forEach(pet => {
