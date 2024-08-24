@@ -53,13 +53,13 @@
                 "item": "Upgrade Manager (+5%/s)",
                 "req": 75000,
                 "item_req": "",
-                "stock": 30,
+                "stock": 50,
                 "base_price": 1000,
                 "price_mult": 1.1,
                 "action": "manager"
             },
             {
-                "item": "Buy \\c2Mythic Mr. Rich \\c0Pet",
+                "item": "Buy \\c2Special \\c0Mr. Rich Pet",
                 "req": 1000000,
                 "item_req": "",
                 "stock": 1,
@@ -79,7 +79,7 @@
                 "req": 500,
                 "item_req": "tiny_tim_buy",
                 "item_req_fancy": "Tiny Tim",
-                "stock": 50,
+                "stock": 100,
                 "base_price": 250,
                 "price_mult": 1.1,
                 "action": "tiny_tim"
@@ -89,7 +89,7 @@
                 "req": 5000,
                 "item_req": "mr_crabs_buy",
                 "item_req_fancy": "Mr. Crabs",
-                "stock": 50,
+                "stock": 100,
                 "base_price": 750,
                 "price_mult": 1.15,
                 "action": "mr_crabs"
@@ -99,7 +99,7 @@
                 "req": 15000,
                 "item_req": "tims_father_buy",
                 "item_req_fancy": "Tim's Father",
-                "stock": 50,
+                "stock": 100,
                 "base_price": 1500,
                 "price_mult": 1.2,
                 "action": "tims_father"
@@ -109,7 +109,7 @@
                 "req": 50000,
                 "item_req": "sand_eater_buy",
                 "item_req_fancy": "Sand Eater",
-                "stock": 50,
+                "stock": 100,
                 "base_price": 2000,
                 "price_mult": 1.2,
                 "action": "sand_eater"
