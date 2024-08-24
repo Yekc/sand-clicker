@@ -315,7 +315,7 @@
             "sps": 0,
             "sps_mult": 0,
             "bonus": "fred_bonus",
-            "bonus_fancy": " Tiny Tim works \\c910x \\c0faster"
+            "bonus_fancy": " \\c0Tiny Tim works \\c910x \\c0faster"
         },
         "display": {
             "name": "Fred",
@@ -333,7 +333,7 @@
             "sps": 100,
             "sps_mult": 2,
             "bonus": "squid_bonus",
-            "bonus_fancy": " Mr. Crabs works \\c95x \\c0faster"
+            "bonus_fancy": " \\c0Mr. Crabs works \\c95x \\c0faster"
         },
         "display": {
             "name": "Squid",
@@ -369,7 +369,7 @@
             "sps": 0,
             "sps_mult": 1.25,
             "bonus": "sandworm_bonus",
-            "bonus_fancy": " Sand Eater works \\c92x \\c0faster"
+            "bonus_fancy": " \\c0Sand Eater works \\c92x \\c0faster"
         },
         "display": {
             "name": "Sandworm",
