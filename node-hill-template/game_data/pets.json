@@ -297,7 +297,7 @@
             "sps": 2000,
             "sps_mult": 0,
             "bonus": "family_dog_bonus",
-            "bonus_fancy": "\\c9 +1% \\c7sand per second \\c0for every pet you own"
+            "bonus_fancy": "\\c9 +0.1% \\c7sand per second \\c0for every pet you own"
         },
         "display": {
             "name": "Family Dog",
