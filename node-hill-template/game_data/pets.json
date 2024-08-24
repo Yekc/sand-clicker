@@ -7,7 +7,7 @@
             "spc": 10,
             "spc_mult": 0,
             "sps": 20,
-            "sps_mult": 1.15,
+            "sps_mult": 1.05,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -43,7 +43,7 @@
             "spc": 5,
             "spc_mult": 1.25,
             "sps": 5,
-            "sps_mult": 1.2,
+            "sps_mult": 1.05,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -61,7 +61,7 @@
             "spc": 10,
             "spc_mult": 0,
             "sps": 10,
-            "sps_mult": 1.15,
+            "sps_mult": 1.1,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -79,7 +79,7 @@
             "spc": 0,
             "spc_mult": 5,
             "sps": 1,
-            "sps_mult": 1.35,
+            "sps_mult": 1.15,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -133,7 +133,7 @@
             "spc": 50,
             "spc_mult": 0,
             "sps": 100,
-            "sps_mult": 1.75,
+            "sps_mult": 1.25,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -187,7 +187,7 @@
             "spc": 0,
             "spc_mult": 2,
             "sps": 0,
-            "sps_mult": 2,
+            "sps_mult": 1.65,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -205,7 +205,7 @@
             "spc": 100,
             "spc_mult": 0,
             "sps": 100,
-            "sps_mult": 1.75,
+            "sps_mult": 1.5,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -257,9 +257,9 @@
         "req": 100000,
         "perks": {
             "spc": 200,
-            "spc_mult": 2,
+            "spc_mult": 3,
             "sps": 0,
-            "sps_mult": 2,
+            "sps_mult": 1.8,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -331,7 +331,7 @@
             "spc": 0,
             "spc_mult": 0,
             "sps": 100,
-            "sps_mult": 2,
+            "sps_mult": 1.25,
             "bonus": "squid_bonus",
             "bonus_fancy": " \\c0Mr. Crabs works \\c95x \\c0faster"
         },
@@ -356,7 +356,7 @@
         "display": {
             "name": "Mr. Rich",
             "description": "Weird flex but ok.",
-            "rarity": 6
+            "rarity": 5
         }
     },
     {
@@ -367,14 +367,14 @@
             "spc": 0,
             "spc_mult": 0,
             "sps": 0,
-            "sps_mult": 1.25,
+            "sps_mult": 1.1,
             "bonus": "sandworm_bonus",
             "bonus_fancy": " \\c0Sand Eater works \\c92x \\c0faster"
         },
         "display": {
             "name": "Sandworm",
             "description": "Loves eating sand dunes with the sand eater.",
-            "rarity": 6
+            "rarity": 5
         }
     },
     {
@@ -392,7 +392,7 @@
         "display": {
             "name": "Cookie Monster",
             "description": "He's blue and loves cookies.",
-            "rarity": 6
+            "rarity": 5
         }
     }
 ]

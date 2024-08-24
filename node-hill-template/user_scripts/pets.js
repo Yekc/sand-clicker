@@ -20,8 +20,6 @@ getRarityColor = function(rarity) {
             return "\\c9";
         case 5:
             return "\\c8";
-        case 6:
-            return "\\c2";
     }
 }
 
@@ -39,13 +37,30 @@ getRarityName = function(rarity) {
             return "Epic";
         case 5:
             return "Legendary";
-        case 6:
-            return "Special";
     }
 }
 
 getUpgradeCost = function(rarity, current_level) {
-    return 0
+    switch (rarity) {
+        default:
+            return Math.round(500 * current_level * 1.15);
+        case 1:
+            return Math.round(5000 * current_level * 1.2);
+        case 2:
+            return Math.round(15000 * current_level * 1.2);
+        case 3:
+            return Math.round(50000 * current_level * 1.25);
+        case 4:
+            return Math.round(100000 * current_level * 1.3);
+        case 5:
+            return Math.round(250000 * current_level * 1.35);
+        case 6:
+            return Math.round(250000 * current_level * 1.35);
+    }
+}
+
+getPerkStrength = function(perk, level) {
+    return perk / 10 * level
 }
 
 earnPet = function(player, id) {
@@ -92,13 +107,13 @@ Game.on("playerJoin", (player) => {
                     if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
 
                     draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
-                    draw += `#\\c0Current level: ${player.data.pets[current_pet.id]}`
+                    draw += `#\\c0Current level: \\c7${player.data.pets[current_pet.id]}`
                     draw += `#\\c1${current_pet.display.description}#`
                     draw += "#\\c0Perks:"
-                    if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${current_pet.perks.spc} sand per click`
-                    if (current_pet.perks.sps != 0) draw += `#    \\c9${current_pet.perks.sps > 0 ? "+" : "-"}${current_pet.perks.sps} sand per second`
-                    if (current_pet.perks.spc_mult != 0) draw += `#    \\c7x${current_pet.perks.spc_mult} sand per click`
-                    if (current_pet.perks.sps_mult != 0) draw += `#    \\c9x${current_pet.perks.sps_mult} sand per second`
+                    if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${getPerkStrength(current_pet.perks.spc, player.data.pets[current_pet.id])} sand per click`
+                    if (current_pet.perks.sps != 0) draw += `#    \\c9${current_pet.perks.sps > 0 ? "+" : "-"}${getPerkStrength(current_pet.perks.sps, player.data.pets[current_pet.id])} sand per second`
+                    if (current_pet.perks.spc_mult != 0) draw += `#    \\c7x${getPerkStrength(current_pet.perks.spc_mult, player.data.pets[current_pet.id])} sand per click`
+                    if (current_pet.perks.sps_mult != 0) draw += `#    \\c9x${getPerkStrength(current_pet.perks.sps_mult, player.data.pets[current_pet.id])} sand per second`
                     if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS!${current_pet.perks.bonus_fancy}`
 
                     draw += `##\\c1[\\c7Q\\c1] ${player.data.pet_active === current_pet.id ? "\\c6Unequip" : "\\c0Equip"}`
