@@ -44,6 +44,10 @@ getRarityName = function(rarity) {
     }
 }
 
+getUpgradeCost = function(rarity, current_level) {
+    return 0
+}
+
 earnPet = function(player, id) {
     if (player.data.pets[id] > 0) {
         //player.message("\\c6You already have that pet!")
@@ -81,15 +85,16 @@ Game.on("playerJoin", (player) => {
                         }
                     }
 
-                    draw += `##\\c0Page ${player.pet_inv_page == 1 ? "\\c1" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c1" : ""}>    \\c1Use \\c7Z \\c1and \\c7X \\c1to scroll through the pages`
+                    draw += `##\\c0Page ${player.pet_inv_page == 1 ? "\\c1" : ""}< \\c0${player.pet_inv_page}/${global.max_pet_inv_page} ${player.pet_inv_page == global.max_pet_inv_page ? "\\c1" : ""}>    \\c1Use \\c7X \\c1and \\c7C \\c1to scroll through the pages`
                 } else {
                     let current_pet = getPet(Object.keys(player.data.pets)[(player.pet_inv_view - 1) + (9 * (player.pet_inv_page - 1))])
 
                     if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
 
                     draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
+                    draw += `#\\c0Current level: ${player.data.pets[current_pet.id]}`
                     draw += `#\\c1${current_pet.display.description}#`
-                    draw += "#\\c0Stats:"
+                    draw += "#\\c0Perks:"
                     if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${current_pet.perks.spc} sand per click`
                     if (current_pet.perks.sps != 0) draw += `#    \\c9${current_pet.perks.sps > 0 ? "+" : "-"}${current_pet.perks.sps} sand per second`
                     if (current_pet.perks.spc_mult != 0) draw += `#    \\c7x${current_pet.perks.spc_mult} sand per click`
@@ -97,6 +102,7 @@ Game.on("playerJoin", (player) => {
                     if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS!${current_pet.perks.bonus_fancy}`
 
                     draw += `##\\c1[\\c7Q\\c1] ${player.data.pet_active === current_pet.id ? "\\c6Unequip" : "\\c0Equip"}`
+                    draw += `#\\c1[\\c7P\\c1] \\c0Upgrade for \\c8${getUpgradeCost(current_pet.display.rarity, player.data.pets[current_pet.id])} sand`
                     draw += `#\\c1[\\c7E\\c1] \\c0Go back to pet inventory`
                 }
 
