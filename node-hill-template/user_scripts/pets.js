@@ -60,7 +60,7 @@ getUpgradeCost = function(rarity, current_level) {
 }
 
 getPerkStrength = function(perk, level) {
-    return perk / 10 * level
+    return Math.round(perk / 10 * level * 100) / 100
 }
 
 earnPet = function(player, id) {
