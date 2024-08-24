@@ -67,14 +67,14 @@ Game.on("playerJoin", (player) => {
                 draw += "\\c1|\\c2===\\c1| \\c9Pet Inventory \\c1|\\c2====================\\c1|"
                 if (player.pet_inv_view == 0) {
                     draw += "#\\c1Press the number next to a pet to view more information about it#"
-                    if (player.data.pet_active !== "") draw += `\\c5Currently equipped: ${getRarityColor(getPet(player.data.pet_active).display.rarity)}${getRarityName(getPet(player.data.pet_active).display.rarity)} \\c0${getPet(player.data.pet_active).display.name}#`
+                    if (player.data.pet_active !== "") draw += `\\c5Currently equipped: ${getRarityColor(getPet(player.data.pet_active).display.rarity)}${getRarityName(getPet(player.data.pet_active).display.rarity)} ${getPet(player.data.pet_active).display.name}#`
 
                     for (i = 0; i < 9; i++) {
                         if (i + (9 * (player.pet_inv_page - 1)) < 22) {
                             let current = player.data.pets[Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))]]
                             let current_pet = getPet(Object.keys(player.data.pets)[i + (9 * (player.pet_inv_page - 1))])
                             if (current > 0) {
-                                draw += `#\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} \\c0${current_pet.display.name}`
+                                draw += `#\\c1[\\c7${i + 1}\\c1] ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
                             } else {
                                 draw += `#\\c1[${i + 1}] \\c6Not unlocked!`
                             }
@@ -87,7 +87,7 @@ Game.on("playerJoin", (player) => {
 
                     if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
 
-                    draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} \\c0${current_pet.display.name}`
+                    draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
                     draw += `#\\c1${current_pet.display.description}#`
                     draw += "#\\c0Stats:"
                     if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${current_pet.perks.spc} sand per click`

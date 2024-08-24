@@ -59,7 +59,7 @@
                 "action": "manager"
             },
             {
-                "item": "Buy \\c2Special \\c0Mr. Rich Pet",
+                "item": "Buy \\c2Special Mr. Rich \\c0Pet",
                 "req": 1000000,
                 "item_req": "",
                 "stock": 1,
