@@ -1,6 +1,7 @@
 let pets = require("../game_data/pets.json")
 
 global.max_pet_inv_page = 3
+global.max_pet_level = 10
 
 getPet = function(id) {
     return pets.find(pet => pet.id == id)
@@ -41,26 +42,27 @@ getRarityName = function(rarity) {
 }
 
 getUpgradeCost = function(rarity, current_level) {
+    current_level--
     switch (rarity) {
         default:
-            return Math.round(500 * current_level * 1.15);
+            return Math.round(500 * Math.max(1, current_level * 1.15));
         case 1:
-            return Math.round(5000 * current_level * 1.2);
+            return Math.round(5000 * Math.max(1, current_level * 1.2));
         case 2:
-            return Math.round(15000 * current_level * 1.2);
+            return Math.round(15000 * Math.max(1, current_level * 1.2));
         case 3:
-            return Math.round(50000 * current_level * 1.25);
+            return Math.round(50000 * Math.max(1, current_level * 1.25));
         case 4:
-            return Math.round(100000 * current_level * 1.3);
+            return Math.round(100000 * Math.max(1, current_level * 1.3));
         case 5:
-            return Math.round(250000 * current_level * 1.35);
+            return Math.round(250000 * Math.max(1, current_level * 1.35));
         case 6:
-            return Math.round(250000 * current_level * 1.35);
+            return Math.round(250000 * Math.max(1, current_level * 1.35));
     }
 }
 
 getPerkStrength = function(perk, level) {
-    return Math.round(perk / 10 * level * 100) / 100
+    return Math.round(perk / global.max_pet_level * level * 100) / 100
 }
 
 earnPet = function(player, id) {
@@ -107,7 +109,7 @@ Game.on("playerJoin", (player) => {
                     if (player.data.pet_active === current_pet.id) draw += "#\\c5You have this pet equipped!#"
 
                     draw += `#\\c0Viewing: ${getRarityColor(current_pet.display.rarity)}${getRarityName(current_pet.display.rarity)} ${current_pet.display.name}`
-                    draw += `#\\c0Current level: \\c7${player.data.pets[current_pet.id]}`
+                    draw += `#\\c0Current level: \\c7${player.data.pets[current_pet.id]} ${player.data.pets[current_pet.id] >= global.max_pet_level ? "\\c6MAX!" : ""}`
                     draw += `#\\c1${current_pet.display.description}#`
                     draw += "#\\c0Perks:"
                     if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${getPerkStrength(current_pet.perks.spc, player.data.pets[current_pet.id])} sand per click`
@@ -117,7 +119,7 @@ Game.on("playerJoin", (player) => {
                     if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS!${current_pet.perks.bonus_fancy}`
 
                     draw += `##\\c1[\\c7Q\\c1] ${player.data.pet_active === current_pet.id ? "\\c6Unequip" : "\\c0Equip"}`
-                    draw += `#\\c1[\\c7P\\c1] \\c0Upgrade for \\c8${getUpgradeCost(current_pet.display.rarity, player.data.pets[current_pet.id])} sand`
+                    if (player.data.pets[current_pet.id] < global.max_pet_level) draw += `#\\c1[\\c7P\\c1] \\c0Upgrade for \\c8${getUpgradeCost(current_pet.display.rarity, player.data.pets[current_pet.id])} sand`
                     draw += `#\\c1[\\c7E\\c1] \\c0Go back to pet inventory`
                 }
 
