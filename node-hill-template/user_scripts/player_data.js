@@ -103,8 +103,8 @@ updateSpc = function(player) {
 
     if (player.data.pet_equipped) {
         let pet = getPet(player.data.pet_active)
-        if (pet.perks.spc != 0) player.data.spc += pet.perks.spc
-        if (pet.perks.spc_mult != 0) player.data.spc = Math.round(player.data.spc * pet.perks.spc_mult)
+        if (pet.perks.spc != 0) player.data.spc += getPerkStrength(pet.perks.spc, player.data.pets[player.data.pet_active])
+        if (pet.perks.spc_mult != 0) player.data.spc = Math.round(player.data.spc * getPerkStrengthMult(pet.perks.spc_mult, player.data.pets[player.data.pet_active]))
     }
 
     if (player.data.spc < 0) player.data.spc = 0
@@ -122,8 +122,8 @@ updateSps = function(player) {
     
     if (player.data.pet_equipped) {
         let pet = getPet(player.data.pet_active)
-        if (pet.perks.sps != 0) player.data.sps += pet.perks.sps
-        if (pet.perks.sps_mult != 0) player.data.sps = Math.round(player.data.sps * pet.perks.sps_mult)
+        if (pet.perks.sps != 0) player.data.sps += getPerkStrength(pet.perks.sps, player.data.pets[player.data.pet_active])
+        if (pet.perks.sps_mult != 0) player.data.sps = Math.round(player.data.sps * getPerkStrengthMult(pet.perks.sps_mult, player.data.pets[player.data.pet_active]))
         if (pet.perks.bonus === "family_dog_bonus") {
             let total_pets = 0
             for (let i = 0; i < 22; i++) {
