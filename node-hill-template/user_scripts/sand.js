@@ -139,7 +139,8 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 
     //Chance for random and super random brick
     if (!(is_random || is_super)) {
-        let random = Math.round(Math.random() * 30000)
+        //let random = Math.round(Math.random() * 30000)
+        let random = Math.round(Math.random() * 300)
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { random = Math.floor(random / 2) } }
         if (random < 100) {
             is_random = true
