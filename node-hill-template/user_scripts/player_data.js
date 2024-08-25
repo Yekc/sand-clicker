@@ -6,9 +6,10 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 2
+const currentTemplateVersion = 3
 const template = {
     firstJoin: true,
+    lastOnline: 0,
     saveDataVersion: currentTemplateVersion,
 
     sand: 0,
@@ -30,7 +31,9 @@ const template = {
         sand_eater_buy: 0,
         sand_eater: 0,
         manager: 0,
-        mr_rich_buy: 0
+        mr_rich_buy: 0,
+        offline_earnings_buy: 0,
+        super_duper_random_brick_buy: 0
     },
 
     pet_equipped: false,
@@ -93,6 +96,11 @@ const updates = {
         }
 
         player.data.saveDataVersion = 2
+    },
+    from2: function(player) {
+        player.data.lastOnline = 0
+
+        player.data.saveDataVersion = 3
     }
 }
 
@@ -137,6 +145,8 @@ updateSps = function(player) {
 }
 
 save = async function(player) {
+    player.data.lastOnline = Date.now()
+
     let data = JSON.stringify(player.data)
     fs.writeFileSync(`./player_data/${player.userId}.txt`, data)
     console.log(`Saved user data for ${player.username} (${player.userId})!`)
@@ -187,6 +197,26 @@ Game.on("playerJoin", (player) => {
 
             //Update sand per second
             updateSps(player)
+
+            //Offline earnings
+            if (player.data.items.offline_earnings_buy > 0) {
+                let now = Date.now()
+                let diff = (now / 1000) - (player.data.lastOnline / 1000)
+                if (diff >= 120) { //Player has been offline for longer than 2 minutes
+                    let hours = diff / 3600
+                    let amount
+
+                    if (hours >= player.data.items.offline_earnings_buy) { //Player has been offline longer than their max offline earnings time
+                        amount = (player.data.items.offline_earnings_buy * player.data.sps) / 10
+                    } else { //Player has been offline shorter than their max offline earnings time
+                        amount = (hours * player.data.sps) / 10
+                    }
+
+                    getSand(player, amount)
+                    player.message(`\\c9Offline Earnings! \\c5You earned \\c8${amount} sand while you were offline for ${hours} hour${hours != 1 ? "s" : ""}.`)
+                    player.message(`\\c1(Max offline earning time: ${player.data.items.offline_earnings_buy} hour${player.data.items.offline_earnings_buy != 1 ? "s" : ""})`)
+                }
+            }
         }
 
         console.log(`Player ${player.username} (${player.userId}) loaded!`)
