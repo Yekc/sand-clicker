@@ -13,7 +13,7 @@ getSand = function(player, amount) {
 giveRandom = function(player, s, d = false) {
     if (d) {
         Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c9DUPER \\c4RANDOM BRICK!!!!!`)
-        let amount = 50000 + player.data.sps * 2700
+        let amount = 50000 + player.data.sps * 9000
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { amount *= 10 } }
         player.message(`\\c5You earned \\c8${number(amount)} sand\\c5!`)
         getSand(player, amount)
