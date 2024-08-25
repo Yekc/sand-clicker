@@ -121,7 +121,26 @@
         "name": "\\c9Wizard Menu",
         "type": "shop",
         "items": [
-
+            {
+                "item": "Upgrade Offline Earnings (+1 hour)",
+                "req": 0,
+                "item_req": "",
+                "item_req_fancy": "",
+                "stock": 24,
+                "base_price": 1000000,
+                "price_mult": 2,
+                "action": "offline_earnings_buy"
+            },
+            {
+                "item": "Ability to spawn \\c7SUPER \\c9DUPER \\c4RANDOM BRICKS\\c0!!!",
+                "req": 10000000,
+                "item_req": "",
+                "item_req_fancy": "",
+                "stock": 1,
+                "base_price": 10000000,
+                "price_mult": 1,
+                "action": "super_duper_random_brick_buy"
+            }
         ]
     }
 ]
