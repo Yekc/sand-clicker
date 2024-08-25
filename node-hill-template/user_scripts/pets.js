@@ -56,17 +56,15 @@ getUpgradeCost = function(rarity, current_level) {
             return Math.round(50000 * Math.max(1, current_level * 1.3));
         case 5:
             return Math.round(150000 * Math.max(1, current_level * 1.35));
-        case 6:
-            return Math.round(150000 * Math.max(1, current_level * 1.35));
     }
 }
 
 getPerkStrength = function(perk, level) {
-    return Math.round(perk / global.max_pet_level * level * 1000) / 1000
+    return Math.round((perk / global.max_pet_level) * level * 1000) / 1000
 }
 
 getPerkStrengthMult = function(perk, level) {
-    return 1 + (Math.round(1 - perk / global.max_pet_level * level * 1000) / 1000)
+    return 1 + (Math.round(1 - (perk / global.max_pet_level) * level * 1000) / 1000)
 }
 
 earnPet = function(player, id) {
