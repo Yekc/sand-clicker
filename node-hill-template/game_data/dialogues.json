@@ -123,7 +123,7 @@
         "items": [
             {
                 "item": "Upgrade Offline Earnings (+1 hour)",
-                "req": 0,
+                "req": 1000000,
                 "item_req": "",
                 "item_req_fancy": "",
                 "stock": 24,
