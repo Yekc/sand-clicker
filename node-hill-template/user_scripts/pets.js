@@ -47,15 +47,15 @@ getUpgradeCost = function(rarity, current_level) {
         default:
             return Math.round(100 * Math.max(1, current_level * 1.4));
         case 1:
-            return Math.round(1000 * Math.max(1, current_level * 1.425));
+            return Math.round(1000 * Math.max(1, current_level * 1.45));
         case 2:
-            return Math.round(5000 * Math.max(1, current_level * 1.475));
+            return Math.round(5000 * Math.max(1, current_level * 1.5));
         case 3:
-            return Math.round(25000 * Math.max(1, current_level * 1.525));
+            return Math.round(25000 * Math.max(1, current_level * 1.65));
         case 4:
-            return Math.round(50000 * Math.max(1, current_level * 1.576));
+            return Math.round(50000 * Math.max(1, current_level * 1.9));
         case 5:
-            return Math.round(150000 * Math.max(1, current_level * 1.625));
+            return Math.round(150000 * Math.max(1, current_level * 2.1));
     }
 }
 
