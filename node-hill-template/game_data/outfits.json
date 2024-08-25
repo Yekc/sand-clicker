@@ -42,5 +42,27 @@
             "hat2": 0,
             "hat3": 0
         }
+    },
+    {
+        "id": "wizard",
+        "bodyColors": {
+            "head": "#ccc000",
+            "torso": "#7f32a8",
+            "leftArm": "#661818",
+            "rightArm": "#4b1866",
+            "leftLeg": "#4b1866",
+            "rightLeg": "#4b1866"
+        },
+        "clothing": {
+            "tshirt": 0,
+            "shirt": 0,
+            "pants": 0
+        },
+        "items": {
+            "face": 0,
+            "hat1": 160,
+            "hat2": 0,
+            "hat3": 0
+        }
     }
 ]

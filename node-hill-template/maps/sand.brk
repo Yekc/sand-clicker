@@ -1484,3 +1484,6 @@ B R I C K  W O R K S H O P  V0.2.0.0
 	+NOCOLLISION
 32 -43 0 11 11 46 1 0 0 0
 	+NAME wizard
+37 -29 0 1 1 1 0 0 0 0
+	+NAME npc_wizard
+	+NOCOLLISION

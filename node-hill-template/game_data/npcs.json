@@ -16,5 +16,14 @@
             "outfit": "office",
             "scale": 1.0
         }
+    },
+    {
+        "id": "wizard",
+        "dialogue": "wizard",
+        "display": {
+            "name": "Wizard",
+            "outfit": "wizard",
+            "scale": 1.1
+        }
     }
 ]
