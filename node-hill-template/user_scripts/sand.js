@@ -148,7 +148,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
         if (random < 100) {
             is_random = true
             is_super = random < 20
-            is_duper = random < 2
+            is_duper = player.data.items.super_duper_random_brick_buy > 0 && random < 2
             randomBrick(is_super, is_duper)
             player.centerPrint(`\\c5You spawned a ${is_super && !is_duper ? "\\c7SUPER " : is_super && is_duper ? "\\c7SUPER \\c9DUPER " : ""}\\c4RANDOM BRICK\\c5! Go get it!`, 2)
             player.should_say = false
