@@ -347,9 +347,6 @@ B R I C K  W O R K S H O P  V0.2.0.0
 -31 39.9975 3 4 1.005 8 0.288 0.7931734 0.8 1
 	+NAME office
 	+NOCOLLISION
--41 18 13 24 24 1 0.39 0.39 0.39 1
-	+NAME office
-	+NOCOLLISION
 -32 19 0 14 1 13 1 0 0 0
 	+NAME office
 -37 19 8 5 1 5 1 0 0 0
@@ -1874,5 +1871,64 @@ B R I C K  W O R K S H O P  V0.2.0.0
 31 -43 38 13 11 1 0.35 0.35 0.35 1
 	+NAME wizard
 	+NOCOLLISION
-32 -43 0 11 11 52 1 0 0 0
+32 -43 0 11 11 41 1 0 0 0
 	+NAME wizard
+-41 18 13 24 24 1 0.39 0.39 0.39 1
+	+NAME office
+	+NOCOLLISION
+0 28 12 3 3 2 1 0 1 0.5882353
+	+NAME duper_1
+-7 35 15 3 3 2 1 0 1 0.5882353
+	+NAME duper_1
+-15 39 20 3 3 2 1 0 1 0.5882353
+	+NAME duper_1
+-37.5 21.5 26.5 5 3 2 1 0 1 0.3921569
+	+NAME random_super_duper_1
+	+NOCOLLISION
+-37 22 27 4 2 1 1 0 1 1
+	+NAME random_duper_1
+	+NOCOLLISION
+44 -55 4 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+47 -61 8 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+54 -62 12 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+62 -56 15 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+65 -47 18 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+61 -40 22 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+54 -35 27 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+46 -31 30 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+40 -28 35 3 3 2 1 0 1 0.5882353
+	+NAME duper_2
+33 -42 41 9 9 3 1 0 0 0
+	+NAME wizard
+34 -41 44 7 7 3 1 0 0 0
+	+NAME wizard
+35 -40 47 5 5 4 1 0 0 0
+	+NAME wizard
+34.5 -39.5 50.5 5 3 2 1 0 1 0.3921569
+	+NAME random_super_duper_2
+	+NOCOLLISION
+35 -39 51 4 2 1 1 0 1 1
+	+NAME random_duper_2
+	+NOCOLLISION
+-60 -47 4 3 3 2 1 0 1 0.5882353
+	+NAME duper_3
+-69 -50 5 3 3 2 1 0 1 0.5882353
+	+NAME duper_3
+-80 -53 7 3 3 2 1 0 1 0.5882353
+	+NAME duper_3
+-88 -55 9 3 3 2 1 0 1 0.5882353
+	+NAME duper_3
+-98.5 -56.5 10.5 5 3 2 1 0 1 0.3921569
+	+NAME random_super_duper_3
+	+NOCOLLISION
+-98 -56 11 4 2 1 1 0 1 1
+	+NAME random_duper_3
+	+NOCOLLISION

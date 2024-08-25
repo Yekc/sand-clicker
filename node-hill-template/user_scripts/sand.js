@@ -31,19 +31,37 @@ giveRandom = function(player, s) {
     }
 }
 
-randomBrick = function(s) {
+randomBrick = function(s, d) {
     //Find random bricks
     let selection = Math.floor(Math.random() * 12)
     let brick = Game.world.bricks.filter(brick => brick.name === "random")[selection]
-    let super_brick
 
-    if (s) {
-        Game.messageAll(`\\c5A \\c7SUPER \\c4RANDOM BRICK \\c5has spawned somewhere!`)
+    if (d) {
+        Game.messageAll(`\\c5A \\c7SUPER \\c9DUPER \\c4RANDOM BRICK \\c5has spawned somewhere!!!`)
         Game.messageAll(`\\c5Be the first to loot it to earn a super duper reward!`)
+
+        let selection_duper = Math.floor(Math.random() * 3)
+
+        let duper_bricks = Game.world.bricks.filter(b => b.name === `duper_${selection_duper}`)
+        let random_duper_brick = Game.world.bricks.filter(b => b.name === `random_duper_${selection_duper}`)[0]
+        let random_super_duper_brick = Game.world.bricks.filter(b => b.name === `random_super_duper_${selection_duper}`)[0]
+
+        random_health = 250
+
+        duper_bricks.forEach(b => {
+            b.setVisibility(0.5)
+            b.setCollision(true)
+        })
+        random_duper_brick.setVisibility(1)
+        random_duper_brick.setCollision(true)
+        random_super_duper_brick.setVisibility(0.4)
+    } else if (s) {
+        Game.messageAll(`\\c5A \\c7SUPER \\c4RANDOM BRICK \\c5has spawned somewhere!`)
+        Game.messageAll(`\\c5Be the first to loot it to earn a super reward!`)
 
         random_health = 50
 
-        super_brick = Game.world.bricks.filter(brick => brick.name === "random_super")[11 - selection] //The super random bricks are backwards for some reason, so the selection must be subtracted from 11 (amount of random bricks - 1)
+        let super_brick = Game.world.bricks.filter(b => b.name === "random_super")[11 - selection] //The super random bricks are backwards for some reason, so the selection must be subtracted from 11 (amount of random bricks - 1)
         
         brick.setVisibility(1)
         brick.setCollision(true)
@@ -87,6 +105,7 @@ randomBrick = function(s) {
 //Yellow brick clicking
 let is_random = false
 let is_super = false
+let is_duper = false
 let random_health = 0
 const click_brick = Game.world.bricks.find(brick => brick.name === "click")
 click_brick.clicked(debouncePlayer((player, secure) => {
@@ -96,13 +115,14 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 
     //Chance for random and super random brick
     if (!(is_random || is_super)) {
-        let random = Math.round(Math.random() * 3000)
+        let random = Math.round(Math.random() * 30000)
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { random = Math.floor(random / 2) } }
-        if (random < 10) {
+        if (random < 100) {
             is_random = true
-            is_super = random < 2
-            randomBrick(is_super)
-            player.centerPrint(`\\c5You spawned a ${is_super ? "\\c7SUPER \\c4" : "\\c4"}RANDOM BRICK\\c5! Go get it!`, 2)
+            is_super = random < 20
+            is_duper = random < 2
+            randomBrick(is_super, is_duper)
+            player.centerPrint(`\\c5You spawned a ${is_super || is_duper ? "\\c7SUPER \\c4" : "\\c4"}${is_duper ? "\\c9DUPER \\c4" : "\\c4"}RANDOM BRICK\\c5! Go get it!`, 2)
             player.should_say = false
         }
     }
