@@ -137,7 +137,7 @@ let is_duper = false
 let random_health = 0
 const click_brick = Game.world.bricks.find(brick => brick.name === "click")
 click_brick.clicked(debouncePlayer((player, secure) => {
-    if (!secure) return //Make sure player is close enough
+    if (!secure || player.interact || player.pet_inv) return //Make sure player is close enough
     player.should_say = true
     getSand(player, player.data.spc)
 
