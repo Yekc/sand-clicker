@@ -6,8 +6,14 @@ getSand = function(player, amount) {
     player.data.total_sand += amount
 }
 
-giveRandom = function(player, s) {
-    if (s) {
+giveRandom = function(player, s, d = false) {
+    if (d) {
+        Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c9DUPER \\c4RANDOM BRICK!!!!!`)
+        let amount = 50000 + player.data.sps * 2700
+        if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { amount *= 10 } }
+        player.message(`\\c5You earned \\c8${amount} sand\\c5!`)
+        getSand(player, amount)
+    } else if (s) {
         Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c4RANDOM BRICK!!!`)
         let amount = 10000 + player.data.sps * 900
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { amount *= 10 } }
@@ -22,7 +28,7 @@ giveRandom = function(player, s) {
     }
 
     //Chance to get the cookie monster
-    let pet_roll = Math.round(Math.random() * (s ? 10 : 100)) //1/10 if super, 1/100 if not super
+    let pet_roll = Math.round(Math.random() * (d ? 3 : s ? 10 : 100))
     if (pet_roll < 2) {
         if (earnPet(player, "cookie_monster")) {
             player.message(`\\c5You found a \\c6Mythic Cookie Monster\\c5!`)
@@ -55,6 +61,24 @@ randomBrick = function(s, d) {
         random_duper_brick.setVisibility(1)
         random_duper_brick.setCollision(true)
         random_super_duper_brick.setVisibility(0.4)
+        random_duper_brick.clicked(debouncePlayer((player, secure) => {
+            if (!secure || !is_random) return //Make sure player is close enough and that random brick should exist
+            random_health--
+            player.centerPrint(`\\c9${random_health}/250`, 3)
+            if (random_health == 0) {
+                giveRandom(player, true, true)
+                duper_bricks.forEach(b => {
+                    b.setVisibility(0)
+                    b.setCollision(false)
+                })
+                random_duper_brick.setVisibility(0)
+                random_duper_brick.setCollision(false)
+                random_super_duper_brick.setVisibility(0)
+                is_random = false
+                is_super = false
+                is_duper = false
+            }
+        }, 100))
     } else if (s) {
         Game.messageAll(`\\c5A \\c7SUPER \\c4RANDOM BRICK \\c5has spawned somewhere!`)
         Game.messageAll(`\\c5Be the first to loot it to earn a super reward!`)

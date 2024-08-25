@@ -387,7 +387,7 @@
             "sps": 0,
             "sps_mult": 1.05,
             "bonus": "cookie_monster_bonus",
-            "bonus_fancy": "\\c9 x10 \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks, and spawn x2 more of them"
+            "bonus_fancy": "\\c9 x10 \\c0more \\c8sand from \\c4RANDOM \\c0bricks, and spawn x2 more of them"
         },
         "display": {
             "name": "Cookie Monster",
