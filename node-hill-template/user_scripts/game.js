@@ -16,5 +16,8 @@ setTimeout(() => {
 
 //Random bricks
 Game.world.bricks.forEach(brick => {
-    if (brick.name === "random" || brick.name === "random_super") brick.setVisibility(0)
+    if (brick.name === "random" || brick.name === "random_super" || brick.name.startsWith("duper") || brick.name.startsWith("random_duper") || brick.name.startsWith("random_super_duper")) {
+        brick.setVisibility(0)
+        brick.setCollision(false)
+    }
 })
