@@ -287,7 +287,9 @@ Game.on("playerJoin", (player) => {
                         if (player.data.pets[pet] >= global.max_pet_level) {
                             player.message("\\c6This pet is already at the max level!")
                         } else {
-                            if (player.data.sand >= getUpgradeCost(getPet(pet).display.rarity, player.data.pets[pet])) {
+                            let cost = getUpgradeCost(getPet(pet).display.rarity, player.data.pets[pet])
+                            if (player.data.sand >= cost) {
+                                player.data.sand -= cost
                                 player.data.pets[pet]++
 
                                 //Update stats
