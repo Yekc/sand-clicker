@@ -104,7 +104,7 @@ const updates = {
 
         player.data.saveDataVersion = 3
     },
-    from4: function(player) {
+    from3: function(player) {
         player.data.items.offline_earnings_buy = 0
         player.data.items.super_duper_random_brick_buy = 0
 
