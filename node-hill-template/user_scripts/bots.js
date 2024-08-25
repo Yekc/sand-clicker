@@ -53,6 +53,12 @@ const item_functions = {
     mr_rich_buy: function(player) {
         earnPet(player, "mr_rich")
         player.message("\\c5You bought a \\c2Mythic Mr. Rich \\c0pet!")
+    },
+    offline_earnings_buy: function(player) {
+
+    },
+    super_duper_random_brick_buy: function(player) {
+        
     }
 }
 
