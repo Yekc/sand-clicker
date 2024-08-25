@@ -213,7 +213,7 @@ Game.on("playerJoin", (player) => {
                     }
 
                     getSand(player, amount)
-                    player.message(`\\c9Offline Earnings! \\c5You earned \\c8${amount} sand while you were offline for ${hours} hour${hours != 1 ? "s" : ""}.`)
+                    player.message(`\\c9Offline Earnings! \\c5You earned \\c8${number(amount)} sand while you were offline for ${hours} hour${hours != 1 ? "s" : ""}.`)
                     player.message(`\\c1(Max offline earning time: ${player.data.items.offline_earnings_buy} hour${player.data.items.offline_earnings_buy != 1 ? "s" : ""})`)
                 }
             }

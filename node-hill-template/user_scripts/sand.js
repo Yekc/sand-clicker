@@ -1,5 +1,9 @@
 let pets = require("../game_data/pets.json")
 
+number = function(value) {
+    return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 getSand = function(player, amount) {
     if (player.data.pet_equipped) if (getPet(player.data.pet_active).perks.bonus === "mr_rich_bonus") amount *= 2
     player.data.sand += amount
@@ -11,19 +15,19 @@ giveRandom = function(player, s, d = false) {
         Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c9DUPER \\c4RANDOM BRICK!!!!!`)
         let amount = 50000 + player.data.sps * 2700
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { amount *= 10 } }
-        player.message(`\\c5You earned \\c8${amount} sand\\c5!`)
+        player.message(`\\c5You earned \\c8${number(amount)} sand\\c5!`)
         getSand(player, amount)
     } else if (s) {
         Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c4RANDOM BRICK!!!`)
         let amount = 10000 + player.data.sps * 900
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { amount *= 10 } }
-        player.message(`\\c5You earned \\c8${amount} sand\\c5!`)
+        player.message(`\\c5You earned \\c8${number(amount)} sand\\c5!`)
         getSand(player, amount)
     } else {
         Game.messageAll(`${player.username} \\c5has looted the \\c4RANDOM BRICK!`)
         let amount = 1000 + player.data.sps * 300
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { amount *= 10 } }
-        player.message(`\\c5You earned \\c8${amount} sand\\c5!`)
+        player.message(`\\c5You earned \\c8${number(amount)} sand\\c5!`)
         getSand(player, amount)
     }
 
@@ -194,7 +198,7 @@ click_brick.clicked(debouncePlayer((player, secure) => {
     //Sand per click indicator
     if (player.should_say) {
         player.centerPrint(`+${player.data.spc}`)
-        setTimeout(() => {player.centerPrint(`\\c8+${player.data.spc}`)}, 100)
+        setTimeout(() => {player.centerPrint(`\\c8+${number(player.data.spc)}`)}, 100)
     }
 }, 175))
 

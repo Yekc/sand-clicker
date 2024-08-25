@@ -159,9 +159,9 @@ setInterval(() => {
     Game.players.forEach((player) => {
         //Info and score
         if (player.data.items.manager > 0) {
-            player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps} (x${1 + Math.round((0.05 * player.data.items.manager) * 100) / 100} mult.)`)
+            player.bottomPrint(`\\c8Sand: ${number(player.data.sand)}  \\c2|  \\c7Sand per click: ${number(player.data.spc)}  \\c2|  \\c9Sand per second: ${number(player.data.sps)} (x${1 + Math.round((0.05 * player.data.items.manager) * 100) / 100} mult.)`)
         } else {
-            player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps}`)
+            player.bottomPrint(`\\c8Sand: ${number(player.data.sand)}  \\c2|  \\c7Sand per click: ${number(player.data.spc)}  \\c2|  \\c9Sand per second: ${number(player.data.sps)}`)
         }
         player.setScore(Math.min(2147483647, player.data.total_sand))
 
@@ -189,13 +189,13 @@ setInterval(() => {
                                 if (player.data.items[item.action] >= item.stock) {
                                     draw += `#\\c1[${key}]   \\c0${item.item}   \\c6Out of stock!`
                                 } else {
-                                    draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${getPrice(player, item)}`
+                                    draw += `#\\c1[\\c7${key}\\c1]   \\c0${item.item}   \\c8Price: ${number(getPrice(player, item))}`
                                 }
                             } else {
                                 draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(0/1 ${item.item_req_fancy})`
                             }
                         } else {
-                            draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(${player.data.total_sand}/${item.req} total sand)`
+                            draw += `#\\c1[${key}]   \\c6Not unlocked! \\c1(${number(player.data.total_sand)}/${number(item.req)} total sand)`
                         }
                         key++
                     })

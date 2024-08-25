@@ -114,14 +114,14 @@ Game.on("playerJoin", (player) => {
                     draw += `#\\c0Current level: \\c7${player.data.pets[current_pet.id]} ${player.data.pets[current_pet.id] >= global.max_pet_level ? "\\c6MAX!" : ""}`
                     draw += `#\\c1${current_pet.display.description}#`
                     draw += "#\\c0Perks:"
-                    if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${getPerkStrength(current_pet.perks.spc, player.data.pets[current_pet.id])} sand per click`
-                    if (current_pet.perks.sps != 0) draw += `#    \\c9${current_pet.perks.sps > 0 ? "+" : "-"}${getPerkStrength(current_pet.perks.sps, player.data.pets[current_pet.id])} sand per second`
-                    if (current_pet.perks.spc_mult != 0) draw += `#    \\c7x${getPerkStrengthMult(current_pet.perks.spc_mult, player.data.pets[current_pet.id])} sand per click`
-                    if (current_pet.perks.sps_mult != 0) draw += `#    \\c9x${getPerkStrengthMult(current_pet.perks.sps_mult, player.data.pets[current_pet.id])} sand per second`
+                    if (current_pet.perks.spc != 0) draw += `#    \\c7${current_pet.perks.spc > 0 ? "+" : "-"}${number(getPerkStrength(current_pet.perks.spc, player.data.pets[current_pet.id]))} sand per click`
+                    if (current_pet.perks.sps != 0) draw += `#    \\c9${current_pet.perks.sps > 0 ? "+" : "-"}${number(getPerkStrength(current_pet.perks.sps, player.data.pets[current_pet.id]))} sand per second`
+                    if (current_pet.perks.spc_mult != 0) draw += `#    \\c7x${number(getPerkStrengthMult(current_pet.perks.spc_mult, player.data.pets[current_pet.id]))} sand per click`
+                    if (current_pet.perks.sps_mult != 0) draw += `#    \\c9x${number(getPerkStrengthMult(current_pet.perks.sps_mult, player.data.pets[current_pet.id]))} sand per second`
                     if (current_pet.perks.bonus !== "") draw += `#    \\c5BONUS!${current_pet.perks.bonus_fancy}`
 
                     draw += `##\\c1[\\c7Q\\c1] ${player.data.pet_active === current_pet.id ? "\\c6Unequip" : "\\c0Equip"}`
-                    if (player.data.pets[current_pet.id] < global.max_pet_level) draw += `#\\c1[\\c7P\\c1] \\c0Upgrade for \\c8${getUpgradeCost(current_pet.display.rarity, player.data.pets[current_pet.id])} sand`
+                    if (player.data.pets[current_pet.id] < global.max_pet_level) draw += `#\\c1[\\c7P\\c1] \\c0Upgrade for \\c8${number(getUpgradeCost(current_pet.display.rarity, player.data.pets[current_pet.id]))} sand`
                     draw += `#\\c1[\\c7E\\c1] \\c0Go back to pet inventory`
                 }
 
