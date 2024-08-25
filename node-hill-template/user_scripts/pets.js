@@ -64,6 +64,7 @@ getPerkStrength = function(perk, level) {
 }
 
 getPerkStrengthMult = function(perk, level) {
+    //return 1 + (Math.round(((perk * 1000) / global.max_pet_level) * level * 1000) / 1000 / 10000)
     return 1 + (Math.round(((perk * 1000) / global.max_pet_level) * level * 1000) / 1000 / 10000)
 }
 
