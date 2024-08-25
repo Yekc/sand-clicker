@@ -55,10 +55,10 @@ const item_functions = {
         player.message("\\c5You bought a \\c2Mythic Mr. Rich \\c0pet!")
     },
     offline_earnings_buy: function(player) {
-
+        player.message(`\\c5You can earn sand offline for a max of ${player.data.items.offline_earnings_buy} hours now!`)
     },
     super_duper_random_brick_buy: function(player) {
-        
+        player.message("\\c5Click on the yellow brick for a chance to spawn one!")
     }
 }
 
