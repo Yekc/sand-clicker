@@ -4,10 +4,10 @@
         "in_the_sand": true,
         "req": 0,
         "perks": {
-            "spc": 10,
+            "spc": 20,
             "spc_mult": 0,
-            "sps": 20,
-            "sps_mult": 1.05,
+            "sps": 40,
+            "sps_mult": 1.25,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -40,10 +40,10 @@
         "in_the_sand": true,
         "req": 0,
         "perks": {
-            "spc": 5,
-            "spc_mult": 1.25,
-            "sps": 5,
-            "sps_mult": 1.05,
+            "spc": 10,
+            "spc_mult": 2.5,
+            "sps": 10,
+            "sps_mult": 1.5,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -58,10 +58,10 @@
         "in_the_sand": true,
         "req": 0,
         "perks": {
-            "spc": 10,
+            "spc": 20,
             "spc_mult": 0,
-            "sps": 10,
-            "sps_mult": 1.1,
+            "sps": 20,
+            "sps_mult": 1.65,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -77,9 +77,9 @@
         "req": 500,
         "perks": {
             "spc": 0,
-            "spc_mult": 5,
+            "spc_mult": 10,
             "sps": 1,
-            "sps_mult": 1.15,
+            "sps_mult": 1.85,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -94,9 +94,9 @@
         "in_the_sand": true,
         "req": 500,
         "perks": {
-            "spc": 10,
-            "spc_mult": 5,
-            "sps": 1,
+            "spc": 20,
+            "spc_mult": 10,
+            "sps": 2,
             "sps_mult": 0,
             "bonus": "",
             "bonus_fancy": ""
@@ -112,7 +112,7 @@
         "in_the_sand": true,
         "req": 500,
         "perks": {
-            "spc": 100,
+            "spc": 200,
             "spc_mult": 0,
             "sps": 0,
             "sps_mult": 0,
@@ -130,10 +130,10 @@
         "in_the_sand": true,
         "req": 5000,
         "perks": {
-            "spc": 50,
+            "spc": 100,
             "spc_mult": 0,
-            "sps": 100,
-            "sps_mult": 1.25,
+            "sps": 200,
+            "sps_mult": 1.9,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -150,8 +150,8 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 250,
-            "sps_mult": 1.2,
+            "sps": 500,
+            "sps_mult": 2.1,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -166,9 +166,9 @@
         "in_the_sand": true,
         "req": 5000,
         "perks": {
-            "spc": 200,
+            "spc": 400,
             "spc_mult": 0,
-            "sps": 10,
+            "sps": 20,
             "sps_mult": 0,
             "bonus": "",
             "bonus_fancy": ""
@@ -185,9 +185,9 @@
         "req": 50000,
         "perks": {
             "spc": 0,
-            "spc_mult": 2,
+            "spc_mult": 5,
             "sps": 0,
-            "sps_mult": 1.65,
+            "sps_mult": 2.35,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -202,10 +202,10 @@
         "in_the_sand": true,
         "req": 50000,
         "perks": {
-            "spc": 100,
+            "spc": 200,
             "spc_mult": 0,
-            "sps": 100,
-            "sps_mult": 1.5,
+            "sps": 200,
+            "sps_mult": 2.25,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -220,9 +220,9 @@
         "in_the_sand": true,
         "req": 50000,
         "perks": {
-            "spc": 500,
+            "spc": 1000,
             "spc_mult": 0,
-            "sps": 400,
+            "sps": 800,
             "sps_mult": 0,
             "bonus": "",
             "bonus_fancy": ""
@@ -238,7 +238,7 @@
         "in_the_sand": true,
         "req": 100000,
         "perks": {
-            "spc": 750,
+            "spc": 1500,
             "spc_mult": 0,
             "sps": 0,
             "sps_mult": 0,
@@ -256,10 +256,10 @@
         "in_the_sand": true,
         "req": 100000,
         "perks": {
-            "spc": 200,
+            "spc": 400,
             "spc_mult": 3,
             "sps": 0,
-            "sps_mult": 1.8,
+            "sps_mult": 2.5,
             "bonus": "",
             "bonus_fancy": ""
         },
@@ -276,7 +276,7 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 2500,
+            "sps": 5000,
             "sps_mult": 0,
             "bonus": "",
             "bonus_fancy": ""
@@ -294,7 +294,7 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 500,
+            "sps": 1000,
             "sps_mult": 0,
             "bonus": "family_dog_bonus",
             "bonus_fancy": "\\c9 +10% \\c7sand per second \\c0for every pet you own"
@@ -310,8 +310,8 @@
         "in_the_sand": true,
         "req": 250000,
         "perks": {
-            "spc": 20,
-            "spc_mult": 25,
+            "spc": 40,
+            "spc_mult": 50,
             "sps": 0,
             "sps_mult": 0,
             "bonus": "fred_bonus",
@@ -330,8 +330,8 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 100,
-            "sps_mult": 1.25,
+            "sps": 200,
+            "sps_mult": 1.75,
             "bonus": "squid_bonus",
             "bonus_fancy": " \\c0Mr. Crabs works \\c95x \\c0faster"
         },
@@ -367,7 +367,7 @@
             "spc": 0,
             "spc_mult": 0,
             "sps": 0,
-            "sps_mult": 1.1,
+            "sps_mult": 1.25,
             "bonus": "sandworm_bonus",
             "bonus_fancy": " \\c0Sand Eater works \\c92x \\c0faster"
         },
@@ -382,10 +382,10 @@
         "in_the_sand": false,
         "req": 0,
         "perks": {
-            "spc": -500,
+            "spc": -1000000,
             "spc_mult": 0,
-            "sps": -500,
-            "sps_mult": 0,
+            "sps": 0,
+            "sps_mult": 1.05,
             "bonus": "cookie_monster_bonus",
             "bonus_fancy": "\\c9 x10 \\c0more \\c8sand from \\c4RANDOM \\c0and \\c7SUPER \\c4RANDOM!!! \\c0bricks, and spawn x2 more of them"
         },
