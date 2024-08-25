@@ -225,6 +225,7 @@ Game.on("playerJoin", (player) => {
                 if (seconds >= 120) { //Player has been offline for longer than 2 minutes
                     let hours = Math.round(seconds / 36) / 100
                     let amount
+                    let gamepass = await player.ownsAsset(696)
 
                     if (hours >= player.data.items.offline_earnings_buy) { //Player has been offline longer than their max offline earnings time
                         amount = Math.round((player.data.items.offline_earnings_buy * 3600 * player.data.sps) / 50)
@@ -233,7 +234,7 @@ Game.on("playerJoin", (player) => {
                     }
 
                     //Player owns 50% more offline earnings gamepass
-                    if (player.ownsAsset(696)) {
+                    if (gamepass) {
                         amount = Math.round(amount * 1.5)
                         console.log(`${player.username} (${player.userId}) bought the 50% more offline earnings gamepass!`)
                     }
@@ -241,7 +242,7 @@ Game.on("playerJoin", (player) => {
                     getSand(player, amount)
                     player.message(`\\c9Offline Earnings! \\c5You earned \\c8${number(amount)} sand while you were offline for ${hours} hour${hours != 1 ? "s" : ""}.`)
                     player.message(`\\c1(Max offline earning time: ${player.data.items.offline_earnings_buy} hour${player.data.items.offline_earnings_buy != 1 ? "s" : ""})`)
-                    player.message(`${player.ownsAsset(696) ? "\\c9You earned 50% more offline because you own the gamepass. Thank you for purchasing!" : ""}`)
+                    player.message(`${gamepass ? "\\c9You earned 50% more offline because you own the gamepass. Thank you for purchasing!" : ""}`)
                 }
             }
         }
