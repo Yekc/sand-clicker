@@ -128,7 +128,7 @@
                 "item_req_fancy": "",
                 "stock": 24,
                 "base_price": 1000000,
-                "price_mult": 2,
+                "price_mult": 10,
                 "action": "offline_earnings_buy"
             },
             {
