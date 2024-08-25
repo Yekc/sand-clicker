@@ -46,6 +46,8 @@ giveRandom = function(player, s, d = false) {
 }
 
 randomBrickClick = function() {
+    console.log(`d: ${is_duper} | s: ${is_super} | r: ${is_random} | health: ${random_health} | selection: ${random_selection}`)
+
     if (is_duper) {
         random_health--
         player.centerPrint(`\\c9${random_health}/250`, 3)
@@ -154,6 +156,7 @@ Game.world.bricks.forEach(brick => {
     if (brick.name === "random" || brick.name.startsWith("duper_")) {
         brick.clicked(debouncePlayer((player, secure) => {
             if (!secure || !is_random) return //Make sure player is close enough and that random brick should exist
+            console.log("click")
             randomBrickClick()
         }, 100))
     }
