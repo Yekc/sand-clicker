@@ -152,6 +152,15 @@ updateSps = function(player) {
     if (player.data.sps < 0) player.data.sps = 0
 }
 
+update = function(player) {
+    let pv = player.data.saveDataVersion
+    let f = updates["from" + String(currentTemplateVersion - 1)]
+    f(player)
+    console.log(`Updated user data for ${player.username} (${player.userId}) from ${pv} to ${currentTemplateVersion}!`)
+
+    if (player.data.saveDataVersion < currentTemplateVersion) update(player)
+}
+
 save = async function(player) {
     player.data.lastOnline = Date.now()
 
@@ -168,10 +177,7 @@ load = async function(player) {
 
             //Check if save data format needs to be updated
             if (player.data.saveDataVersion < currentTemplateVersion) {
-                let pv = player.data.saveDataVersion
-                let f = updates["from" + String(currentTemplateVersion - 1)]
-                f(player)
-                console.log(`Updated user data for ${player.username} (${player.userId}) from ${pv} to ${currentTemplateVersion}!`)
+                update(player)
             }
         } else { //Player has no save data
             player.data = JSON.parse(JSON.stringify(template)) //Need to reparse like that to deep copy player data
