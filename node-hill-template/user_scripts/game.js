@@ -2,7 +2,7 @@
 console.error("----------------------------------------")
 Game.MOTD = ""
 
-//Restart after 2 hours
+//Restart after 3 hours
 setTimeout(() => {
     Game.messageAll("\\c6!!! Server restarting in 1 minute !!!")
 
@@ -12,8 +12,7 @@ setTimeout(() => {
     })
 
     setTimeout(() => {Game.shutdown()}, 60000)
-//}, 7200000)
-}, 3600000) //1 hour temp
+}, 12000000)
 
 //Random bricks
 Game.world.bricks.forEach(brick => {
