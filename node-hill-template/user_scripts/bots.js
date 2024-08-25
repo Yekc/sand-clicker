@@ -163,7 +163,7 @@ setInterval(() => {
         } else {
             player.bottomPrint(`\\c8Sand: ${player.data.sand}  \\c2|  \\c7Sand per click: ${player.data.spc}  \\c2|  \\c9Sand per second: ${player.data.sps}`)
         }
-        player.setScore(player.data.total_sand)
+        player.setScore(Math.min(2147483647, player.data.total_sand))
 
         //Office tip
         if (!player.data.office_tip && player.data.items.tiny_tim_buy > 0 && !player.interact) {

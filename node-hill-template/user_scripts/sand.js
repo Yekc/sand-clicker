@@ -46,7 +46,7 @@ randomBrick = function(s, d) {
         Game.messageAll(`\\c5A \\c7SUPER \\c9DUPER \\c4RANDOM BRICK \\c5has spawned somewhere!!!`)
         Game.messageAll(`\\c5Be the first to loot it to earn a super duper reward!`)
 
-        let selection_duper = Math.floor(Math.random() * 3)
+        let selection_duper = Math.floor(Math.random() * 3) + 1
 
         let duper_bricks = Game.world.bricks.filter(b => b.name === `duper_${selection_duper}`)
         let random_duper_brick = Game.world.bricks.filter(b => b.name === `random_duper_${selection_duper}`)[0]
