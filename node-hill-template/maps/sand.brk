@@ -1578,42 +1578,42 @@ B R I C K  W O R K S H O P  V0.2.0.0
 	+ROT -270
 	+SHAPE slope
 	+NOCOLLISION
-32.995 -39.5 17 1.01 1 1 0 0 0 1
+32.995 -39.505 17 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -90
 	+SHAPE round_slope
 	+NOCOLLISION
-32.995 -38.5 17 1.01 1 1 0 0 0 1
+32.995 -38.505 17 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -270
 	+SHAPE round_slope
 	+NOCOLLISION
-33.995 -37.5 25 1.01 1 1 0 0 0 1
+33.995 -37.505 25 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -90
 	+SHAPE round_slope
 	+NOCOLLISION
-33.995 -36.5 25 1.01 1 1 0 0 0 1
+33.995 -36.505 25 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -270
 	+SHAPE round_slope
 	+NOCOLLISION
-33.995 -37.5 36 1.01 1 1 1 0.55 1 1
+33.995 -37.505 36 1.01 1.01 1 1 0.55 1 1
 	+NAME wizard
 	+ROT -270
 	+SHAPE round_slope
 	+NOCOLLISION
-33.995 -38.5 36 1.01 1 1 1 0.55 1 1
+33.995 -38.505 36 1.01 1.01 1 1 0.55 1 1
 	+NAME wizard
 	+ROT -90
 	+SHAPE round_slope
 	+NOCOLLISION
-38.5 -34.005 17 1 1.01 1 0 0 0 1
+38.495 -34.005 17 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -180
 	+SHAPE round_slope
 	+NOCOLLISION
-37.5 -34.005 17 1 1.01 1 0 0 0 1
+37.495 -34.005 17 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+SHAPE round_slope
 	+NOCOLLISION
@@ -1635,22 +1635,22 @@ B R I C K  W O R K S H O P  V0.2.0.0
 	+NAME wizard
 	+SHAPE round_slope
 	+NOCOLLISION
-39.995 -38.5 25 1.01 1 1 0 0 0 1
+39.995 -38.505 25 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -270
 	+SHAPE round_slope
 	+NOCOLLISION
-39.995 -39.5 25 1.01 1 1 0 0 0 1
+39.995 -39.505 25 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -90
 	+SHAPE round_slope
 	+NOCOLLISION
-40.995 -37.5 17 1.01 1 1 0 0 0 1
+40.995 -37.505 17 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -90
 	+SHAPE round_slope
 	+NOCOLLISION
-40.995 -36.5 17 1.01 1 1 0 0 0 1
+40.995 -36.505 17 1.01 1.01 1 0 0 0 1
 	+NAME wizard
 	+ROT -270
 	+SHAPE round_slope
@@ -1673,12 +1673,12 @@ B R I C K  W O R K S H O P  V0.2.0.0
 	+NAME wizard
 	+SHAPE round_slope
 	+NOCOLLISION
-39.995 -37.5 36 1.01 1 1 1 0.55 1 1
+39.995 -37.505 36 1.01 1.01 1 1 0.55 1 1
 	+NAME wizard
 	+ROT -270
 	+SHAPE round_slope
 	+NOCOLLISION
-39.995 -38.5 36 1.01 1 1 1 0.55 1 1
+39.995 -38.505 36 1.01 1.01 1 1 0.55 1 1
 	+NAME wizard
 	+ROT -90
 	+SHAPE round_slope
