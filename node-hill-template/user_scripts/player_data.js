@@ -226,9 +226,15 @@ Game.on("playerJoin", (player) => {
                         amount = Math.round((seconds * player.data.sps) / 50)
                     }
 
+                    //Player owns 50% more offline earnings gamepass
+                    if (player.ownsAsset(696)) {
+                        amount = Math.round(amount * 1.5)
+                    }
+
                     getSand(player, amount)
                     player.message(`\\c9Offline Earnings! \\c5You earned \\c8${number(amount)} sand while you were offline for ${hours} hour${hours != 1 ? "s" : ""}.`)
                     player.message(`\\c1(Max offline earning time: ${player.data.items.offline_earnings_buy} hour${player.data.items.offline_earnings_buy != 1 ? "s" : ""})`)
+                    player.message(`${player.ownsAsset(696) ? "\\c9You earned 50% more offline because you own the gamepass. Thank you for purchasing!" : ""}`)
                 }
             }
         }

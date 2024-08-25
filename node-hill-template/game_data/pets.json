@@ -276,7 +276,7 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 5000,
+            "sps": 8000,
             "sps_mult": 0,
             "bonus": "",
             "bonus_fancy": ""
@@ -294,7 +294,7 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 1000,
+            "sps": 1200,
             "sps_mult": 1.25,
             "bonus": "family_dog_bonus",
             "bonus_fancy": "\\c9 +10% \\c7sand per second \\c0for every pet you own"
@@ -330,7 +330,7 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 1000,
+            "sps": 2000,
             "sps_mult": 1.75,
             "bonus": "squid_bonus",
             "bonus_fancy": " \\c0Mr. Crabs works \\c95x \\c0faster"
