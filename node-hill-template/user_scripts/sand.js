@@ -16,6 +16,10 @@ giveRandom = function(player, s, d = false) {
         let amount = 50000 + player.data.sps * 9000
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { amount *= 10 } }
         player.message(`\\c5You earned \\c8${number(amount)} sand\\c5!`)
+        if (earnPet(player, "grimace")) {
+            player.message("\\c5You found a \\c8Legendary Grimace\\c5!")
+            player.centerPrint("\\c5You found a \\c8Legendary Grimace\\c5!", 5)
+        }
         getSand(player, amount)
     } else if (s) {
         Game.messageAll(`${player.username} \\c5has looted the \\c7SUPER \\c4RANDOM BRICK!!!`)
@@ -35,8 +39,8 @@ giveRandom = function(player, s, d = false) {
     let pet_roll = Math.round(Math.random() * (d ? 3 : s ? 10 : 100))
     if (pet_roll < 2) {
         if (earnPet(player, "cookie_monster")) {
-            player.message(`\\c5You found a \\c6Mythic Cookie Monster\\c5!`)
-            player.centerPrint(`\\c5You found a \\c6Mythic Cookie Monster\\c5!`, 5)
+            player.message("\\c5You found a \\c8Legendary Cookie Monster\\c5!")
+            player.centerPrint("\\c5You found a \\c8Legendary Cookie Monster\\c5!", 5)
         }
     }
 }

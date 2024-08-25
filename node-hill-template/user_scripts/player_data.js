@@ -60,7 +60,8 @@ const template = {
         squid: 0,
         mr_rich: 0,
         sandworm: 0,
-        cookie_monster: 0
+        cookie_monster: 0,
+        grimace: 0
     }
 }
 
@@ -109,6 +110,11 @@ const updates = {
         player.data.items.super_duper_random_brick_buy = 0
 
         player.data.saveDataVersion = 4
+    },
+    from4: function(player) {
+        player.data.pets.grimace = 0
+
+        player.data.saveDataVersion = 5
     }
 }
 

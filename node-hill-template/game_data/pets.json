@@ -394,5 +394,23 @@
             "description": "He's blue and loves cookies.",
             "rarity": 5
         }
+    },
+    {
+        "id": "grimace",
+        "in_the_sand": false,
+        "req": 0,
+        "perks": {
+            "spc": -10000000,
+            "spc_mult": 0,
+            "sps": 1000,
+            "sps_mult": 3,
+            "bonus": "cookie_monster_bonus",
+            "bonus_fancy": "\\c9 x10 \\c0more \\c8sand from \\c4RANDOM \\c0bricks, and spawn x2 more of them"
+        },
+        "display": {
+            "name": "Grimace",
+            "description": "He's purple and loves...",
+            "rarity": 5
+        }
     }
 ]
