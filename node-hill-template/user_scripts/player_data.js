@@ -235,6 +235,7 @@ Game.on("playerJoin", (player) => {
                     //Player owns 50% more offline earnings gamepass
                     if (player.ownsAsset(696)) {
                         amount = Math.round(amount * 1.5)
+                        console.log(`${player.username} (${player.userId}) bought the 50% more offline earnings gamepass!`)
                     }
 
                     getSand(player, amount)
