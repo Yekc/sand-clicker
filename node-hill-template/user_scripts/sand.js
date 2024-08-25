@@ -1,7 +1,7 @@
 let pets = require("../game_data/pets.json")
 
 number = function(value) {
-    return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    return String(new Intl.NumberFormat().format(value))
 }
 
 getSand = function(player, amount) {
