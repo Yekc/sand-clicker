@@ -283,17 +283,18 @@ Game.on("playerJoin", (player) => {
                 //Upgrade pet
                 case "p":
                     if (player.pet_inv && player.pet_inv_view != 0) {
-                        if (player.data.pets[player.data.pet_active] >= global.max_pet_level) {
+                        pet = Object.keys(player.data.pets)[(player.pet_inv_view - 1) + (9 * (player.pet_inv_page - 1))]
+                        if (player.data.pets[pet] >= global.max_pet_level) {
                             player.message("\\c6This pet is already at the max level!")
                         } else {
-                            if (player.data.sand >= getUpgradeCost(getPet(player.data.pet_active).display.rarity, player.data.pets[player.data.pet_active])) {
-                                player.data.pets[player.data.pet_active]++
+                            if (player.data.sand >= getUpgradeCost(getPet(pet).display.rarity, player.data.pets[pet])) {
+                                player.data.pets[pet]++
 
                                 //Update stats
                                 updateSpc(player)
                                 updateSps(player)
 
-                                player.message(`\\c5You upgraded your ${getRarityColor(getPet(player.data.pet_active).display.rarity)}${getRarityName(getPet(player.data.pet_active).display.rarity)} ${getPet(player.data.pet_active).display.name} \\c5to level \\c7${player.data.pets[player.data.pet_active]}!`)
+                                player.message(`\\c5You upgraded your ${getRarityColor(getPet(pet).display.rarity)}${getRarityName(getPet(pet).display.rarity)} ${getPet(pet).display.name} \\c5to level \\c7${player.data.pets[pet]}!`)
                             } else {
                                 player.message("\\c6You can not afford to upgrade this pet!")
                             }
