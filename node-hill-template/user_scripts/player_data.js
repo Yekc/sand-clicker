@@ -203,13 +203,13 @@ Game.on("playerJoin", (player) => {
                 let now = Date.now()
                 let diff = (now / 1000) - (player.data.lastOnline / 1000)
                 if (diff >= 120) { //Player has been offline for longer than 2 minutes
-                    let hours = diff / 3600
+                    let hours = Math.round(diff / 36) / 100
                     let amount
 
                     if (hours >= player.data.items.offline_earnings_buy) { //Player has been offline longer than their max offline earnings time
-                        amount = (player.data.items.offline_earnings_buy * player.data.sps) / 10
+                        amount = Math.round((player.data.items.offline_earnings_buy * player.data.sps) / 10)
                     } else { //Player has been offline shorter than their max offline earnings time
-                        amount = (hours * player.data.sps) / 10
+                        amount = Math.round((hours * player.data.sps) / 10)
                     }
 
                     getSand(player, amount)
