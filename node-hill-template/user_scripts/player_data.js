@@ -6,7 +6,7 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 3
+const currentTemplateVersion = 4
 const template = {
     firstJoin: true,
     lastOnline: 0,
@@ -99,8 +99,16 @@ const updates = {
     },
     from2: function(player) {
         player.data.lastOnline = 0
+        player.data.items.offline_earnings_buy = 0
+        player.data.items.super_duper_random_brick_buy = 0
 
         player.data.saveDataVersion = 3
+    },
+    from4: function(player) {
+        player.data.items.offline_earnings_buy = 0
+        player.data.items.super_duper_random_brick_buy = 0
+
+        player.data.saveDataVersion = 4
     }
 }
 
