@@ -295,7 +295,7 @@
             "spc": 0,
             "spc_mult": 0,
             "sps": 1000,
-            "sps_mult": 0,
+            "sps_mult": 1.25,
             "bonus": "family_dog_bonus",
             "bonus_fancy": "\\c9 +10% \\c7sand per second \\c0for every pet you own"
         },
@@ -313,7 +313,7 @@
             "spc": 40,
             "spc_mult": 50,
             "sps": 0,
-            "sps_mult": 0,
+            "sps_mult": 2,
             "bonus": "fred_bonus",
             "bonus_fancy": " \\c0Tiny Tim works \\c910x \\c0faster"
         },
@@ -330,7 +330,7 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 200,
+            "sps": 1000,
             "sps_mult": 1.75,
             "bonus": "squid_bonus",
             "bonus_fancy": " \\c0Mr. Crabs works \\c95x \\c0faster"
@@ -346,9 +346,9 @@
         "in_the_sand": false,
         "req": 0,
         "perks": {
-            "spc": 0,
-            "spc_mult": 0,
-            "sps": 0,
+            "spc": 1000,
+            "spc_mult": 2,
+            "sps": 1000,
             "sps_mult": 0,
             "bonus": "mr_rich_bonus",
             "bonus_fancy": "\\c9 x2 \\c0more \\c8sand \\c0from every source"
@@ -366,7 +366,7 @@
         "perks": {
             "spc": 0,
             "spc_mult": 0,
-            "sps": 0,
+            "sps": 1000,
             "sps_mult": 1.25,
             "bonus": "sandworm_bonus",
             "bonus_fancy": " \\c0Sand Eater works \\c92x \\c0faster"
