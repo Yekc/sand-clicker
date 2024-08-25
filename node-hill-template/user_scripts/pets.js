@@ -45,17 +45,17 @@ getUpgradeCost = function(rarity, current_level) {
     current_level--
     switch (rarity) {
         default:
-            return Math.round(100 * Math.max(1, current_level * 1.15));
+            return Math.round(100 * Math.max(1, current_level * 1.25));
         case 1:
-            return Math.round(1000 * Math.max(1, current_level * 1.2));
+            return Math.round(1000 * Math.max(1, current_level * 1.3));
         case 2:
-            return Math.round(5000 * Math.max(1, current_level * 1.2));
+            return Math.round(5000 * Math.max(1, current_level * 1.3));
         case 3:
-            return Math.round(25000 * Math.max(1, current_level * 1.25));
+            return Math.round(25000 * Math.max(1, current_level * 1.35));
         case 4:
-            return Math.round(50000 * Math.max(1, current_level * 1.3));
+            return Math.round(50000 * Math.max(1, current_level * 1.375));
         case 5:
-            return Math.round(150000 * Math.max(1, current_level * 1.35));
+            return Math.round(150000 * Math.max(1, current_level * 1.425));
     }
 }
 
@@ -64,7 +64,7 @@ getPerkStrength = function(perk, level) {
 }
 
 getPerkStrengthMult = function(perk, level) {
-    return 1 + (Math.round(1 - (perk / global.max_pet_level) * level * 1000) / 1000)
+    return 1 + Math.round(((1 - perk) / global.max_pet_level) * level * 1000) / 1000
 }
 
 earnPet = function(player, id) {
