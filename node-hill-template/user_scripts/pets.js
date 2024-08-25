@@ -60,7 +60,7 @@ getUpgradeCost = function(rarity, current_level) {
 }
 
 getPerkStrength = function(perk, level) {
-    return Math.round((perk / global.max_pet_level) * level * 1000) / 1000
+    return Math.round(((perk * level) / global.max_pet_level) * 1000) / 1000
 }
 
 getPerkStrengthMult = function(perk, level) {
