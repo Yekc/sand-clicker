@@ -115,5 +115,13 @@
                 "action": "sand_eater"
             }
         ]
+    },
+    {
+        "id": "wizard",
+        "name": "\\c9Wizard Menu",
+        "type": "shop",
+        "items": [
+
+        ]
     }
 ]
