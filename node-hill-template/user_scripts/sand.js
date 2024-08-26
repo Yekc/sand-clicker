@@ -154,7 +154,6 @@ Game.world.bricks.forEach(brick => {
     if (brick.name === "random" || brick.name.startsWith("duper_")) {
         brick.clicked(debouncePlayer((player, secure) => {
             if (!secure || !is_random) return //Make sure player is close enough and that random brick should exist
-            console.log("click")
             randomBrickClick(player)
         }, 100))
     }
