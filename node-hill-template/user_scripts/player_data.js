@@ -228,9 +228,9 @@ Game.on("playerJoin", (player) => {
                     let gamepass = await player.ownsAsset(696)
 
                     if (hours >= player.data.items.offline_earnings_buy) { //Player has been offline longer than their max offline earnings time
-                        amount = Math.round((player.data.items.offline_earnings_buy * 3600 * player.data.sps) / 50)
+                        amount = Math.round((player.data.items.offline_earnings_buy * 3600 * player.data.sps) / 5)
                     } else { //Player has been offline shorter than their max offline earnings time
-                        amount = Math.round((seconds * player.data.sps) / 50)
+                        amount = Math.round((seconds * player.data.sps) / 5)
                     }
 
                     //Player owns 50% more offline earnings gamepass
