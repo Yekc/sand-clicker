@@ -128,7 +128,7 @@ randomBrick = function() {
         let brick = Game.world.bricks.filter(brick => brick.name === "random")[random_selection]
         let super_brick = Game.world.bricks.filter(b => b.name === "random_super")[11 - random_selection] //The super random bricks are backwards for some reason, so the selection must be subtracted from 11 (amount of random bricks - 1)
 
-        Game.messageAll(`\\c5A \\c7SUPER \\c9DUPER \\c4RANDOM BRICK \\c5has spawned somewhere!!!`)
+        Game.messageAll(`\\c5A \\c7SUPER \\c4RANDOM BRICK \\c5has spawned somewhere!!!`)
         Game.messageAll(`\\c5Be the first to loot it to earn a super duper reward!`)
 
         random_health = 50
@@ -173,7 +173,8 @@ click_brick.clicked(debouncePlayer((player, secure) => {
 
     //Chance for random and super random brick
     if (!is_random) {
-        let random = Math.round(Math.random() * 30000)
+        //let random = Math.round(Math.random() * 30000)
+        let random = Math.round(Math.random() * 300)
         if (player.data.pet_equipped) { if (getPet(player.data.pet_active).perks.bonus === "cookie_monster_bonus") { random = Math.floor(random / 2) } }
         if (random < 100) {
             is_random = true
