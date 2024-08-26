@@ -49,8 +49,6 @@ randomBrickClick = function() {
     console.log(`d: ${is_duper} | s: ${is_super} | r: ${is_random} | health: ${random_health} | selection: ${random_selection}`)
 
     if (is_duper) {
-        console.log(`is_duper`)
-
         random_health--
         player.centerPrint(`\\c9${random_health}/250`, 3)
 
@@ -75,8 +73,6 @@ randomBrickClick = function() {
             random_selection = 0
         }
     } else if (is_super) {
-        console.log(`is_super`)
-
         random_health--
         player.centerPrint(`\\c7${random_health}/50`, 3)
 
@@ -98,18 +94,24 @@ randomBrickClick = function() {
         console.log(`is_random`)
 
         random_health--
+        console.log(`rh: ${random_health}`)
         player.centerPrint(`\\c7${random_health}/10`)
+        console.log(`centerPrint`)
 
         if (random_health == 0) {
+            console.log(`ded`)
             giveRandom(player, false)
+            console.log(`gave`)
 
             let brick = Game.world.bricks.filter(brick => brick.name === "random")[random_selection]
 
             brick.setVisibility(0)
             brick.setCollision(false)
+            console.log(`yea`)
 
             is_random = false
             random_selection = 0
+            console.log(`done`)
         }
     }
 }
