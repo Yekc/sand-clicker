@@ -181,7 +181,7 @@
                 "stock": 50,
                 "base_price": 5000000,
                 "price_mult": 5.25,
-                "action": ""
+                "action": "mr_sandman"
             },
             {
                 "item": "Upgrade Sandy Cheeks (+100/s)",
@@ -191,7 +191,7 @@
                 "stock": 50,
                 "base_price": 10000000,
                 "price_mult": 5.75,
-                "action": ""
+                "action": "sandy_cheeks"
             },
             {
                 "item": "Upgrade Sandworm (+250/s)",
@@ -201,7 +201,7 @@
                 "stock": 50,
                 "base_price": 50000000,
                 "price_mult": 6.5,
-                "action": ""
+                "action": "sandworm"
             }
         ]
     }
