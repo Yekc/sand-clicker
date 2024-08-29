@@ -179,7 +179,7 @@
                 "item_req": "mr_sandman_buy",
                 "item_req_fancy": "Mr. Sandman",
                 "stock": 50,
-                "base_price": 0,
+                "base_price": 5000000,
                 "price_mult": 5.25,
                 "action": ""
             },
@@ -189,7 +189,7 @@
                 "item_req": "sandy_cheeks_buy",
                 "item_req_fancy": "Sandy Cheeks",
                 "stock": 50,
-                "base_price": 0,
+                "base_price": 10000000,
                 "price_mult": 5.75,
                 "action": ""
             },
