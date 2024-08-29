@@ -64,5 +64,27 @@
             "hat2": 0,
             "hat3": 0
         }
+    },
+    {
+        "id": "ceo",
+        "bodyColors": {
+            "head": "#ccc000",
+            "torso": "#343f52",
+            "leftArm": "#343f52",
+            "rightArm": "#343f52",
+            "leftLeg": "#272f3d",
+            "rightLeg": "#272f3d"
+        },
+        "clothing": {
+            "tshirt": 0,
+            "shirt": 0,
+            "pants": 0
+        },
+        "items": {
+            "face": 0,
+            "hat1": 0,
+            "hat2": 0,
+            "hat3": 0
+        }
     }
 ]

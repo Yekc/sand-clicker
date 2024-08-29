@@ -50,15 +50,6 @@
                 "action": "sand_eater_buy"
             },
             {
-                "item": "Upgrade Manager (+5%/s)",
-                "req": 75000,
-                "item_req": "",
-                "stock": 50,
-                "base_price": 1000,
-                "price_mult": 1.1,
-                "action": "manager"
-            },
-            {
                 "item": "Get \\c8Legendary Mr. Rich \\c0Pet",
                 "req": 1000000,
                 "item_req": "",
@@ -66,6 +57,33 @@
                 "base_price": 2500000,
                 "price_mult": 1,
                 "action": "mr_rich_buy"
+            },
+            {
+                "item": "Hire Mr. Sandman (100/s)",
+                "req": 100000000,
+                "item_req": "",
+                "stock": 1,
+                "base_price": 10000000,
+                "price_mult": 1,
+                "action": "mr_sandman_buy"
+            },
+            {
+                "item": "Hire Sandy Cheeks (250/s)",
+                "req": 500000000,
+                "item_req": "",
+                "stock": 1,
+                "base_price": 25000000,
+                "price_mult": 1,
+                "action": "sandy_cheeks_buy"
+            },
+            {
+                "item": "Hire Sandworm (500/s)",
+                "req": 1000000000,
+                "item_req": "",
+                "stock": 1,
+                "base_price": 100000000,
+                "price_mult": 1,
+                "action": "sandworm_buy"
             }
         ]
     },
@@ -79,7 +97,7 @@
                 "req": 500,
                 "item_req": "tiny_tim_buy",
                 "item_req_fancy": "Tiny Tim",
-                "stock": 100,
+                "stock": 50,
                 "base_price": 250,
                 "price_mult": 1.1,
                 "action": "tiny_tim"
@@ -89,7 +107,7 @@
                 "req": 5000,
                 "item_req": "mr_crabs_buy",
                 "item_req_fancy": "Mr. Crabs",
-                "stock": 100,
+                "stock": 50,
                 "base_price": 750,
                 "price_mult": 1.15,
                 "action": "mr_crabs"
@@ -99,7 +117,7 @@
                 "req": 15000,
                 "item_req": "tims_father_buy",
                 "item_req_fancy": "Tim's Father",
-                "stock": 100,
+                "stock": 50,
                 "base_price": 1500,
                 "price_mult": 1.2,
                 "action": "tims_father"
@@ -109,7 +127,7 @@
                 "req": 50000,
                 "item_req": "sand_eater_buy",
                 "item_req_fancy": "Sand Eater",
-                "stock": 100,
+                "stock": 50,
                 "base_price": 2000,
                 "price_mult": 1.2,
                 "action": "sand_eater"
@@ -138,6 +156,52 @@
                 "base_price": 10000000,
                 "price_mult": 1,
                 "action": "super_duper_random_brick_buy"
+            }
+        ]
+    },
+    {
+        "id": "ceo",
+        "name": "\\c7Workers",
+        "type": "shop",
+        "items": [
+            {
+                "item": "Upgrade Manager (+5%/s)",
+                "req": 75000,
+                "item_req": "",
+                "stock": 50,
+                "base_price": 1000,
+                "price_mult": 1.1,
+                "action": "manager"
+            },
+            {
+                "item": "Upgrade Mr. Sandman (+50/s)",
+                "req": 100000000,
+                "item_req": "mr_sandman_buy",
+                "item_req_fancy": "Mr. Sandman",
+                "stock": 50,
+                "base_price": 0,
+                "price_mult": 5.25,
+                "action": ""
+            },
+            {
+                "item": "Upgrade Sandy Cheeks (+100/s)",
+                "req": 500000000,
+                "item_req": "sandy_cheeks_buy",
+                "item_req_fancy": "Sandy Cheeks",
+                "stock": 50,
+                "base_price": 0,
+                "price_mult": 5.75,
+                "action": ""
+            },
+            {
+                "item": "Upgrade Sandworm (+250/s)",
+                "req": 1000000000,
+                "item_req": "sandworm_buy",
+                "item_req_fancy": "Sandworm",
+                "stock": 50,
+                "base_price": 50000000,
+                "price_mult": 6.5,
+                "action": ""
             }
         ]
     }

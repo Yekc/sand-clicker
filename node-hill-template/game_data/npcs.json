@@ -25,5 +25,14 @@
             "outfit": "wizard",
             "scale": 0.95
         }
+    },
+    {
+        "id": "ceo",
+        "dialogue": "ceo",
+        "display": {
+            "name": "CEO",
+            "outfit": "ceo",
+            "scale": 1.0
+        }
     }
 ]

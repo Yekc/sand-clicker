@@ -59,7 +59,31 @@ const item_functions = {
     },
     super_duper_random_brick_buy: function(player) {
         player.message("\\c5Click on the yellow brick for a chance to spawn one!")
-    }
+    },
+    mr_sandman_buy: function(player) {
+        updateSps(player)
+        player.message("\\c5Upgrade \\c0Mr. Sandman \\c5at the CEO's office!")
+    },
+    mr_sandman: function(player) {
+        updateSps(player)
+        player.message("\\c0Mr. Sandman \\c5has been promoted! \\c9+50 sand per second")
+    },
+    sandy_cheeks_buy: function(player) {
+        updateSps(player)
+        player.message("\\c5Upgrade \\c0Sandy Cheeks \\c5at the CEO's office!")
+    },
+    sandy_cheeks: function(player) {
+        updateSps(player)
+        player.message("\\c0Sandy Cheeks \\c5has been promoted! \\c9+100 sand per second")
+    },
+    sandworm_buy: function(player) {
+        updateSps(player)
+        player.message("\\c5Upgrade \\c0Sandworm \\c5at the CEO's office!")
+    },
+    sandworm: function(player) {
+        updateSps(player)
+        player.message("\\c0Sandworm \\c5has been promoted! \\c9+250 sand per second")
+    },
 }
 
 getNpc = function(id) {

@@ -6,7 +6,7 @@ const saveInterval = 600000
 if (fs.existsSync(`./player_data/`) === false) fs.mkdirSync("./player_data/")
 
 //Default save data
-const currentTemplateVersion = 4
+const currentTemplateVersion = 6
 const template = {
     firstJoin: true,
     lastOnline: 0,
@@ -17,6 +17,8 @@ const template = {
 
     spc: 1, //Sand per second
     sps: 0, //Sand per click
+
+    prestige: 0,
 
     office_tip: false,
 
@@ -33,7 +35,13 @@ const template = {
         manager: 0,
         mr_rich_buy: 0,
         offline_earnings_buy: 0,
-        super_duper_random_brick_buy: 0
+        super_duper_random_brick_buy: 0,
+        mr_sandman_buy: 0,
+        mr_sandman: 0,
+        sandy_cheeks_buy: 0,
+        sandy_cheeks: 0,
+        sandworm_buy: 0,
+        sandworm: 0
     },
 
     pet_equipped: false,
@@ -115,6 +123,26 @@ const updates = {
         player.data.pets.grimace = 0
 
         player.data.saveDataVersion = 5
+    },
+    from5: function(player) {
+        player.data.items.mr_sandman_buy = 0
+        player.data.items.mr_sandman = 0
+        player.data.items.sandy_cheeks_buy = 0
+        player.data.items.sandy_cheeks = 0
+        player.data.items.sandworm_buy = 0
+        player.data.items.sandworm = 0
+
+        //Lowered upgrade stock
+        if (player.data.items.tiny_tim > 50) player.data.items.tiny_tim = 50
+        if (player.data.items.mr_crabs > 50) player.data.items.mr_crabs = 50
+        if (player.data.items.tims_father > 50) player.data.items.tims_father = 50
+        if (player.data.items.sand_eater > 50) player.data.items.sand_eater = 50
+
+        //Fix players with decimal sand
+        player.data.sand = Math.round(player.data.sand)
+        player.data.total_sand = Math.round(player.data.total_sand)
+
+        player.data.saveDataVersion = 6
     }
 }
 
@@ -139,6 +167,9 @@ updateSps = function(player) {
     if (player.data.items.mr_crabs_buy > 0) player.data.sps += 5 + ((player.data.items.mr_crabs * 2) * (player.data.pet_equipped ? (getPet(player.data.pet_active).perks.bonus === "squid_bonus" ? 5 : 1) : 1))
     if (player.data.items.tims_father_buy > 0) player.data.sps += 10 + (player.data.items.tims_father * 5)
     if (player.data.items.sand_eater_buy > 0) player.data.sps += 20 + ((player.data.items.sand_eater * 10) * (player.data.pet_equipped ? (getPet(player.data.pet_active).perks.bonus === "sandworm_bonus" ? 2 : 1) : 1))
+    if (player.data.items.mr_sandman_buy > 0) player.data.sps += 100 + (player.data.items.mr_sandman * 50)
+    if (player.data.items.sandy_cheeks_buy > 0) player.data.sps += 250 + (player.data.items.sandy_cheeks * 100)
+    if (player.data.items.sandworm_buy > 0) player.data.sps += 500 + (player.data.items.sandworm * 250)
     
     if (player.data.items.manager > 0) player.data.sps = Math.round(player.data.sps * (1 + (0.05 * player.data.items.manager)))
     
@@ -151,7 +182,7 @@ updateSps = function(player) {
             for (let i = 0; i < 22; i++) {
                 if (player.data.pets[Object.keys(player.data.pets)[i]] > 0) total_pets++
             }
-            player.data.sps = Math.round(player.data.sps * (1 + (0.1 * total_pets)))
+            player.data.sps = Math.round(player.data.sps * (1 + (0.05 * total_pets)))
         }
     }
 
